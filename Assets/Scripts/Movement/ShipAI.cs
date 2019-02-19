@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ShipAI : MonoBehaviour
 {
@@ -21,12 +22,15 @@ public class ShipAI : MonoBehaviour
 
     PlayerShooting shooting;
 
+    //ShipMovement shipMovement;
+
     void Start()
     {
         shootableMask = LayerMask.GetMask("Shootable");
         path = FindObjectOfType<AIPath>();
         input = GetComponent<PlayerInput>();
         shooting = GetComponentInChildren<PlayerShooting>();
+        //shipMovement = GetComponent<ShipMovement>();
 
         Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
 
@@ -76,19 +80,43 @@ public class ShipAI : MonoBehaviour
         Vector3 relativeVector = transform.InverseTransformPoint(nodes[currentNode].position);
 
         float directionX;
-        float directionY;
+        float directionZ;
 
         directionX = relativeVector.x / relativeVector.magnitude;
-        directionY = relativeVector.y / relativeVector.magnitude;
+        directionZ = relativeVector.z / relativeVector.magnitude;
 
-        if (!swapRotation)
+        Vector3 nextNodeDirection = nodes[currentNode].position - transform.position;
+
+        float angle = Vector3.Angle(nextNodeDirection, transform.forward);
+
+        if (relativeVector.x < 0f)
         {
             input.rudder = directionX;
         }
-        else
+        else if (relativeVector.x > 0f && relativeVector.z > 0f)
         {
-            input.rudder = directionY * posOrNeg;
+            if (angle > 0f && angle < 10f)
+            {
+                input.rudder = directionZ;
+            }
+            else
+            {
+                input.rudder = directionZ * 2.0f;
+            }
         }
+
+        //float directionY;
+
+        //directionY = relativeVector.y / relativeVector.magnitude;
+
+        //if (!swapRotation)
+        //{
+        //    input.rudder = directionX;
+        //}
+        //else
+        //{
+        //    input.rudder = directionY * posOrNeg;
+        //}
     }
 
     void Accelerate()
@@ -98,7 +126,7 @@ public class ShipAI : MonoBehaviour
 
     void CheckNodeDistance()
     {
-        if (Vector3.Distance(transform.position, nodes[currentNode].position) < 50f)
+        if (Vector3.Distance(transform.position, nodes[currentNode].position) < 25f)
         {
             if (currentNode == nodes.Count - 1)
             {
