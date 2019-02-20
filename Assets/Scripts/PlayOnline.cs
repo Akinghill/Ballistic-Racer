@@ -7,7 +7,7 @@ public class PlayOnline : MonoBehaviour {
 
 	public void LoadScene()
 	{
-		SceneManager.LoadScene(1);
+		SceneManager.LoadScene("Network");
 	}
 
 }
