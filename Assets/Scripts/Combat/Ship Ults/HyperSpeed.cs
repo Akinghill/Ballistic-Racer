@@ -31,17 +31,18 @@ public class HyperSpeed : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ultCharge.ultCharged)
+        //if (ultCharge.ultCharged)
+        //{
+        if (input.powerUp)
         {
-            if (input.powerUp)
-            {
-                boosting = true;
-                StartCoroutine(SpeedBoost());
-                ultCharge.CancelInvoke("UltimateCharge");
+            boosting = true;
+            StartCoroutine(SpeedBoost());
+            ultCharge.CancelInvoke("UltimateCharge");
 
-                ultCharge.ultPower = 0;
-            }
+            ultCharge.ultPower = 0;
+            GetComponent<HyperSpeed>().enabled = false;
         }
+        //}
         if (boosting)
         {
             input.boost = false;
