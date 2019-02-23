@@ -87,36 +87,24 @@ public class ShipAI : MonoBehaviour
 
         Vector3 nextNodeDirection = nodes[currentNode].position - transform.position;
 
-        float angle = Vector3.Angle(nextNodeDirection, transform.forward);
+        float angle = Vector3.SignedAngle(nextNodeDirection, transform.forward, Vector3.up);
+        //Debug.Log(angle);
 
-        if (relativeVector.x < 0f)
+        if (angle < -5.0F)
         {
+            //print("turn right");
+            input.rudder = directionZ;
+        }
+        else if (angle > 5.0F)
+        {
+            //print("turn left");
+            input.rudder = -directionZ;
+        }
+        else
+        {
+            //print("forward");
             input.rudder = directionX;
         }
-        else if (relativeVector.x > 0f && relativeVector.z > 0f)
-        {
-            if (angle > 0f && angle < 10f)
-            {
-                input.rudder = directionZ;
-            }
-            else
-            {
-                input.rudder = directionZ * 2.0f;
-            }
-        }
-
-        //float directionY;
-
-        //directionY = relativeVector.y / relativeVector.magnitude;
-
-        //if (!swapRotation)
-        //{
-        //    input.rudder = directionX;
-        //}
-        //else
-        //{
-        //    input.rudder = directionY * posOrNeg;
-        //}
     }
 
     void Accelerate()
