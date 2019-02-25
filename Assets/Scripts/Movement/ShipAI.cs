@@ -87,8 +87,9 @@ public class ShipAI : MonoBehaviour
         Vector3 nextNodeDirection = nodes[currentNode].position - transform.position;
 
         float angle = Vector3.SignedAngle(transform.forward, nextNodeDirection, Vector3.up);
-        Debug.Log(angle);
+        //Debug.Log(angle);
 
+        // Turn left or right if angle between ship and next node is less than -5 or greater than 5. If not, then go forward.
         if (angle < -5.0f)
         {
             //Debug.Log("turn left");
@@ -103,6 +104,16 @@ public class ShipAI : MonoBehaviour
         {
             //Debug.Log("forward");
             input.rudder = directionX;
+        }
+
+        // If next node is greater than 2000 away from ship, then boost.
+        if (nextNodeDirection.magnitude > 2000.0f)
+        {
+            input.boost = true;
+        }
+        else
+        {
+            input.boost = false;
         }
     }
 
