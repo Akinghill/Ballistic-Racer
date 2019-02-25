@@ -35,6 +35,8 @@ public class CheckTrigger : MonoBehaviour
 
     int numberOfRacers;
 
+    private float MaxSpeedStart;
+
     void Start()
     {
         miniMapIcon.SetActive(true);
@@ -48,28 +50,47 @@ public class CheckTrigger : MonoBehaviour
         checkpoint = FindObjectOfType<Checkpoint>();
 
         lastPoint = GameObject.FindGameObjectWithTag("Finish");
+        MaxSpeedStart = GetComponentInParent<ShipMovement>().maxSpeed;
     }
 
     void Update()
     {
         lastPointDistance = Vector3.Distance(transform.position, lastPoint.transform.position);
         lapNumber.text = lapsCompleted + "/" + checkpoint.numberOfLaps;
-        if (position == 1)
+        switch(position)
         {
-            racePosition.text = position + "st";
+            case 1:
+                racePosition.text = position + "st";
+                GetComponentInParent<ShipMovement>().maxSpeed = MaxSpeedStart;
+            break;
+
+            case 2:
+                racePosition.text = position + "nd";
+                GetComponentInParent<ShipMovement>().maxSpeed = MaxSpeedStart + 1;
+            break;
+
+            case 3:
+                racePosition.text = position + "rd";
+                GetComponentInParent<ShipMovement>().maxSpeed = MaxSpeedStart + 2;
+            break;
+
+            case 4:
+                racePosition.text = position + "th";
+                GetComponentInParent<ShipMovement>().maxSpeed = MaxSpeedStart + 5;
+            break;
+
+            case 5:
+                racePosition.text = position + "th";
+                GetComponentInParent<ShipMovement>().maxSpeed = MaxSpeedStart + 7;
+            break;
+
+            case 6:
+                racePosition.text = position + "th";
+                //racePosition.text = "hah ur last u suck"
+                GetComponentInParent<ShipMovement>().maxSpeed = MaxSpeedStart + 10;
+            break;
         }
-        else if (position == 2)
-        {
-            racePosition.text = position + "nd";
-        }
-        else if (position == 3)
-        {
-            racePosition.text = position + "rd";
-        }
-        else if (position >= 4)
-        {
-            racePosition.text = position + "th";
-        }
+        
 
         foreach (CheckTrigger check in checks)
         {

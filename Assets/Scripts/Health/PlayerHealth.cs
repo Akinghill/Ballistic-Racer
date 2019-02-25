@@ -83,6 +83,10 @@ public class PlayerHealth : MonoBehaviour
 
             healthSlider.value = currentHealth;
         }
+        if(transform.position.y <= -160)
+        {
+            Death();
+        }
     }
 
     public void TakeDamage(int amount)
