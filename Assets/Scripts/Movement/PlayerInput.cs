@@ -33,6 +33,8 @@ public class PlayerInput : MonoBehaviour
 
     [HideInInspector] public bool usingKeyboard;
 
+    public bool usingKeyboard;
+
     [HideInInspector] public float rudder;
     [HideInInspector] public float accelerate;
     [HideInInspector] public float brake;

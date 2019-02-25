@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class ShipAI : MonoBehaviour
 {
@@ -76,18 +77,32 @@ public class ShipAI : MonoBehaviour
         Vector3 relativeVector = transform.InverseTransformPoint(nodes[currentNode].position);
 
         float directionX;
-        float directionY;
+        //float directionY;
+        float directionZ;
 
         directionX = relativeVector.x / relativeVector.magnitude;
-        directionY = relativeVector.y / relativeVector.magnitude;
+        //directionY = relativeVector.y / relativeVector.magnitude;
+        directionZ = relativeVector.z / relativeVector.magnitude;
 
-        if (!swapRotation)
+        Vector3 nextNodeDirection = nodes[currentNode].position - transform.position;
+
+        float angle = Vector3.SignedAngle(transform.forward, nextNodeDirection, Vector3.up);
+        Debug.Log(angle);
+
+        if (angle < -5.0f)
         {
-            input.rudder = directionX;
+            //Debug.Log("turn left");
+            input.rudder = -directionZ;
+        }
+        else if (angle > 5.0f)
+        {
+            //Debug.Log("turn right");
+            input.rudder = directionZ;
         }
         else
         {
-            input.rudder = directionY * posOrNeg;
+            //Debug.Log("forward");
+            input.rudder = directionX;
         }
     }
 
@@ -98,7 +113,7 @@ public class ShipAI : MonoBehaviour
 
     void CheckNodeDistance()
     {
-        if (Vector3.Distance(transform.position, nodes[currentNode].position) < 50f)
+        if (Vector3.Distance(transform.position, nodes[currentNode].position) < 25f)
         {
             if (currentNode == nodes.Count - 1)
             {
