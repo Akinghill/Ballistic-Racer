@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
     bool damaged;
     bool isInvulnerable = false;
 
-    PlayerInput input;
+    //PlayerInput input;
     //UltCharge ultCharge;
 
     bool isReflective = false;
@@ -37,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
         mesh = GetComponent<MeshRenderer>();
-        input = GetComponentInParent<PlayerInput>();
+        //input = GetComponentInParent<PlayerInput>();
         meshCollider = GetComponent<Collider>();
         currentHealth = startingHealth;
     }
@@ -69,19 +69,21 @@ public class PlayerHealth : MonoBehaviour
                 isInvulnerable = false;
             }
         }
-        if (input.controllerNumber != 0)
+        if (damaged)
         {
-            if (damaged)
-            {
-                damageImage.color = flashColour;
-            }
-            else
-            {
-                damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
-            }
-            damaged = false;
+            damageImage.color = flashColour;
+        }
+        else
+        {
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
+        damaged = false;
 
-            healthSlider.value = currentHealth;
+        healthSlider.value = currentHealth;
+
+        if (transform.position.y <= -160)
+        {
+            Death();
         }
     }
 

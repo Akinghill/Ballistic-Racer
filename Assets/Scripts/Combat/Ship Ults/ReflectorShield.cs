@@ -9,16 +9,17 @@ public class ReflectorShield : MonoBehaviour {
     //Then, add this script to it and change the layer to "Ricochet"
     //Finally, disable the new mesh collider by unchecking the box on the component.
 
-    public float timeBetweenPowerup = 15f;
+    UltCharge ultCharge;
 
     float timer;
     PlayerInput input;
-    PlayerHealth health;
-    Collider ReflectCollider;
+    public PlayerHealth health;
+    public Collider ReflectCollider;
 
     // Use this for initialization
     void Awake()
     {
+        ultCharge = GetComponent<UltCharge>();
         input = GetComponentInParent<PlayerInput>();
         health = GetComponentInParent<PlayerHealth>();
         ReflectCollider = GetComponent<Collider>();
@@ -27,13 +28,15 @@ public class ReflectorShield : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-
-        if (input.powerUp && timer >= timeBetweenPowerup && Time.timeScale != 0)
+        //if (ultCharge.ultCharged)
+        //{
+        if (input.powerUp)
         {
             ReflectShield();
-            timer = 0;
+            ultCharge.ultPower = 0;
+            GetComponent<ReflectorShield>().enabled = false;
         }
+        //}
     }
 
     public void ReflectShield()

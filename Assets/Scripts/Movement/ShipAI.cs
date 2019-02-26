@@ -22,15 +22,12 @@ public class ShipAI : MonoBehaviour
 
     PlayerShooting shooting;
 
-    //ShipMovement shipMovement;
-
     void Start()
     {
         shootableMask = LayerMask.GetMask("Shootable");
         path = FindObjectOfType<AIPath>();
         input = GetComponent<PlayerInput>();
         shooting = GetComponentInChildren<PlayerShooting>();
-        //shipMovement = GetComponent<ShipMovement>();
 
         Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
 
@@ -80,30 +77,43 @@ public class ShipAI : MonoBehaviour
         Vector3 relativeVector = transform.InverseTransformPoint(nodes[currentNode].position);
 
         float directionX;
+        //float directionY;
         float directionZ;
 
         directionX = relativeVector.x / relativeVector.magnitude;
+        //directionY = relativeVector.y / relativeVector.magnitude;
         directionZ = relativeVector.z / relativeVector.magnitude;
 
         Vector3 nextNodeDirection = nodes[currentNode].position - transform.position;
 
-        float angle = Vector3.SignedAngle(nextNodeDirection, transform.forward, Vector3.up);
+        float angle = Vector3.SignedAngle(transform.forward, nextNodeDirection, Vector3.up);
         //Debug.Log(angle);
 
-        if (angle < -5.0F)
+        // Turn left or right if angle between ship and next node is less than -5 or greater than 5. If not, then go forward.
+        if (angle < -5.0f)
         {
-            //print("turn right");
-            input.rudder = directionZ;
-        }
-        else if (angle > 5.0F)
-        {
-            //print("turn left");
+            //Debug.Log("turn left");
             input.rudder = -directionZ;
+        }
+        else if (angle > 5.0f)
+        {
+            //Debug.Log("turn right");
+            input.rudder = directionZ;
         }
         else
         {
-            //print("forward");
+            //Debug.Log("forward");
             input.rudder = directionX;
+        }
+
+        // If next node is greater than 2000 away from ship, then boost.
+        if (nextNodeDirection.magnitude > 2000.0f)
+        {
+            input.boost = true;
+        }
+        else
+        {
+            input.boost = false;
         }
     }
 

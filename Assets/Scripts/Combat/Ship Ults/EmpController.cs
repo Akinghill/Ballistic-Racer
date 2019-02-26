@@ -10,6 +10,7 @@ public class EmpController : MonoBehaviour
     public float timeTillCollapse;
 
     public float empEffectTime;
+    public GameObject shipPower;
 
     public Collider shipCollider;
     ParticleSystem electricParticle;
@@ -41,17 +42,18 @@ public class EmpController : MonoBehaviour
 
     void Update()
     {
-        if (ultCharge.ultCharged)
+        //if (ultCharge.ultCharged)
+        //{
+        if (input.powerUp)
         {
-            if (input.powerUp)
-            {
-                bursting = true;
-                ultCharge.CancelInvoke("UltimateCharge");
-                StartCoroutine(EMPBurst());
+            bursting = true;
+            ultCharge.CancelInvoke("UltimateCharge");
+            StartCoroutine(EMPBurst());
 
-                ultCharge.ultPower = 0;
-            }
+            ultCharge.ultPower = 0;
+            shipPower.GetComponent<EmpController>().enabled = false;
         }
+        //}
     }
 
     void ChangeParticle(float radius, float size)
