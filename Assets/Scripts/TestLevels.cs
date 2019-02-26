@@ -9,7 +9,7 @@ public class TestLevels : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            PlayMovingPlatforms();
+            PrototypeTrack();
         }
 
         if (Input.GetKeyDown(KeyCode.F2))
@@ -18,9 +18,9 @@ public class TestLevels : MonoBehaviour {
         }
     }
 
-    public void PlayMovingPlatforms()
+    public void PrototypeTrack()
     {
-        SceneManager.LoadScene("Rose_MichaelB");
+        SceneManager.LoadScene("Prototype");
     }
 
     public void PlayExplosion()

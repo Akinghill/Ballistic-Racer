@@ -21,14 +21,20 @@ public class MovingPlatform : MonoBehaviour {
 			transform.position = Vector3.Lerp (pos1.transform.position, pos2.transform.position, Mathf.PingPong (Time.time * speed, 1f));
 		}
 	}
-
 	void OnTriggerStay (Collider other)
 	{
-		other.gameObject.transform.parent.parent = this.gameObject.transform;
+		if (other.CompareTag ("Ship")) 
+		{
+			other.gameObject.transform.parent.parent = this.gameObject.transform;
+		}
 	}
 
 	void OnTriggerExit (Collider other)
-	{
-		other.gameObject.transform.parent.parent = null;
+    {
+        if (other.CompareTag("Ship"))
+        {
+            other.gameObject.transform.parent.parent = null;
+        }
 	}
+
 }

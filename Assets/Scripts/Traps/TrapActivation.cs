@@ -6,7 +6,7 @@ public class TrapActivation : MonoBehaviour {
 
     public bool trapActive;
     public GameObject trap;
-    private float timer = 5f;
+    public float timer;
 
     void Start()
     {
