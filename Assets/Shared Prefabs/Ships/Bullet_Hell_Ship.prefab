@@ -2158,6 +2158,8 @@ MonoBehaviour:
   ultPowerMax: 100
   chargeRate: 5
   ultCharged: 0
+  empParticles: {fileID: 0}
+  reflectCollider: {fileID: 0}
 --- !u!114 &114602137617772808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2244,7 +2246,7 @@ MonoBehaviour:
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
   timeTillRespawn: 5
-  reflectLength: 0
+  reflectLength: 5
   particles:
   - {fileID: 198912931713377468}
   - {fileID: 198086802341709264}
@@ -2253,10 +2255,13 @@ MonoBehaviour:
   - {fileID: 198090118651149894}
   - {fileID: 198099992096361366}
   - {fileID: 198788250727137952}
+  shipCollider: {fileID: 1831439497551332}
   player: {fileID: 4037578740913382}
   respawnPoint: {fileID: 0}
   movement: {fileID: 114038548662036914}
   playerShooting: []
+  isReflective: 0
+  reflectCounter: 0
 --- !u!114 &114666332673604310
 MonoBehaviour:
   m_ObjectHideFlags: 1

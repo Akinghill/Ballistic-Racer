@@ -17,7 +17,6 @@ public class PlayerInput : MonoBehaviour
         public string airBrake;
         public string camView;
     }
-
     public InputNames inputNames;
 
     string accelerateInput;

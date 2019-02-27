@@ -19,7 +19,7 @@ public class ReflectorShield : MonoBehaviour {
     // Use this for initialization
     void Awake()
     {
-        ultCharge = GetComponent<UltCharge>();
+        ultCharge = GetComponentInParent<UltCharge>();
         input = GetComponentInParent<PlayerInput>();
         health = GetComponentInParent<PlayerHealth>();
         ReflectCollider = GetComponent<Collider>();
@@ -41,11 +41,12 @@ public class ReflectorShield : MonoBehaviour {
 
     public void ReflectShield()
     {
-        ReflectCollider.enabled = true;
+        //ReflectCollider.enabled = true;
         health.ReflectorShield();
         if (health.StopReflect() == false)
         {
-            ReflectCollider.enabled = false;
+            //ReflectCollider.enabled = false;
+            //GetComponent<ReflectorShield>().enabled = false;
         }
     }
 }
