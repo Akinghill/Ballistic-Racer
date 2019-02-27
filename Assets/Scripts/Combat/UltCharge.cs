@@ -7,6 +7,8 @@ public class UltCharge : MonoBehaviour {
 
     public Slider ultimateSlider;
 
+    public Text ultName;
+
     public int ultPower;
 
     public int ultPowerMax;
@@ -42,6 +44,7 @@ public class UltCharge : MonoBehaviour {
         else
         {
             ultCharged = false;
+            ultName.text = " ";
         }
     }
     //chargeSpeed = check.position + 10;
@@ -68,6 +71,7 @@ public class UltCharge : MonoBehaviour {
                 empParticles.GetComponent<EmpController>().enabled = false;
                 GetComponent<HyperSpeed>().enabled = false;
                 reflectCollider.GetComponent<ReflectorShield>().enabled = false;
+                ultName.text = "Invulnerability";
             }
             if (powerUpNum == 1)
             {
@@ -75,6 +79,7 @@ public class UltCharge : MonoBehaviour {
                 empParticles.GetComponent<EmpController>().enabled = true;
                 GetComponent<HyperSpeed>().enabled = false;
                 reflectCollider.GetComponent<ReflectorShield>().enabled = false;
+                ultName.text = "EMP Burst";
             }
             if (powerUpNum == 2)
             {
@@ -82,6 +87,7 @@ public class UltCharge : MonoBehaviour {
                 empParticles.GetComponent<EmpController>().enabled = false;
                 GetComponent<HyperSpeed>().enabled = true;
                 reflectCollider.GetComponent<ReflectorShield>().enabled = false;
+                ultName.text = "Hyper Speed";
             }
             if (powerUpNum == 3)
             {
@@ -89,6 +95,7 @@ public class UltCharge : MonoBehaviour {
                 empParticles.GetComponent<EmpController>().enabled = false;
                 GetComponent<HyperSpeed>().enabled = false;
                 reflectCollider.GetComponent<ReflectorShield>().enabled = true;
+                ultName.text = "Reflector Shield";
             }
         }
     }
