@@ -9,18 +9,28 @@ public class TestLevels : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            PrototypeTrack();
+            AITestTrack1();
         }
 
         if (Input.GetKeyDown(KeyCode.F2))
+        {
+            AITestTrack2();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F3))
         {
             PlayExplosion();
         }
     }
 
-    public void PrototypeTrack()
+    public void AITestTrack1()
     {
-        SceneManager.LoadScene("Prototype");
+        SceneManager.LoadScene("Andrew_AI_Test-Track_1");
+    }
+
+    public void AITestTrack2()
+    {
+        SceneManager.LoadScene("Andrew_AI_Test-Track_2");
     }
 
     public void PlayExplosion()
