@@ -1433,7 +1433,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c1099ff6b3b86418cb7cfbfa88f6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenPowerup: 15
+  health: {fileID: 0}
+  ReflectCollider: {fileID: 0}
 --- !u!114 &114363658253065354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1701,17 +1702,20 @@ MonoBehaviour:
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
   timeTillRespawn: 5
-  reflectLength: 0
+  reflectLength: 5
   particles:
   - {fileID: 198418238004302012}
   - {fileID: 198746363139874504}
   - {fileID: 198820477964726544}
   - {fileID: 198343947205804474}
   - {fileID: 198505082118623398}
+  shipCollider: {fileID: 1938119045461916}
   player: {fileID: 4554600284499788}
   respawnPoint: {fileID: 0}
   movement: {fileID: 114956379926168538}
   playerShooting: []
+  isReflective: 0
+  reflectCounter: 0
 --- !u!114 &114650011657718562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1788,6 +1792,8 @@ MonoBehaviour:
   ultPowerMax: 100
   chargeRate: 5
   ultCharged: 0
+  empParticles: {fileID: 0}
+  reflectCollider: {fileID: 0}
 --- !u!114 &114795839572813754
 MonoBehaviour:
   m_ObjectHideFlags: 1

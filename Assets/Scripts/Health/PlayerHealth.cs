@@ -75,21 +75,20 @@ public class PlayerHealth : MonoBehaviour
                 isInvulnerable = false;
             }
         }
-        if (input.controllerNumber != 0)
-        {
-            if (damaged)
-            {
-                damageImage.color = flashColour;
-            }
-            else
-            {
-                damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
-            }
-            damaged = false;
 
-            healthSlider.value = currentHealth;
+        if (damaged)
+        {
+            damageImage.color = flashColour;
         }
-        if(transform.position.y <= -160)
+        else
+        {
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
+        damaged = false;
+
+        healthSlider.value = currentHealth;
+
+        if (transform.position.y <= -160)
         {
             Death();
         }
