@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     MeshRenderer mesh;
     public ParticleSystem[] particles;
     Collider meshCollider;
+    public GameObject shipCollider;
 
     public Transform player;
     public Transform respawnPoint;
@@ -26,32 +27,37 @@ public class PlayerHealth : MonoBehaviour
     bool isDead;
     bool damaged;
     bool isInvulnerable = false;
+    int ricochetLayer;
+    int shootableLayer;
 
-    //PlayerInput input;
+    PlayerInput input;
     //UltCharge ultCharge;
 
-    bool isReflective = false;
-    float reflectCounter;
+    public bool isReflective;
+    public float reflectCounter;
 
 
     void Awake()
     {
         mesh = GetComponent<MeshRenderer>();
-        //input = GetComponentInParent<PlayerInput>();
+        input = GetComponentInParent<PlayerInput>();
         meshCollider = GetComponent<Collider>();
         currentHealth = startingHealth;
+        ricochetLayer = LayerMask.NameToLayer("Ricochet");
+        shootableLayer = LayerMask.NameToLayer("Shootable");
     }
 
     void Update()
     {
-        if (isReflective == true)
+        if (shipCollider.layer == ricochetLayer)
         {
             reflectCounter -= Time.deltaTime;
 
             if (reflectCounter <= 0)
             {
-                meshCollider.enabled = true;
+                shipCollider.layer = shootableLayer;
                 StopReflect();
+                //GetComponent<ReflectorShield>().enabled = false;
             }
         }
 
@@ -69,19 +75,21 @@ public class PlayerHealth : MonoBehaviour
                 isInvulnerable = false;
             }
         }
-        if (damaged)
+        if (input.controllerNumber != 0)
         {
-            damageImage.color = flashColour;
-        }
-        else
-        {
-            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
-        }
-        damaged = false;
+            if (damaged)
+            {
+                damageImage.color = flashColour;
+            }
+            else
+            {
+                damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+            }
+            damaged = false;
 
-        healthSlider.value = currentHealth;
-
-        if (transform.position.y <= -160)
+            healthSlider.value = currentHealth;
+        }
+        if(transform.position.y <= -160)
         {
             Death();
         }
@@ -168,9 +176,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void ReflectorShield()
     {
-        isReflective = true;
-        meshCollider.enabled = false;
+        shipCollider.layer = ricochetLayer;
         reflectCounter = reflectLength;
+        isReflective = true;
     }
 
     public bool StopReflect()

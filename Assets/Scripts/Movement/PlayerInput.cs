@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     [System.Serializable]
-    public class InputNames
-    {
+    public class InputNames {
         public string joystickInitial;
         public string accelerate;
         public string brake;
@@ -17,7 +16,6 @@ public class PlayerInput : MonoBehaviour
         public string airBrake;
         public string camView;
     }
-
     public InputNames inputNames;
 
     string accelerateInput;
@@ -28,10 +26,12 @@ public class PlayerInput : MonoBehaviour
     string shootInput;
     string airBrakeInput;
     string camViewInput;
+    
+    
 
     public int controllerNumber;
 
-    public bool usingKeyboard;
+    [HideInInspector] public bool usingKeyboard;
 
     [HideInInspector] public float rudder;
     [HideInInspector] public float accelerate;
