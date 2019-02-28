@@ -32,9 +32,12 @@ public class SpawnShips : MonoBehaviour {
     private bool keyboard_P3;
     private bool keyboard_P4;
 
+    private PlayerHealth[] playerHealth;
+
     void Awake()
     {
         shipsInstance = new GameObject[ships.Length];
+        playerHealth = new PlayerHealth[ships.Length];
     }
 
     void Start()
@@ -65,6 +68,9 @@ public class SpawnShips : MonoBehaviour {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
 
+                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                    playerHealth[i].respawnPoint = startPositions[i].transform;
+
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 1;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P1;
                     cam_P1 = shipsInstance[i].GetComponentInChildren<Camera>();
@@ -85,6 +91,11 @@ public class SpawnShips : MonoBehaviour {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
 
+                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                    playerHealth[i].respawnPoint = startPositions[i].transform;
+
+                    //shipsInstance[i].GetComponentInChildren<PlayerHealth>().respawnPoint.transform.position = startPositions[i].transform.position;
+
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
 
                     shipsInstance[i].GetComponentInChildren<Camera>().gameObject.SetActive(false);
@@ -101,6 +112,9 @@ public class SpawnShips : MonoBehaviour {
                 {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+
+                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                    playerHealth[i].respawnPoint = startPositions[i].transform;
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 1;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P1;
@@ -122,6 +136,9 @@ public class SpawnShips : MonoBehaviour {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
 
+                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                    playerHealth[i].respawnPoint = startPositions[i].transform;
+
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 2;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P2;
                     cam_P2 = shipsInstance[i].GetComponentInChildren<Camera>();
@@ -142,6 +159,9 @@ public class SpawnShips : MonoBehaviour {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
 
+                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                    playerHealth[i].respawnPoint = startPositions[i].transform;
+
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
 
                     shipsInstance[i].GetComponentInChildren<Camera>().gameObject.SetActive(false);
@@ -158,6 +178,9 @@ public class SpawnShips : MonoBehaviour {
                 {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+
+                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                    playerHealth[i].respawnPoint = startPositions[i].transform;
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 1;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P1;
@@ -179,6 +202,9 @@ public class SpawnShips : MonoBehaviour {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
 
+                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                    playerHealth[i].respawnPoint = startPositions[i].transform;
+
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 2;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P2;
                     cam_P2 = shipsInstance[i].GetComponentInChildren<Camera>();
@@ -198,6 +224,9 @@ public class SpawnShips : MonoBehaviour {
                 {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+
+                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                    playerHealth[i].respawnPoint = startPositions[i].transform;
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 3;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P3;
@@ -219,6 +248,9 @@ public class SpawnShips : MonoBehaviour {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
 
+                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                    playerHealth[i].respawnPoint = startPositions[i].transform;
+
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
 
                     shipsInstance[i].GetComponentInChildren<Camera>().gameObject.SetActive(false);
@@ -235,6 +267,9 @@ public class SpawnShips : MonoBehaviour {
                 {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+
+                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                    playerHealth[i].respawnPoint = startPositions[i].transform;
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 1;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P1;
@@ -256,6 +291,9 @@ public class SpawnShips : MonoBehaviour {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
 
+                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                    playerHealth[i].respawnPoint = startPositions[i].transform;
+
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 2;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P2;
                     cam_P2 = shipsInstance[i].GetComponentInChildren<Camera>();
@@ -275,6 +313,9 @@ public class SpawnShips : MonoBehaviour {
                 {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+
+                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                    playerHealth[i].respawnPoint = startPositions[i].transform;
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 3;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P3;
@@ -296,6 +337,9 @@ public class SpawnShips : MonoBehaviour {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
 
+                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                    playerHealth[i].respawnPoint = startPositions[i].transform;
+
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 4;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P4;
                     cam_P4 = shipsInstance[i].GetComponentInChildren<Camera>();
@@ -315,6 +359,9 @@ public class SpawnShips : MonoBehaviour {
                 {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+
+                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                    playerHealth[i].respawnPoint = startPositions[i].transform;
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
 
