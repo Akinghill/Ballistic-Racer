@@ -11,7 +11,22 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: shipMesh6
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pitMat
+    second: {fileID: 2100004, guid: f9622bbbbfcb4cf4786cd2d9435f6bb8, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ship6Mat
+    second: {fileID: 2100000, guid: 650a3bde712894b278487abd488491a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: thrusterMat
+    second: {fileID: 2100000, guid: 2ece57bb248b32849ba960557f479008, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
