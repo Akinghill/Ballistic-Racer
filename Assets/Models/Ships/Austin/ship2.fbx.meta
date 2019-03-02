@@ -1,49 +1,38 @@
 fileFormatVersion: 2
-guid: 8b2170490f8021042a714c8b1960a848
+guid: f9622bbbbfcb4cf4786cd2d9435f6bb8
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: pSphere1
-    100002: pSphere2
-    100004: pSphere3
-    100006: //RootNode
-    100008: ship4:bottom
-    100010: ship4:imagePlane1
-    100012: ship4:imagePlane2
-    100014: ship4:ShipBodyMesh
-    100016: ship4:ShipPitMesh
-    400000: pSphere1
-    400002: pSphere2
-    400004: pSphere3
-    400006: //RootNode
-    400008: ship4:bottom
-    400010: ship4:imagePlane1
-    400012: ship4:imagePlane2
-    400014: ship4:ShipBodyMesh
-    400016: ship4:ShipPitMesh
-    2000000: ship4:bottom
-    2100000: ship4_blinn2
-    2100002: ship4_ShipPitMat
-    2100004: blinn1
-    2100006: blinn2
-    2300000: pSphere1
-    2300002: pSphere2
-    2300004: pSphere3
-    2300006: ship4:ShipBodyMesh
-    2300008: ship4:ShipPitMesh
-    3300000: pSphere1
-    3300002: pSphere2
-    3300004: pSphere3
-    3300006: ship4:ShipBodyMesh
-    3300008: ship4:ShipPitMesh
-    4300000: ship4:ShipBodyMesh
-    4300002: ship4:ShipPitMesh
-    4300004: pSphere1
-    4300006: pSphere2
-    4300008: pSphere3
-    7400000: Take 001
-    9500000: //RootNode
-  externalObjects: {}
+    100000: //RootNode
+    400000: //RootNode
+    2100000: shipHullMat
+    2100002: cPitGlassMat
+    2100004: cPitMat
+    2100006: thrusterMat
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: shipMesh2
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cPitGlassMat
+    second: {fileID: 2100000, guid: 6a820a5b2a1efe945bffd0e4eba459c9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cPitMat
+    second: {fileID: 2100000, guid: 4d6485c42b1ff4300b7c32a05326f1df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shipHullMat
+    second: {fileID: 2100000, guid: d59b56da840ae4966919b2a6f75d69d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: thrusterMat
+    second: {fileID: 2100000, guid: 2ece57bb248b32849ba960557f479008, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -77,7 +66,6 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -96,15 +84,12 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
-    blendShapeNormalImportMode: 1
-    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -119,11 +104,12 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
