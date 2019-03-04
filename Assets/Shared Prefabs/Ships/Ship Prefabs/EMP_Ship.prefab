@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 20086367524380730}
   - component: {fileID: 81968952636189390}
   - component: {fileID: 114494840358725208}
+  - component: {fileID: 114019802152831920}
   m_Layer: 0
   m_Name: Camera_EMP_Ship
   m_TagString: Untagged
@@ -1795,6 +1796,18 @@ MonoBehaviour:
   particleBoostSpeed: 5.18
   particleBoostLifeTime: 0.89
   emp: 0
+--- !u!114 &114019802152831920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1341922376408842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: b15477c9c0ea04524a62f3a6252e65de, type: 2}
 --- !u!114 &114020901062776078
 MonoBehaviour:
   m_ObjectHideFlags: 1
