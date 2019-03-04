@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4496938566005228}
   - component: {fileID: 114803525714725928}
+  - component: {fileID: 114004859619352526}
   m_Layer: 0
   m_Name: CM_MixingCamera_Invincibility_Ship
   m_TagString: Untagged
@@ -135,6 +136,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1207669724678652
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4677242258110324}
+  - component: {fileID: 65159744388757972}
+  m_Layer: 0
+  m_Name: ConfineBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &1229554560310754
 GameObject:
   m_ObjectHideFlags: 1
@@ -568,6 +585,7 @@ Transform:
   - {fileID: 4593961417252560}
   - {fileID: 4264723610655154}
   - {fileID: 4536769262779408}
+  - {fileID: 4677242258110324}
   m_Father: {fileID: 4786117906939736}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -666,6 +684,19 @@ Transform:
   m_Father: {fileID: 4840681594678538}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4677242258110324
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1207669724678652}
+  m_LocalRotation: {x: 0.1080642, y: -0, z: -0, w: 0.9941439}
+  m_LocalPosition: {x: -0, y: 0.22669213, z: -0.56171024}
+  m_LocalScale: {x: 0.040000074, y: 0.040000003, z: 0.040000066}
+  m_Children: []
+  m_Father: {fileID: 4079226316267830}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4733378934500084
 Transform:
   m_ObjectHideFlags: 1
@@ -699,7 +730,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1794231623934640}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1150, y: 13, z: 1400}
+  m_LocalPosition: {x: 2073.0042, y: 36.405502, z: 1219.8011}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4079226316267830}
@@ -718,7 +749,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1963176840285230}
-  m_LocalRotation: {x: 0.14521313, y: 0.0000001490116, z: 0.00000026822087, w: -0.9894004}
+  m_LocalRotation: {x: 0.14521311, y: 0.00000008940696, z: 0.0000002607703, w: -0.9894004}
   m_LocalPosition: {x: 0.00000047683696, y: 3.5, z: -4.9999986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -920,6 +951,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: c9ce0dda23c5d41498591e5eea04d72f, type: 3}
+--- !u!65 &65159744388757972
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1207669724678652}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 27}
+  m_Center: {x: 0, y: 0, z: -13}
 --- !u!81 &81104327999695150
 AudioListener:
   m_ObjectHideFlags: 1
@@ -1059,6 +1102,22 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114004859619352526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000485199437434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2fba25a5cd15594e8f050a11e386c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ConfineMode: 1
+  m_BoundingVolume: {fileID: 65159744388757972}
+  m_BoundingShape2D: {fileID: 0}
+  m_ConfineScreenEdges: 1
+  m_Damping: 0
 --- !u!114 &114017134521419618
 MonoBehaviour:
   m_ObjectHideFlags: 1
