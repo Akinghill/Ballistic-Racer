@@ -7,7 +7,17 @@ public class UltCharge : MonoBehaviour {
 
     public Slider ultimateSlider;
 
-    public Text ultName;
+    public RawImage ultPic;
+
+    public Texture nullTex;
+
+    public Texture empTex;
+
+    public Texture hyperTex;
+
+    public Texture invulnTex;
+
+    public Texture reflectTex;
 
     public int ultPower;
 
@@ -28,10 +38,10 @@ public class UltCharge : MonoBehaviour {
     //CheckTrigger check;
 
     // Use this for initialization
-    //void Start () {
-    //check = GetComponentInChildren<CheckTrigger>();
-    //InvokeRepeating("UltimateCharge", chargeRate, chargeRate);
-    //}
+    void Start () {
+        //check = GetComponentInChildren<CheckTrigger>();
+        //InvokeRepeating("UltimateCharge", chargeRate, chargeRate);
+    }
 
     // Update is called once per frame
     void Update()
@@ -44,7 +54,7 @@ public class UltCharge : MonoBehaviour {
         else
         {
             ultCharged = false;
-            ultName.text = " ";
+            ultPic.texture = nullTex;
         }
     }
     //chargeSpeed = check.position + 10;
@@ -71,7 +81,7 @@ public class UltCharge : MonoBehaviour {
                 empParticles.GetComponent<EmpController>().enabled = false;
                 GetComponent<HyperSpeed>().enabled = false;
                 reflectCollider.GetComponent<ReflectorShield>().enabled = false;
-                ultName.text = "Invulnerability";
+                ultPic.texture = invulnTex;
             }
             if (powerUpNum == 1)
             {
@@ -79,7 +89,7 @@ public class UltCharge : MonoBehaviour {
                 empParticles.GetComponent<EmpController>().enabled = true;
                 GetComponent<HyperSpeed>().enabled = false;
                 reflectCollider.GetComponent<ReflectorShield>().enabled = false;
-                ultName.text = "EMP Burst";
+                ultPic.texture = empTex;
             }
             if (powerUpNum == 2)
             {
@@ -87,7 +97,7 @@ public class UltCharge : MonoBehaviour {
                 empParticles.GetComponent<EmpController>().enabled = false;
                 GetComponent<HyperSpeed>().enabled = true;
                 reflectCollider.GetComponent<ReflectorShield>().enabled = false;
-                ultName.text = "Hyper Speed";
+                ultPic.texture = hyperTex;
             }
             if (powerUpNum == 3)
             {
@@ -95,7 +105,7 @@ public class UltCharge : MonoBehaviour {
                 empParticles.GetComponent<EmpController>().enabled = false;
                 GetComponent<HyperSpeed>().enabled = false;
                 reflectCollider.GetComponent<ReflectorShield>().enabled = true;
-                ultName.text = "Reflector Shield";
+                ultPic.texture = reflectTex;
             }
         }
     }
