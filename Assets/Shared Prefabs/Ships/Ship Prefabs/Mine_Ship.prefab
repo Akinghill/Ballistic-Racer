@@ -898,7 +898,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1400511802670630}
-  m_LocalRotation: {x: -0.38268292, y: -0.000005543232, z: 0.000002577901, w: -0.92387974}
+  m_LocalRotation: {x: -0.38268286, y: -0.000005602836, z: 0.0000025779007, w: -0.92387974}
   m_LocalPosition: {x: -0.00005863977, y: 10, z: -5.00001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -938,8 +938,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1244861559613164}
-  m_LocalRotation: {x: 0.16754282, y: 0.0000003874302, z: -0.000000059604645, w: 0.9858648}
-  m_LocalPosition: {x: -0.000009641051, y: 7.1428566, z: -14.285782}
+  m_LocalRotation: {x: 0.10806325, y: 0.0000004172325, z: -0.000000044703484, w: 0.9941441}
+  m_LocalPosition: {x: -15.287483, y: 13.885714, z: -113.380554}
   m_LocalScale: {x: 1.0000017, y: 1, z: 1.0000014}
   m_Children: []
   m_Father: {fileID: 4665736950699264}
@@ -1117,7 +1117,7 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1772134507948074}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6f2ac3db4e288d047a5c099508e6fee1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2162,6 +2162,9 @@ MonoBehaviour:
   respawnPoint: {fileID: 0}
   movement: {fileID: 114253576599835712}
   playerShooting: []
+  DeathXplosion: {fileID: 1751335438653384, guid: 8d2164bd5b3b2854497e678508a3753e,
+    type: 2}
+  SparkFX: {fileID: 1165369611301698, guid: 87048cfbe5abd1048998a3bcfa9142f5, type: 2}
   isReflective: 0
   reflectCounter: 0
 --- !u!114 &114805594040250544

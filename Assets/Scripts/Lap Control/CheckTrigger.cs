@@ -137,7 +137,7 @@ public class CheckTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Checkpoint")
+        if (other.tag == "Respawn")
         {
             checkpointReached = true;
             Debug.Log("Passed");
