@@ -4798,6 +4798,23 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!114 &853559823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 853559820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047ec3068a67bf34b84c63b1381434a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotating: 1
+  rotation: {x: 0, y: 0, z: 100}
+  moving: 0
+  speed: 0
+  pos1: {fileID: 0}
+  pos2: {fileID: 0}
 --- !u!1001 &854098002
 Prefab:
   m_ObjectHideFlags: 0
@@ -8900,6 +8917,23 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 0}
+--- !u!114 &1324267514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1324267511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 047ec3068a67bf34b84c63b1381434a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotating: 0
+  rotation: {x: 0, y: 0, z: 0}
+  moving: 1
+  speed: 3
+  pos1: {fileID: 1491422810}
+  pos2: {fileID: 1117524854}
 --- !u!1 &1326993996 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1422887969891886, guid: 1b918b88fbd34d446a3ddf04984ddcd8,
