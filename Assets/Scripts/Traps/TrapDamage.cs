@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class TrapDamage : MonoBehaviour {
 
+    void Update()
+    {
+        transform.Rotate(0, (360 * (Time.deltaTime * 10)), 0);
+    }
+
 
     void OnTriggerEnter(Collider other)
     {

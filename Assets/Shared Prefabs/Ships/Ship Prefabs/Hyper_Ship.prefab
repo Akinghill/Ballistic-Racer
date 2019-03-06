@@ -534,7 +534,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1078709173861864}
-  m_LocalRotation: {x: 0.14521283, y: -0.0000056624413, z: -0.0000005736947, w: -0.9894005}
+  m_LocalRotation: {x: 0.1452128, y: -0.0000056624413, z: -0.0000005736947, w: -0.9894005}
   m_LocalPosition: {x: -0.00005863977, y: 3.5, z: -5.00001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -548,8 +548,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1992596181384658}
-  m_LocalRotation: {x: 0.1748201, y: 0.000001758337, z: -0.00000032782555, w: 0.9846004}
-  m_LocalPosition: {x: -0.000030770898, y: 5.285713, z: -8.571396}
+  m_LocalRotation: {x: 0.17841928, y: 0.0078083863, z: -0.0014159231, w: 0.98392254}
+  m_LocalPosition: {x: -11.532125, y: -1.0114269, z: -207.49545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4834067959076706}
@@ -587,7 +587,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1756994776639580}
-  m_LocalRotation: {x: 0.22975248, y: -0.00000017881392, z: -0.00000004470348, w: 0.9732491}
+  m_LocalRotation: {x: 0.2297525, y: -0.00000023841855, z: -0.00000002235174, w: 0.9732491}
   m_LocalPosition: {x: 0.0000047907215, y: 10, z: -10.000019}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -899,7 +899,7 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1332160062206578}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6f2ac3db4e288d047a5c099508e6fee1, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1793,6 +1793,9 @@ MonoBehaviour:
   respawnPoint: {fileID: 0}
   movement: {fileID: 114197383261657110}
   playerShooting: []
+  DeathXplosion: {fileID: 1751335438653384, guid: 8d2164bd5b3b2854497e678508a3753e,
+    type: 2}
+  SparkFX: {fileID: 1165369611301698, guid: 87048cfbe5abd1048998a3bcfa9142f5, type: 2}
   isReflective: 0
   reflectCounter: 0
 --- !u!114 &114742365464838468
@@ -16285,7 +16288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 480, y: 132.4}
+  m_AnchoredPosition: {x: 480, y: 132.40002}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224844364025152964

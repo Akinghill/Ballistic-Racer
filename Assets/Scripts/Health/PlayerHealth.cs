@@ -23,6 +23,9 @@ public class PlayerHealth : MonoBehaviour
     public ShipMovement movement;
     public PlayerShooting[] playerShooting;
 
+    public GameObject DeathXplosion;
+
+    public GameObject SparkFX;
     float invincibilityCounter;
     bool isDead;
     bool damaged;
@@ -45,6 +48,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = startingHealth;
         ricochetLayer = LayerMask.NameToLayer("Ricochet");
         shootableLayer = LayerMask.NameToLayer("Shootable");
+        
     }
 
     void Update()
@@ -64,6 +68,15 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth > startingHealth)
         {
             currentHealth = startingHealth;
+        }
+
+        if(currentHealth > 50)
+        {
+            SparkFX.GetComponent<ParticleSystem>().Play();
+        }
+        else
+        {
+            SparkFX.GetComponent<ParticleSystem>().Pause();
         }
 
         if (isInvulnerable == true)
@@ -90,6 +103,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (transform.position.y <= -160)
         {
+            SparkFX.GetComponent<ParticleSystem>().Pause();
             Death();
         }
     }
@@ -126,7 +140,9 @@ public class PlayerHealth : MonoBehaviour
 
     public void Death()
     {
+        
         isDead = true;
+        GameObject clone = (GameObject)Instantiate (DeathXplosion, transform.position, Quaternion.identity);
 
         foreach (PlayerShooting playerShooting in playerShooting)
         {
@@ -140,12 +156,14 @@ public class PlayerHealth : MonoBehaviour
         mesh.enabled = false;
         meshCollider.enabled = false;
         movement.enabled = false;
+        Destroy(clone, 1f);
 
         StartCoroutine(StartRespawn());
     }
 
     void Respawn()
     {
+        
         if (isDead == true)
         {
             player.transform.position = respawnPoint.transform.position;
