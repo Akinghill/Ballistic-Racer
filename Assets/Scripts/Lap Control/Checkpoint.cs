@@ -6,6 +6,7 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     public int numberOfLaps;
+    /* 
 
     void Update(CheckTrigger checkTrigger)
     {
@@ -45,4 +46,5 @@ public class Checkpoint : MonoBehaviour
             checkTrigger.finish.SetActive(true);
         }
     }
+    */
 }

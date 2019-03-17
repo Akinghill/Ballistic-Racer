@@ -10,6 +10,7 @@ public class LapTimeManager : MonoBehaviour
     public static float MilliCount;
     public static string MilliDisplay;
 
+
     public GameObject MinuteBox;
     public GameObject SecondBox;
     public GameObject MilliBox;
@@ -50,6 +51,5 @@ public class LapTimeManager : MonoBehaviour
         {
             MinuteBox.GetComponent<Text>().text = "" + MinuteCount + ":";
         }
-
     }
 }
