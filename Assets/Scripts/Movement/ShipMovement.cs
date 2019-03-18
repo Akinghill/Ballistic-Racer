@@ -63,6 +63,8 @@ public class ShipMovement : MonoBehaviour
 
     [HideInInspector] public bool emp;
 
+    [HideInInspector] public Vector3 normal;
+
     void Start()
     {
         playerHealth = GetComponentInChildren<PlayerHealth>();
@@ -134,7 +136,7 @@ public class ShipMovement : MonoBehaviour
 
     void Hover()
     {
-        Vector3 normal;
+        //Vector3 normal;
 
         Ray ray = new Ray(transform.position, -transform.up);
 
@@ -156,7 +158,6 @@ public class ShipMovement : MonoBehaviour
 
             shipRigidbody.AddForce(force, ForceMode.Acceleration);
             shipRigidbody.AddForce(gravity, ForceMode.Acceleration);
-
         }
         else
         {

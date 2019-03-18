@@ -6,19 +6,6 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     public int numberOfLaps;
-    /* 
-
-    void Update(CheckTrigger checkTrigger)
-    {
-        if(checkTrigger.finish.activeInHierarchy)
-        {
-            foreach(GameObject item in GameObject.FindGameObjectsWithTag("Respawn"))
-            {
-                item.SetActive(true);
-            }
-            checkTrigger.finish.SetActive(false);
-        }
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,9 +15,9 @@ public class Checkpoint : MonoBehaviour
             CheckTrigger checkTrigger = other.GetComponent<CheckTrigger>();
             if (checkTrigger.checkpointReached)
             {
+                Debug.Log("Passed");
                 CompleteLap(checkTrigger);
             }
-            other.gameObject.SetActive(false);
         }
     }
 
@@ -46,5 +33,4 @@ public class Checkpoint : MonoBehaviour
             checkTrigger.finish.SetActive(true);
         }
     }
-    */
 }

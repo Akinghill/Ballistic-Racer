@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TrapDamage : MonoBehaviour {
-
+	public bool rotate;
     void Update()
     {
-        transform.Rotate(0, (360 * (Time.deltaTime * 10)), 0);
+		if (rotate) {
+			transform.Rotate (0, (360 * (Time.deltaTime * 10)), 0);
+		}
     }
 
 
-    void OnCollisionEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Ship")
         {

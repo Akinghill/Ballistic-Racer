@@ -1135,7 +1135,7 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1303150254073936}
-  m_Material: {fileID: 13400000, guid: 6f2ac3db4e288d047a5c099508e6fee1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2010,6 +2010,13 @@ MonoBehaviour:
   acceleration: 1
   swapRotation: 0
   posOrNeg: 0
+  pathOne: {fileID: 0}
+  m_pathOne: []
+  pathTwo: {fileID: 0}
+  m_pathTwo: []
+  pathThree: {fileID: 0}
+  m_pathThree: []
+  randomPath: 0
 --- !u!114 &114055677093763874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2925,6 +2932,7 @@ MonoBehaviour:
   particleBoostSpeed: 5.18
   particleBoostLifeTime: 0.89
   emp: 0
+  project: {x: 0, y: 0, z: 0}
 --- !u!114 &114849942796151246
 MonoBehaviour:
   m_ObjectHideFlags: 1
