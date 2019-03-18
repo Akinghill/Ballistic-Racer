@@ -8,10 +8,10 @@ public class ShipAI : MonoBehaviour
     [Range(0, 1)]
     public float acceleration;
 
-    AIPath path;
-
-    List<Transform> nodes = new List<Transform>();
-    int currentNode = 0;
+    //AIPath path;
+    //List<Transform> nodes = new List<Transform>();
+    Transform[] nodes;
+    public int currentNode = 0;
 
     int shootableMask;
 
@@ -20,35 +20,79 @@ public class ShipAI : MonoBehaviour
 
     PlayerInput input;
 
+    ShipMovement shipMovement;
+
     PlayerShooting shooting;
+
+    PlayerHealth playerHealth;
+
+    [HideInInspector] public GameObject pathOne;
+    [HideInInspector] public Transform[] m_pathOne;
+
+    [HideInInspector] public GameObject pathTwo;
+    [HideInInspector] public Transform[] m_pathTwo;
+
+    [HideInInspector] public GameObject pathThree;
+    [HideInInspector] public Transform[] m_pathThree;
+
+    public int randomPath;
 
     void Start()
     {
         shootableMask = LayerMask.GetMask("Shootable");
-        path = FindObjectOfType<AIPath>();
+        //path = FindObjectOfType<AIPath>();
         input = GetComponent<PlayerInput>();
         shooting = GetComponentInChildren<PlayerShooting>();
+        playerHealth = GetComponentInChildren<PlayerHealth>();
+        shipMovement = GetComponent<ShipMovement>();
 
-        Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
+        //Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
+        //nodes = new List<Transform>();
+        //for (int i = 0; i < pathTransforms.Length; i++)
+        //{
+        //    if (pathTransforms[i] != path.transform)
+        //    {
+        //        nodes.Add(pathTransforms[i]);
+        //    }
+        //}
 
-        nodes = new List<Transform>();
+        pathOne = GameObject.FindGameObjectWithTag("AI Path 1");
+        int numOfNodesOnPathOne = pathOne.transform.childCount;
+        m_pathOne = new Transform[numOfNodesOnPathOne];
 
-        for (int i = 0; i < pathTransforms.Length; i++)
+        for (int i = 0; i < numOfNodesOnPathOne; i++)
         {
-            if (pathTransforms[i] != path.transform)
-            {
-                nodes.Add(pathTransforms[i]);
-            }
+            m_pathOne[i] = pathOne.transform.GetChild(i);
         }
+
+        pathTwo = GameObject.FindGameObjectWithTag("AI Path 2");
+        int numOfNodesOnPathTwo = pathTwo.transform.childCount;
+        m_pathTwo = new Transform[numOfNodesOnPathTwo];
+
+        for (int i = 0; i < numOfNodesOnPathTwo; i++)
+        {
+            m_pathTwo[i] = pathTwo.transform.GetChild(i);
+        }
+
+        pathThree = GameObject.FindGameObjectWithTag("AI Path 3");
+        int numOfNodesOnPathThree = pathThree.transform.childCount;
+        m_pathThree = new Transform[numOfNodesOnPathThree];
+
+        for (int i = 0; i < numOfNodesOnPathThree; i++)
+        {
+            m_pathThree[i] = pathThree.transform.GetChild(i);
+        }
+
+        randomPath = Random.Range(1, 11);
     }
 
     void FixedUpdate()
     {
-        CheckNodeDistance();
         if (input.controllerNumber == 0)
         {
             Rudder();
             Accelerate();
+            CheckNodeDistance();
             if (input.canShoot)
             {
                 DetectEnemy();
@@ -74,6 +118,22 @@ public class ShipAI : MonoBehaviour
 
     void Rudder()
     {
+        if (playerHealth.currentHealth < 75)
+        {
+            if (randomPath <= 5)
+            {
+                nodes = m_pathTwo;
+            }
+            else
+            {
+                nodes = m_pathThree;
+            }
+        }
+        else
+        {
+            nodes = m_pathOne;
+        }
+
         Vector3 relativeVector = transform.InverseTransformPoint(nodes[currentNode].position);
 
         float directionX;
@@ -86,23 +146,41 @@ public class ShipAI : MonoBehaviour
 
         Vector3 nextNodeDirection = nodes[currentNode].position - transform.position;
 
-        float angle = Vector3.SignedAngle(transform.forward, nextNodeDirection, Vector3.up);
+        float angle = Vector3.SignedAngle(transform.forward, nextNodeDirection, shipMovement.normal);
         //Debug.Log(angle);
 
-        // Turn left or right if angle between ship and next node is less than -5 or greater than 5. If not, then go forward.
         if (angle < -5.0f)
         {
-            //Debug.Log("turn left");
-            input.rudder = -directionZ;
+            if (angle < -40.0f)
+            {
+                input.brake = 1.0f;
+                input.rudder = directionX;
+                input.brake = 0.0f;
+            }
+            else
+            {
+                input.brake = 1.0f;
+                input.rudder = -directionZ;
+                input.brake = 0.0f;
+            }
         }
         else if (angle > 5.0f)
         {
-            //Debug.Log("turn right");
-            input.rudder = directionZ;
+            if (angle > 40.0f)
+            {
+                input.brake = 1.0f;
+                input.rudder = directionX;
+                input.brake = 0.0f;
+            }
+            else
+            {
+                input.brake = 1.0f;
+                input.rudder = directionZ;
+                input.brake = 0.0f;
+            }
         }
         else
         {
-            //Debug.Log("forward");
             input.rudder = directionX;
         }
 
@@ -124,11 +202,12 @@ public class ShipAI : MonoBehaviour
 
     void CheckNodeDistance()
     {
-        if (Vector3.Distance(transform.position, nodes[currentNode].position) < 25f)
+        if (Vector3.Distance(transform.position, nodes[currentNode].position) < 50f)
         {
-            if (currentNode == nodes.Count - 1)
+            if (currentNode == nodes.Length)
             {
                 currentNode = 0;
+                randomPath = Random.Range(1, 11);
             }
             else
             {
