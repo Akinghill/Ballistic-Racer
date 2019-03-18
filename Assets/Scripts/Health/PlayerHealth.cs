@@ -70,7 +70,7 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = startingHealth;
         }
 
-        if(currentHealth > 50)
+        if(currentHealth < 50)
         {
             SparkFX.GetComponent<ParticleSystem>().Play();
         }
