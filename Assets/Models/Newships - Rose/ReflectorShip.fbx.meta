@@ -55,7 +55,12 @@ ModelImporter:
     4300012: EngineBody
     4300014: EngineGear
     4300016: EngineConnection
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ReflectorShipTexture
+    second: {fileID: 2100000, guid: b3a4f3506f3512b49b8a605ea63adb0d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -86,7 +91,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 250
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

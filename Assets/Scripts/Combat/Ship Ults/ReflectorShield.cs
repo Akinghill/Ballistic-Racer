@@ -35,6 +35,7 @@ public class ReflectorShield : MonoBehaviour {
             ReflectShield();
             ultCharge.ultPower = 0;
             GetComponent<ReflectorShield>().enabled = false;
+            ReflectCollider.enabled = true;
         }
         //}
     }
@@ -45,8 +46,8 @@ public class ReflectorShield : MonoBehaviour {
         health.ReflectorShield();
         if (health.StopReflect() == false)
         {
-            //ReflectCollider.enabled = false;
-            //GetComponent<ReflectorShield>().enabled = false;
+            ReflectCollider.enabled = false;
+            GetComponent<ReflectorShield>().enabled = false;
         }
     }
 }
