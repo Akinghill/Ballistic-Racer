@@ -1,4 +1,6 @@
-﻿
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+
 
 Shader "Unlit/toonShaderTest"
 {
@@ -8,6 +10,7 @@ Shader "Unlit/toonShaderTest"
 		//_Outline("Outline width", Range(.002, 0.03)) = .005
 		_Outline("Outline width", Range(0.1, 0.3)) = .3
 		_MainTex("Base (RGB)", 2D) = "white" { }
+	    _BumpMap("Normal Map", 2D) = "bump" {}
 	}
 
 	CGINCLUDE
@@ -46,11 +49,61 @@ Shader "Unlit/toonShaderTest"
 		#pragma surface surf Lambert
 
 		sampler2D _MainTex;
+		sampler2D _BumpMap;
+		float4 _BumpMap_ST;
+	
 		fixed4 _Color;
 
 		struct Input {
 		float2 uv_MainTex;
+		
 	};
+		struct vertexOutput
+		{
+			float4 pos : SV_POSITION;
+			float2 uv : TEXCOORD0;
+			half3 tspace0 : TEXCOORD1; // tangent.x, bitangent.x, normal.x
+			half3 tspace1 : TEXCOORD2; // tangent.y, bitangent.y, normal.y
+			half3 tspace2 : TEXCOORD3; // tangent.z, bitangent.z, normal.z
+									   /*half diffuse : TEXCOORD1;
+									   half night : TEXCOORD2;*/
+			half3 viewDir : TEXCOORD4;
+			half3 normalDir : TEXCOORD5;
+		};
+		vertexOutput vert(appdata_tan input)
+		{
+			vertexOutput output;
+			output.pos = UnityObjectToClipPos(input.vertex);
+			output.uv = input.texcoord;
+
+			output.viewDir = normalize(ObjSpaceViewDir(input.vertex));
+			output.normalDir = input.normal;
+
+			half3 wNormal = UnityObjectToWorldNormal(input.normal);
+			half3 wTangent = UnityObjectToWorldDir(input.tangent.xyz);
+			// compute bitangent from cross product of normal and tangent
+			half tangentSign = input.tangent.w * unity_WorldTransformParams.w;
+			half3 wBitangent = cross(wNormal, wTangent) * tangentSign;
+			// output the tangent space matrix
+			output.tspace0 = half3(wTangent.x, wBitangent.x, wNormal.x);
+			output.tspace1 = half3(wTangent.y, wBitangent.y, wNormal.y);
+			output.tspace2 = half3(wTangent.z, wBitangent.z, wNormal.z);
+
+			return output;
+		}
+		half4 frag(vertexOutput input) : SV_Target
+		{
+			//half2 uv_MainTex = TRANSFORM_TEX(input.uv, _MainTex);
+			half2 uv_BumpMap = TRANSFORM_TEX(input.uv, _BumpMap);
+
+
+			half3 tnormal = UnpackNormal(tex2D(_BumpMap, uv_BumpMap));
+			// transform normal from tangent to world space
+			half3 worldNormal;
+			worldNormal.x = dot(input.tspace0, tnormal);
+			worldNormal.y = dot(input.tspace1, tnormal);
+			worldNormal.z = dot(input.tspace2, tnormal);
+		}
 
 	void surf(Input IN, inout SurfaceOutput o) {
 		fixed4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
