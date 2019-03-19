@@ -26,6 +26,8 @@ public class PlayerHealth : MonoBehaviour
     public GameObject DeathXplosion;
 
     public GameObject SparkFX;
+    Rigidbody rb;
+    UltCharge ultimate;
     float invincibilityCounter;
     bool isDead;
     bool damaged;
@@ -44,11 +46,12 @@ public class PlayerHealth : MonoBehaviour
     {
         mesh = GetComponent<MeshRenderer>();
         input = GetComponentInParent<PlayerInput>();
+        rb = GetComponentInParent<Rigidbody>();
         meshCollider = GetComponent<Collider>();
         currentHealth = startingHealth;
         ricochetLayer = LayerMask.NameToLayer("Ricochet");
         shootableLayer = LayerMask.NameToLayer("Shootable");
-        
+        ultimate = GetComponentInParent<UltCharge>();
     }
 
     void Update()
@@ -142,6 +145,8 @@ public class PlayerHealth : MonoBehaviour
     {
         
         isDead = true;
+        rb.velocity = Vector3.zero;
+        ultimate.ultPower = 0;
         GameObject clone = (GameObject)Instantiate (DeathXplosion, transform.position, Quaternion.identity);
 
         foreach (PlayerShooting playerShooting in playerShooting)
