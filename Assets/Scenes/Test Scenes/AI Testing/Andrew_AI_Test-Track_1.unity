@@ -1296,7 +1296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7781b161f465b4d813bf3fdb53ac19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotate: 0
+  rotate: 1
 --- !u!65 &507652352
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1885,7 +1885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7781b161f465b4d813bf3fdb53ac19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotate: 0
+  rotate: 1
 --- !u!65 &684244953
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3085,7 +3085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7781b161f465b4d813bf3fdb53ac19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotate: 0
+  rotate: 1
 --- !u!65 &894853175
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3185,7 +3185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7781b161f465b4d813bf3fdb53ac19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotate: 0
+  rotate: 1
 --- !u!65 &912548300
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3704,7 +3704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7781b161f465b4d813bf3fdb53ac19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotate: 0
+  rotate: 1
 --- !u!65 &1064741214
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5691,6 +5691,18 @@ Prefab:
       propertyPath: m_LocalRotation.z
       value: -0.00000012665987
       objectReference: {fileID: 0}
+    - target: {fileID: 4372524623189866, guid: 0cf54cff3190d434dbdf32c0417256c5, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0.22975287
+      objectReference: {fileID: 0}
+    - target: {fileID: 4372524623189866, guid: 0cf54cff3190d434dbdf32c0417256c5, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.00000014901161
+      objectReference: {fileID: 0}
+    - target: {fileID: 4372524623189866, guid: 0cf54cff3190d434dbdf32c0417256c5, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0.00000014156103
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0cf54cff3190d434dbdf32c0417256c5, type: 2}
   m_IsPrefabAsset: 0
@@ -6013,7 +6025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7781b161f465b4d813bf3fdb53ac19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotate: 0
+  rotate: 1
 --- !u!65 &1868552758
 BoxCollider:
   m_ObjectHideFlags: 0
