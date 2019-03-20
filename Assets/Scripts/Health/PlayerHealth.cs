@@ -44,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Awake()
     {
-        mesh = GetComponentsInChildren<MeshRenderer>();
+        mesh = GetComponentInChildren<MeshRenderer>();
         input = GetComponentInParent<PlayerInput>();
         rb = GetComponentInParent<Rigidbody>();
         meshCollider = GetComponentInChildren<Collider>();
