@@ -44,10 +44,10 @@ public class PlayerHealth : MonoBehaviour
 
     void Awake()
     {
-        mesh = GetComponent<MeshRenderer>();
+        mesh = GetComponentsInChildren<MeshRenderer>();
         input = GetComponentInParent<PlayerInput>();
         rb = GetComponentInParent<Rigidbody>();
-        meshCollider = GetComponent<Collider>();
+        meshCollider = GetComponentInChildren<Collider>();
         currentHealth = startingHealth;
         ricochetLayer = LayerMask.NameToLayer("Ricochet");
         shootableLayer = LayerMask.NameToLayer("Shootable");

@@ -16,7 +16,7 @@ public class TrapDamage : MonoBehaviour {
     {
         if (other.gameObject.tag == "Ship")
         {
-            other.gameObject.GetComponent<PlayerHealth>().Death();
+			other.gameObject.GetComponentInParent<PlayerHealth>().Death();
         }
     }
 }
