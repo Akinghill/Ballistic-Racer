@@ -9,12 +9,17 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: pCube1
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Track_Light_Mat
+    second: {fileID: 2100006, guid: e1d2de5ff427cd44e8b76415b285402a, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
