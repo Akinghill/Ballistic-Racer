@@ -13,9 +13,9 @@ public class PlayerHealth : MonoBehaviour
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
     public float timeTillRespawn = 5f;
     public float reflectLength;
-    MeshRenderer mesh;
+    public MeshRenderer[] mesh;
+    public MeshCollider[] meshCollider;
     public ParticleSystem[] particles;
-    Collider meshCollider;
     public GameObject shipCollider;
 
     public Transform player;
@@ -44,10 +44,10 @@ public class PlayerHealth : MonoBehaviour
 
     void Awake()
     {
-        mesh = GetComponentInChildren<MeshRenderer>();
+        mesh = GetComponentsInChildren<MeshRenderer>();
         input = GetComponentInParent<PlayerInput>();
         rb = GetComponentInParent<Rigidbody>();
-        meshCollider = GetComponentInChildren<Collider>();
+        meshCollider = GetComponentsInChildren<MeshCollider>();
         currentHealth = startingHealth;
         ricochetLayer = LayerMask.NameToLayer("Ricochet");
         shootableLayer = LayerMask.NameToLayer("Shootable");
@@ -158,8 +158,14 @@ public class PlayerHealth : MonoBehaviour
         {
             particle.Stop();
         }
-        mesh.enabled = false;
-        meshCollider.enabled = false;
+		for (int i = 0; i < mesh.Length; i++) 
+		{
+			mesh[i].enabled = false;
+		}
+        for (int j = 0; j < meshCollider.Length; j++)
+        {
+            meshCollider[j].enabled = false;
+        }
         movement.enabled = false;
         Destroy(clone, 1f);
 
@@ -173,8 +179,14 @@ public class PlayerHealth : MonoBehaviour
         {
             player.transform.position = respawnPoint.transform.position;
             player.transform.rotation = respawnPoint.rotation;
-            mesh.enabled = true;
-            meshCollider.enabled = true;
+			for (int x = 0; x < mesh.Length; x++) 
+			{
+				mesh[x].enabled = true;
+			}
+            for (int j = 0; j < meshCollider.Length; j++)
+            {
+                meshCollider[j].enabled = true;
+            }
             movement.enabled = true;
             foreach (PlayerShooting playerShooting in playerShooting)
             {

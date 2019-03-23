@@ -25,7 +25,7 @@ public class MovingPlatform : MonoBehaviour {
 	{
 		if (other.CompareTag ("Ship")) 
 		{
-			other.gameObject.transform.parent.parent.parent = this.gameObject.transform;
+			other.gameObject.transform.parent.parent = this.gameObject.transform;
 			other.transform.Find("ConfineBox").gameObject.SetActive(true);
 		}
 	}
@@ -34,7 +34,7 @@ public class MovingPlatform : MonoBehaviour {
     {
         if (other.CompareTag("Ship"))
         {
-            other.gameObject.transform.parent.parent.parent = null;
+            other.gameObject.transform.parent.parent = null;
 			other.transform.Find("ConfineBox").gameObject.SetActive(false);
         }
 	}
