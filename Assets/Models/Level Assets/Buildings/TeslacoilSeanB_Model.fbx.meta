@@ -33,6 +33,26 @@ ModelImporter:
     9500000: //RootNode
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RingL_Mat
+    second: {instanceID: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RingM_Mat
+    second: {instanceID: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RingS_Mat
+    second: {instanceID: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rod_Mat
+    second: {instanceID: 0}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: RingL_Diff
@@ -66,7 +86,7 @@ ModelImporter:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

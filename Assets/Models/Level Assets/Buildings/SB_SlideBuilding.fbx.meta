@@ -9,7 +9,12 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Slide_Mesh
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Slide_Mat
+    second: {fileID: 2100000, guid: 104a094448ffb3d4591fc8bc3c16096c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

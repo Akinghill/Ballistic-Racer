@@ -9,12 +9,17 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: factory
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Factory_mat
+    second: {fileID: 2100000, guid: 2adc7b85b8eb9274fb5a69966a56ba9f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

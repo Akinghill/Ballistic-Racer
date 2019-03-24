@@ -86,7 +86,27 @@ ModelImporter:
     2300000: pasted__pCylinder10
     3300000: pasted__pCylinder10
     4300000: pasted__pCylinder10
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn1
+    second: {fileID: 2100000, guid: f46a906bd08061c4283d8b6f31211152, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 2100000, guid: f46a906bd08061c4283d8b6f31211152, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__blinn1
+    second: {fileID: 2100000, guid: f46a906bd08061c4283d8b6f31211152, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pasted__phongE1
+    second: {fileID: 2100000, guid: f46a906bd08061c4283d8b6f31211152, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

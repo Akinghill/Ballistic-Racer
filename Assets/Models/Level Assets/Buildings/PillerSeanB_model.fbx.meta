@@ -11,6 +11,11 @@ ModelImporter:
     4300000: Piller_Mesh
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Piller_Mat
+    second: {fileID: 2100000, guid: 1e8b05f75159faa469ce28bc3cccbc66, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Piller_Diff
@@ -24,7 +29,7 @@ ModelImporter:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
