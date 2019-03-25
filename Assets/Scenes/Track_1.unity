@@ -2474,6 +2474,10 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 10.74
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: be4a99aa72e5e0740894f587efebeb6d, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be4a99aa72e5e0740894f587efebeb6d, type: 3}
   m_IsPrefabAsset: 0
@@ -5610,8 +5614,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.611496, z: 1.187965}
-  m_Center: {x: 1.5024709e-10, y: 0.305748, z: 0.013607999}
+  m_Size: {x: 1, y: 1.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1858926599
 MeshRenderer:
   m_ObjectHideFlags: 0

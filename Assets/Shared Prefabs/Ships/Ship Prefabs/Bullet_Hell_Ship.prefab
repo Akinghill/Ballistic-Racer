@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 64218801324714136}
   - component: {fileID: 114674762547679194}
   - component: {fileID: 114301409792362618}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: Ship 5
   m_TagString: Ship
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 4920440173485472}
   - component: {fileID: 33965279758312890}
   - component: {fileID: 23695270108342362}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Minimap_Icon_Bullet_Hell_Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1048,7 +1048,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 5943
+    m_Bits: 12087
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -2735,6 +2735,8 @@ MonoBehaviour:
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
   timeTillRespawn: 5
   reflectLength: 5
+  mesh: []
+  meshCollider: []
   particles:
   - {fileID: 198278775329297492}
   - {fileID: 198670928419292434}
