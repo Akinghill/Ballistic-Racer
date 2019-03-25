@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class RacerSelection : MonoBehaviour
 {
     private GameObject[] CharacterList;
-    private int index;
+    public int index;
 
     public static string selectedShip_P1;
     public static string selectedShip_P2;
