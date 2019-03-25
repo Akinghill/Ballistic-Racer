@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 4762540233350412}
   - component: {fileID: 33394568182484780}
   - component: {fileID: 23720697406812244}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Minimap_Icon_EMP_Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -622,7 +622,7 @@ GameObject:
   - component: {fileID: 64775580748281536}
   - component: {fileID: 114829288538799616}
   - component: {fileID: 114641972583619418}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: ship3
   m_TagString: Ship
   m_Icon: {fileID: 0}
@@ -1046,7 +1046,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 5943
+    m_Bits: 12087
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1834,6 +1834,8 @@ MonoBehaviour:
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
   timeTillRespawn: 5
   reflectLength: 10
+  mesh: []
+  meshCollider: []
   particles:
   - {fileID: 198760097494983396}
   - {fileID: 198373445597788188}
@@ -2796,6 +2798,8 @@ MonoBehaviour:
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
   timeTillRespawn: 5
   reflectLength: 5
+  mesh: []
+  meshCollider: []
   particles:
   - {fileID: 198962087028634752}
   - {fileID: 198080587437291580}

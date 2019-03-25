@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 64766276906325132}
   - component: {fileID: 114722100835215382}
   - component: {fileID: 114173770832170148}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: ship6
   m_TagString: Ship
   m_Icon: {fileID: 0}
@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 4489126678797578}
   - component: {fileID: 33253697760109638}
   - component: {fileID: 23529530912186844}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Minimap Icon - Player 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +811,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 5943
+    m_Bits: 12087
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1826,6 +1826,8 @@ MonoBehaviour:
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
   timeTillRespawn: 5
   reflectLength: 5
+  mesh: []
+  meshCollider: []
   particles:
   - {fileID: 198140521052561998}
   - {fileID: 198971547495971420}
