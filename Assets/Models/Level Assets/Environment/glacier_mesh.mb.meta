@@ -10,12 +10,22 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: glacier_mesh
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ice_mat
+    second: {fileID: 2100000, guid: 1772ae3179133de4fb742a20057162bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: water_mat
+    second: {fileID: 2100000, guid: dfbbac243f6077a4f9ce88d250b930ef, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

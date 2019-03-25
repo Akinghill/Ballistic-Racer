@@ -29,12 +29,22 @@ ModelImporter:
     3300002: polySurface2
     4300000: polySurface2
     4300002: polySurface1
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wallpylon_txt
+    second: {fileID: 2100000, guid: c38f8d393aea4c641ae9325807aaa56c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wallsheild_txt
+    second: {fileID: 2100000, guid: 432cfc73c1465b94fb32dd23e581a839, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0

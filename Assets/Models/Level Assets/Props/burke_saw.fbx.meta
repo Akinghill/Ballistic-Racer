@@ -9,12 +9,17 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: saw_mb
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: saw_txt
+    second: {fileID: 2100000, guid: 43a256654de54524ca46a5aebcdc0f90, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
