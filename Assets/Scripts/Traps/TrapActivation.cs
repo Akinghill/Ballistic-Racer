@@ -30,7 +30,7 @@ public class TrapActivation : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Shootable") && trapActive == false)
+        if (other.gameObject.transform.parent.tag == "Ship" && trapActive == false)
         {
             trapActive = true;
         }

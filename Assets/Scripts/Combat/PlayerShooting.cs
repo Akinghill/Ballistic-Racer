@@ -72,7 +72,7 @@ public class PlayerShooting : MonoBehaviour
 
         if (Physics.Raycast(shootRay, out shootHit, range, shootableMask))
         {
-            PlayerHealth playerHealth = shootHit.collider.GetComponent<PlayerHealth>();
+            PlayerHealth playerHealth = shootHit.collider.GetComponentInParent<PlayerHealth>();
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damagePerShot, shootHit.point);
