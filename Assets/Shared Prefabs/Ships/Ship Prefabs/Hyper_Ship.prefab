@@ -551,7 +551,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1078709173861864}
-  m_LocalRotation: {x: 0.1452128, y: -0.0000056624413, z: -0.0000007003546, w: -0.9894005}
+  m_LocalRotation: {x: 0.14521281, y: -0.0000056624413, z: -0.0000007003546, w: -0.9894005}
   m_LocalPosition: {x: -0.00005863977, y: 3.5, z: -5.00001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -565,8 +565,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1992596181384658}
-  m_LocalRotation: {x: 0.17481989, y: 0.0000018179414, z: -0.00000032037494, w: 0.9846004}
-  m_LocalPosition: {x: -0.000030770898, y: 5.2857056, z: -8.571396}
+  m_LocalRotation: {x: 0.17482013, y: 0.000001758337, z: -0.00000033527613, w: 0.9846004}
+  m_LocalPosition: {x: -0.000030770898, y: 5.285714, z: -8.571396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4834067959076706}
@@ -756,7 +756,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1566668865159144}
   m_LocalRotation: {x: -0, y: 0.7096788, z: -0, w: 0.7045254}
-  m_LocalPosition: {x: 1128.2001, y: 483.96017, z: 1780.2874}
+  m_LocalPosition: {x: 1124.6898, y: 0.0000019073486, z: 1399.9852}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4511167150536936}
@@ -1282,6 +1282,7 @@ MonoBehaviour:
   ultPowerMax: 100
   chargeRate: 5
   ultCharged: 0
+  range: 10
   empParticles: {fileID: 1473336342071770}
   reflectCollider: {fileID: 64766276906325132}
 --- !u!114 &114173770832170148
@@ -1428,6 +1429,7 @@ MonoBehaviour:
   timeTillCollapse: 5
   empEffectTime: 10
   shipPower: {fileID: 1473336342071770}
+  empCollider: {fileID: 135011874317192758}
   shipCollider: {fileID: 64766276906325132}
 --- !u!114 &114320992592956078
 MonoBehaviour:
@@ -2161,7 +2163,7 @@ SphereCollider:
   m_GameObject: {fileID: 1473336342071770}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 1.3541064
   m_Center: {x: 0.31974527, y: 0.075478196, z: -0.44628584}

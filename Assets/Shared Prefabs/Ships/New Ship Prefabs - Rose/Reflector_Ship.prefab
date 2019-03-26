@@ -799,7 +799,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1369419036309998}
-  m_LocalRotation: {x: -0.2297529, y: 0.00000014901161, z: -0.00000016391277, w: -0.9732491}
+  m_LocalRotation: {x: -0.22975287, y: 0.00000014901161, z: -0.00000017136335, w: -0.9732491}
   m_LocalPosition: {x: 0.00000047683696, y: 7.5, z: -4.9999986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -933,8 +933,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1989442488613096}
-  m_LocalRotation: {x: 0.17842409, y: 0.000000059604638, z: -0, w: 0.98395365}
-  m_LocalPosition: {x: 83.00001, y: 6.4285717, z: -11.428581}
+  m_LocalRotation: {x: 0.17842402, y: -0.000000059604645, z: -0, w: 0.9839538}
+  m_LocalPosition: {x: 0.0000009536743, y: 6.428571, z: -11.42859}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000006}
   m_Children: []
   m_Father: {fileID: 4921317588071958}
@@ -1202,7 +1202,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1466700902911532}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1150, y: 13, z: 1483}
+  m_LocalPosition: {x: 1131.991, y: 0.0000019073486, z: 1407.9565}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4490212773185100}
@@ -2197,6 +2197,7 @@ MonoBehaviour:
   ultPowerMax: 100
   chargeRate: 5
   ultCharged: 0
+  range: 10
   empParticles: {fileID: 1873930525360942}
   reflectCollider: {fileID: 135722554199634224}
 --- !u!114 &114058960201965308
@@ -2413,6 +2414,7 @@ MonoBehaviour:
   timeTillCollapse: 5
   empEffectTime: 10
   shipPower: {fileID: 1873930525360942}
+  empCollider: {fileID: 135400712217842032}
   shipCollider: {fileID: 135722554199634224}
 --- !u!114 &114180425473718284
 MonoBehaviour:
@@ -3335,7 +3337,7 @@ SphereCollider:
   m_GameObject: {fileID: 1873930525360942}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 1.3541064
   m_Center: {x: 0.31974527, y: 0.075478196, z: -0.44628584}

@@ -824,8 +824,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1544438348731654}
-  m_LocalRotation: {x: 0.1784243, y: 0.0000053346157, z: -0.0000009685755, w: 0.9839537}
-  m_LocalPosition: {x: -0.000080764294, y: 6.428589, z: -11.42865}
+  m_LocalRotation: {x: 0.17842372, y: 0.0000053644176, z: -0.0000009536742, w: 0.9839537}
+  m_LocalPosition: {x: -0.000080764294, y: 6.428571, z: -11.42865}
   m_LocalScale: {x: 1.0000006, y: 1.0000001, z: 1.0000006}
   m_Children: []
   m_Father: {fileID: 4793624516729230}
@@ -900,7 +900,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1176545649375022}
   m_LocalRotation: {x: -0, y: 0.7096788, z: -0, w: 0.7045254}
-  m_LocalPosition: {x: 1118.9476, y: 478.4921, z: 1905.5}
+  m_LocalPosition: {x: 1130.0431, y: 0.0000019073486, z: 1395.2205}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4753443386715990}
@@ -1485,6 +1485,7 @@ MonoBehaviour:
   ultPowerMax: 100
   chargeRate: 5
   ultCharged: 0
+  range: 10
   empParticles: {fileID: 1617588138725700}
   reflectCollider: {fileID: 64789718107937728}
 --- !u!114 &114114967720929330
@@ -2291,6 +2292,7 @@ MonoBehaviour:
   timeTillCollapse: 5
   empEffectTime: 10
   shipPower: {fileID: 1617588138725700}
+  empCollider: {fileID: 135738293472196806}
   shipCollider: {fileID: 64789718107937728}
 --- !u!114 &114862443221160594
 MonoBehaviour:
@@ -2618,7 +2620,7 @@ SphereCollider:
   m_GameObject: {fileID: 1617588138725700}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 1.3541064
   m_Center: {x: 0.31974527, y: 0.075478196, z: -0.44628584}

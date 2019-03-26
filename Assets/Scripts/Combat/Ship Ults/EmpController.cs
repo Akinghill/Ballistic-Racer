@@ -12,6 +12,7 @@ public class EmpController : MonoBehaviour
     public float empEffectTime;
     public GameObject shipPower;
 
+    public Collider empCollider;
     public Collider shipCollider;
     ParticleSystem electricParticle;
 
@@ -51,7 +52,6 @@ public class EmpController : MonoBehaviour
             StartCoroutine(EMPBurst());
 
             ultCharge.ultPower = 0;
-            shipPower.GetComponent<EmpController>().enabled = false;
         }
         //}
     }
@@ -75,6 +75,7 @@ public class EmpController : MonoBehaviour
     {
         while (bursting)
         {
+            empCollider.enabled = true;
             if (currentRadius < MaxBlastRadius)
             {
                 currentRadius += Time.deltaTime * 100f;
@@ -105,6 +106,8 @@ public class EmpController : MonoBehaviour
                 returning = false;
             }
             yield return null;
+            empCollider.enabled = false;
+            shipPower.GetComponent<EmpController>().enabled = false;
         }
     }
 

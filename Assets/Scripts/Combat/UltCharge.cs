@@ -27,6 +27,8 @@ public class UltCharge : MonoBehaviour {
 
     public bool ultCharged;
 
+    public float range = 10;
+
     //public GameObject ships;
     public GameObject empParticles;
     public Collider reflectCollider;
@@ -70,42 +72,48 @@ public class UltCharge : MonoBehaviour {
     //}
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Pick Up"))
+        Transform otherDist;
+        otherDist = other.gameObject.transform;
+        float distance = Vector3.Distance(otherDist.position, transform.position);
+        if (distance <= range)
         {
-            ultPower = ultPowerMax;
-            ultimateSlider.value = ultPowerMax;
-            powerUpNum = Random.Range(0, 4);
-            if (powerUpNum == 0)
+            if (other.gameObject.CompareTag("Pick Up"))
             {
-                GetComponent<Invulnerability>().enabled = true;
-                empParticles.GetComponent<EmpController>().enabled = false;
-                GetComponent<HyperSpeed>().enabled = false;
-                reflectCollider.GetComponent<ReflectorShield>().enabled = false;
-                ultPic.texture = invulnTex;
-            }
-            if (powerUpNum == 1)
-            {
-                GetComponent<Invulnerability>().enabled = false;
-                empParticles.GetComponent<EmpController>().enabled = true;
-                GetComponent<HyperSpeed>().enabled = false;
-                reflectCollider.GetComponent<ReflectorShield>().enabled = false;
-                ultPic.texture = empTex;
-            }
-            if (powerUpNum == 2)
-            {
-                GetComponent<Invulnerability>().enabled = false;
-                empParticles.GetComponent<EmpController>().enabled = false;
-                GetComponent<HyperSpeed>().enabled = true;
-                reflectCollider.GetComponent<ReflectorShield>().enabled = false;
-                ultPic.texture = hyperTex;
-            }
-            if (powerUpNum == 3)
-            {
-                GetComponent<Invulnerability>().enabled = false;
-                empParticles.GetComponent<EmpController>().enabled = false;
-                GetComponent<HyperSpeed>().enabled = false;
-                reflectCollider.GetComponent<ReflectorShield>().enabled = true;
-                ultPic.texture = reflectTex;
+                ultPower = ultPowerMax;
+                ultimateSlider.value = ultPowerMax;
+                powerUpNum = Random.Range(0, 4);
+                if (powerUpNum == 0)
+                {
+                    GetComponent<Invulnerability>().enabled = true;
+                    empParticles.GetComponent<EmpController>().enabled = false;
+                    GetComponent<HyperSpeed>().enabled = false;
+                    reflectCollider.GetComponent<ReflectorShield>().enabled = false;
+                    ultPic.texture = invulnTex;
+                }
+                if (powerUpNum == 1)
+                {
+                    GetComponent<Invulnerability>().enabled = false;
+                    empParticles.GetComponent<EmpController>().enabled = true;
+                    GetComponent<HyperSpeed>().enabled = false;
+                    reflectCollider.GetComponent<ReflectorShield>().enabled = false;
+                    ultPic.texture = empTex;
+                }
+                if (powerUpNum == 2)
+                {
+                    GetComponent<Invulnerability>().enabled = false;
+                    empParticles.GetComponent<EmpController>().enabled = false;
+                    GetComponent<HyperSpeed>().enabled = true;
+                    reflectCollider.GetComponent<ReflectorShield>().enabled = false;
+                    ultPic.texture = hyperTex;
+                }
+                if (powerUpNum == 3)
+                {
+                    GetComponent<Invulnerability>().enabled = false;
+                    empParticles.GetComponent<EmpController>().enabled = false;
+                    GetComponent<HyperSpeed>().enabled = false;
+                    reflectCollider.GetComponent<ReflectorShield>().enabled = true;
+                    ultPic.texture = reflectTex;
+                }
             }
         }
     }
