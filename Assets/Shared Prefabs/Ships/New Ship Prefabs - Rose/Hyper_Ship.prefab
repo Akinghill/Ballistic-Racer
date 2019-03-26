@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 135651901278950308}
   - component: {fileID: 114857643334794858}
   - component: {fileID: 114461210321597372}
-  m_Layer: 10
+  m_Layer: 13
   m_Name: HyperspeedShip
   m_TagString: Ship
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 33549719953067142}
   - component: {fileID: 23960115103216026}
   - component: {fileID: 64902534240516160}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Cabin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   - component: {fileID: 33249821778668424}
   - component: {fileID: 23601645202521412}
   - component: {fileID: 64555829678056694}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Engine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 33941458076475226}
   - component: {fileID: 23167899540766106}
   - component: {fileID: 64761940788135008}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Engine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   - component: {fileID: 114938632982308944}
   m_Layer: 0
   m_Name: Hyper_Ship
-  m_TagString: Ship
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -679,7 +679,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1152241387647292}
-  m_LocalRotation: {x: 0.22975293, y: -0.00000008940697, z: 0.00000012665987, w: 0.9732491}
+  m_LocalRotation: {x: 0.22975287, y: -0.00000014901161, z: 0.00000014156103, w: 0.9732491}
   m_LocalPosition: {x: 0.0000009536739, y: 10, z: -9.999997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -760,7 +760,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1926850975006400}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1137.6051, y: 0.0000019073486, z: 1379.8927}
+  m_LocalPosition: {x: 1150, y: 13, z: 1400}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4511392759586564}
@@ -779,7 +779,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1017029128041340}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30.7, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4662779842589330}
@@ -840,7 +840,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1690348198967728}
-  m_LocalRotation: {x: -0.22975293, y: 0.00000008940697, z: -0.00000012665987, w: -0.9732491}
+  m_LocalRotation: {x: -0.22975287, y: 0.00000014901161, z: -0.00000014156103, w: -0.9732491}
   m_LocalPosition: {x: 0.00000047683696, y: 7.5, z: -4.9999986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -867,8 +867,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1738483377152800}
-  m_LocalRotation: {x: 0.17842406, y: 0.000000059604638, z: -0, w: 0.98395365}
-  m_LocalPosition: {x: 0.0000009536743, y: 6.428571, z: -11.42859}
+  m_LocalRotation: {x: 0.17842403, y: -0.000000059604645, z: 0.000000022351742, w: 0.9839538}
+  m_LocalPosition: {x: 0.0000009536743, y: 6.4285717, z: -11.42859}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000006}
   m_Children: []
   m_Father: {fileID: 4509963602465506}
@@ -970,7 +970,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 5943
+    m_Bits: 12087
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -2477,7 +2477,7 @@ SphereCollider:
   m_Enabled: 0
   serializedVersion: 2
   m_Radius: 1.3541064
-  m_Center: {x: 0.31974527, y: 0.075478196, z: -0.44628584}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135651901278950308
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -2489,7 +2489,7 @@ SphereCollider:
   m_Enabled: 0
   serializedVersion: 2
   m_Radius: 3.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.719, z: 0}
 --- !u!136 &136546956799727904
 CapsuleCollider:
   m_ObjectHideFlags: 1
