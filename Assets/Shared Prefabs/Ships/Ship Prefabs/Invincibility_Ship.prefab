@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 4870214163472892}
   - component: {fileID: 33250100595192610}
   - component: {fileID: 23891063807082882}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Minimap Icon - Player 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,8 +473,12 @@ GameObject:
   - component: {fileID: 64376561824195848}
   - component: {fileID: 114843041070479880}
   - component: {fileID: 114573937842958630}
+<<<<<<< HEAD
   - component: {fileID: 65570037469397678}
   m_Layer: 10
+=======
+  m_Layer: 13
+>>>>>>> 7d862f229ec18761c3111744fd71b946bf2c66bd
   m_Name: Ship 6
   m_TagString: Ship
   m_Icon: {fileID: 0}
@@ -840,8 +844,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1252272640898116}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 25, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalPosition: {x: 7.6939707, y: 25, z: 0.0000009536743}
+  m_LocalScale: {x: 488.3505, y: 488.35, z: 488.3505}
   m_Children: []
   m_Father: {fileID: 4648643422074278}
   m_RootOrder: 3
@@ -874,7 +878,7 @@ Camera:
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 5943
+    m_Bits: 12087
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1378,6 +1382,7 @@ MonoBehaviour:
   racePosition: {fileID: 114265870050444898}
   finish: {fileID: 1695483000734766}
   lapsCompleted: 0
+  racerFinished: 0
   playerHealth: {fileID: 114843041070479880}
   checkpointReached: 0
   miniMapIcon: {fileID: 1252272640898116}
@@ -2087,6 +2092,8 @@ MonoBehaviour:
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
   timeTillRespawn: 5
   reflectLength: 5
+  mesh: []
+  meshCollider: []
   particles:
   - {fileID: 198297006573333116}
   - {fileID: 198886536722330638}

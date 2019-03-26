@@ -14,9 +14,9 @@ public class TrapDamage : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Ship")
+        if (other.gameObject.transform.parent.tag == "Ship")
         {
-            other.gameObject.GetComponent<PlayerHealth>().Death();
+			other.gameObject.GetComponentInParent<PlayerHealth>().Death();
         }
     }
 }

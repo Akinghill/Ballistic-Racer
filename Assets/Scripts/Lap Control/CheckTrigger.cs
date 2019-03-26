@@ -13,6 +13,8 @@ public class CheckTrigger : MonoBehaviour
 
     public int lapsCompleted;
 
+    public bool racerFinished = false;
+
     Checkpoint checkpoint;
 
     public PlayerHealth playerHealth;

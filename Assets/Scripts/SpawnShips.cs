@@ -9,35 +9,45 @@ public class SpawnShips : MonoBehaviour {
     public GameObject minimap_1P;
     public GameObject minimap_MP;
 
-    private string selectedRacer_P1;
-    private string selectedRacer_P2;
-    private string selectedRacer_P3;
-    private string selectedRacer_P4;
+    string selectedRacer_P1;
+    string selectedRacer_P2;
+    string selectedRacer_P3;
+    string selectedRacer_P4;
 
-    private GameObject[] spawnOrder;
-    private GameObject[] shipsInstance;
+    GameObject[] spawnOrder;
+    GameObject[] shipsInstance;
 
-    private GameObject ship_P1;
-    private GameObject ship_P2;
-    private GameObject ship_P3;
-    private GameObject ship_P4;
+    GameObject ship_P1;
+    GameObject ship_P2;
+    GameObject ship_P3;
+    GameObject ship_P4;
 
-    private Camera cam_P1;
-    private Camera cam_P2;
-    private Camera cam_P3;
-    private Camera cam_P4;
+    Camera cam_P1;
+    Camera cam_P2;
+    Camera cam_P3;
+    Camera cam_P4;
 
-    private bool keyboard_P1;
-    private bool keyboard_P2;
-    private bool keyboard_P3;
-    private bool keyboard_P4;
+    bool keyboard_P1;
+    bool keyboard_P2;
+    bool keyboard_P3;
+    bool keyboard_P4;
 
-    private PlayerHealth[] playerHealth;
+    PlayerHealth[] playerHealth;
+
+    int playerOneLayer;
+    int playerTwoLayer;
+    int playerThreeLayer;
+    int playerFourLayer;
 
     void Awake()
     {
         shipsInstance = new GameObject[ships.Length];
         playerHealth = new PlayerHealth[ships.Length];
+
+        playerOneLayer = LayerMask.NameToLayer("Player1");
+        playerTwoLayer = LayerMask.NameToLayer("Player2");
+        playerThreeLayer = LayerMask.NameToLayer("Player3");
+        playerFourLayer = LayerMask.NameToLayer("Player4");
     }
 
     void Start()
@@ -78,12 +88,12 @@ public class SpawnShips : MonoBehaviour {
                     cam_P1.rect = new Rect(0.0f, 0.0f, 1.0f, 1.0f);
                     PlayerOneCullingMask(cam_P1);
 
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = 14;
+                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerOneLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
 
                     foreach (Cinemachine.CinemachineVirtualCamera vCam in vCams)
                     {
-                        vCam.gameObject.layer = 14;
+                        vCam.gameObject.layer = playerOneLayer;
                     }
                 }
                 else
@@ -123,12 +133,12 @@ public class SpawnShips : MonoBehaviour {
                     cam_P1.rect = new Rect(0.0f, 0.0f, 0.5f, 1.0f);
                     PlayerOneCullingMask(cam_P1);
 
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = 14;
+                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerOneLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
 
                     foreach (Cinemachine.CinemachineVirtualCamera vCam in vCams)
                     {
-                        vCam.gameObject.layer = 14;
+                        vCam.gameObject.layer = playerOneLayer;
                     }
                 }
                 else if (ships[i].name == selectedRacer_P2)
@@ -146,12 +156,12 @@ public class SpawnShips : MonoBehaviour {
                     cam_P2.rect = new Rect(0.5f, 0.0f, 0.5f, 1.0f);
                     PlayerTwoCullingMask(cam_P2);
 
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = 15;
+                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerTwoLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
 
                     foreach (Cinemachine.CinemachineVirtualCamera vCam in vCams)
                     {
-                        vCam.gameObject.layer = 15;
+                        vCam.gameObject.layer = playerTwoLayer;
                     }
                 }
                 else
@@ -189,12 +199,12 @@ public class SpawnShips : MonoBehaviour {
                     cam_P1.rect = new Rect(0.0f, 0.5f, 0.5f, 0.5f);
                     PlayerOneCullingMask(cam_P1);
 
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = 14;
+                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerOneLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
 
                     foreach (Cinemachine.CinemachineVirtualCamera vCam in vCams)
                     {
-                        vCam.gameObject.layer = 14;
+                        vCam.gameObject.layer = playerOneLayer;
                     }
                 }
                 else if (ships[i].name == selectedRacer_P2)
@@ -212,12 +222,12 @@ public class SpawnShips : MonoBehaviour {
                     cam_P2.rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
                     PlayerTwoCullingMask(cam_P2);
 
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = 15;
+                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerTwoLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
 
                     foreach (Cinemachine.CinemachineVirtualCamera vCam in vCams)
                     {
-                        vCam.gameObject.layer = 15;
+                        vCam.gameObject.layer = playerTwoLayer;
                     }
                 }
                 else if (ships[i].name == selectedRacer_P3)
@@ -235,12 +245,12 @@ public class SpawnShips : MonoBehaviour {
                     cam_P3.rect = new Rect(0.0f, 0.0f, 1.0f, 0.5f);
                     PlayerThreeCullingMask(cam_P3);
 
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = 16;
+                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerThreeLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
 
                     foreach (Cinemachine.CinemachineVirtualCamera vCam in vCams)
                     {
-                        vCam.gameObject.layer = 16;
+                        vCam.gameObject.layer = playerThreeLayer;
                     }
                 }
                 else
@@ -278,12 +288,12 @@ public class SpawnShips : MonoBehaviour {
                     cam_P1.rect = new Rect(0.0f, 0.5f, 0.5f, 0.5f);
                     PlayerOneCullingMask(cam_P1);
 
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = 14;
+                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerOneLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
 
                     foreach (Cinemachine.CinemachineVirtualCamera vCam in vCams)
                     {
-                        vCam.gameObject.layer = 14;
+                        vCam.gameObject.layer = playerOneLayer;
                     }
                 }
                 else if (ships[i].name == selectedRacer_P2)
@@ -301,12 +311,12 @@ public class SpawnShips : MonoBehaviour {
                     cam_P2.rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
                     PlayerTwoCullingMask(cam_P2);
 
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = 15;
+                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerTwoLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
 
                     foreach (Cinemachine.CinemachineVirtualCamera vCam in vCams)
                     {
-                        vCam.gameObject.layer = 15;
+                        vCam.gameObject.layer = playerTwoLayer;
                     }
                 }
                 else if (ships[i].name == selectedRacer_P3)
@@ -324,12 +334,12 @@ public class SpawnShips : MonoBehaviour {
                     cam_P3.rect = new Rect(0.0f, 0.0f, 0.5f, 0.5f);
                     PlayerThreeCullingMask(cam_P3);
 
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = 16;
+                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerThreeLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
 
                     foreach (Cinemachine.CinemachineVirtualCamera vCam in vCams)
                     {
-                        vCam.gameObject.layer = 16;
+                        vCam.gameObject.layer = playerThreeLayer;
                     }
                 }
                 else if (ships[i].name == selectedRacer_P4)
@@ -347,12 +357,12 @@ public class SpawnShips : MonoBehaviour {
                     cam_P4.rect = new Rect(0.5f, 0.0f, 0.5f, 0.5f);
                     PlayerFourCullingMask(cam_P4);
 
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = 17;
+                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerFourLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
 
                     foreach (Cinemachine.CinemachineVirtualCamera vCam in vCams)
                     {
-                        vCam.gameObject.layer = 17;
+                        vCam.gameObject.layer = playerFourLayer;
                     }
                 }
                 else

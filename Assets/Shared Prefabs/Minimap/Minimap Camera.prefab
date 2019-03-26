@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4377941414874112}
   - component: {fileID: 20534210773026786}
   - component: {fileID: 81250199614620062}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Minimap Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,13 +34,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1733947491430070}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 0, y: 7500, z: 0}
+  m_LocalRotation: {x: -0.31517524, y: -0.63298076, z: 0.6329807, w: -0.31517515}
+  m_LocalPosition: {x: 1298, y: 4680, z: 2521}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 232.939}
 --- !u!20 &20534210773026786
 Camera:
   m_ObjectHideFlags: 1
@@ -50,7 +50,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -63,13 +63,13 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 10000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  field of view: 90
+  orthographic: 1
+  orthographic size: 5000
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 2147484160
+    m_Bits: 7680
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: b47011153b54bcc4786a1a45fecf4581, type: 2}
   m_TargetDisplay: 0
@@ -87,4 +87,4 @@ AudioListener:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1733947491430070}
-  m_Enabled: 1
+  m_Enabled: 0
