@@ -19,11 +19,11 @@ public class EnergyRing : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Shootable"))
+        if (other.gameObject.transform.parent.tag == "Ship")
         {
             if (!deactivated)
             {
-                other.GetComponent<PlayerHealth>().currentHealth += energyAmmount;
+                other.GetComponentInParent<PlayerHealth>().currentHealth += energyAmmount;
                 StartCoroutine(ActivationTime());
             }
         }

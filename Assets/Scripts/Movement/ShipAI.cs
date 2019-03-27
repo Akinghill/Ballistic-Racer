@@ -204,7 +204,7 @@ public class ShipAI : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, nodes[currentNode].position) < 50f)
         {
-            if (currentNode == nodes.Length)
+            if (currentNode == nodes.Length - 1)
             {
                 currentNode = 0;
                 randomPath = Random.Range(1, 11);
