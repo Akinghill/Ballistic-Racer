@@ -809,11 +809,18 @@ MonoBehaviour:
   flashColour: {r: 1, g: 0, b: 0, a: 0.1}
   timeTillRespawn: 5
   reflectLength: 0
+  mesh: []
+  meshCollider: []
   particles: []
+  shipCollider: {fileID: 0}
   player: {fileID: 0}
   respawnPoint: {fileID: 0}
   movement: {fileID: 0}
   playerShooting: []
+  DeathXplosion: {fileID: 0}
+  SparkFX: {fileID: 0}
+  isReflective: 0
+  reflectCounter: 0
 --- !u!114 &114674294726424894
 MonoBehaviour:
   m_ObjectHideFlags: 1
