@@ -108,7 +108,11 @@ public class SpawnShips : MonoBehaviour {
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
 
-                    shipsInstance[i].GetComponentInChildren<Camera>().gameObject.SetActive(false);
+                    //Disables all child cameras
+                    Component[] Cameras;
+                    Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                    foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
+
                     shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
                 }
             }
@@ -174,7 +178,11 @@ public class SpawnShips : MonoBehaviour {
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
 
-                    shipsInstance[i].GetComponentInChildren<Camera>().gameObject.SetActive(false);
+                    //Disables all child cameras
+                    Component[] Cameras;
+                    Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                    foreach(Camera cam in Cameras) { cam.gameObject.SetActive(false); }
+                
                     shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
                 }
             }
@@ -263,7 +271,11 @@ public class SpawnShips : MonoBehaviour {
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
 
-                    shipsInstance[i].GetComponentInChildren<Camera>().gameObject.SetActive(false);
+                    //Disables all child cameras
+                    Component[] Cameras;
+                    Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                    foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
+
                     shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
                 }
             }
@@ -375,7 +387,11 @@ public class SpawnShips : MonoBehaviour {
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
 
-                    shipsInstance[i].GetComponentInChildren<Camera>().gameObject.SetActive(false);
+                    //Disables all child cameras
+                    Component[] Cameras;
+                    Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                    foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
+
                     shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
                 }
             }
