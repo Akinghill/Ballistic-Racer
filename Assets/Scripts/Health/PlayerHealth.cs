@@ -80,6 +80,7 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             SparkFX.GetComponent<ParticleSystem>().Pause();
+            SparkFX.GetComponent<ParticleSystem>().Clear();
         }
 
         if (isInvulnerable == true)
@@ -106,7 +107,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (transform.position.y <= -160)
         {
-            SparkFX.GetComponent<ParticleSystem>().Pause();
+            //SparkFX.GetComponent<ParticleSystem>().Pause();
             Death();
         }
     }
@@ -156,9 +157,12 @@ public class PlayerHealth : MonoBehaviour
         }
         foreach (ParticleSystem particle in particles)
         {
-            particle.Stop();
+            if (particle.isPlaying || particle.isEmitting)
+            {
+                particle.Stop();
+            }
         }
-		for (int i = 0; i < mesh.Length; i++) 
+        for (int i = 0; i < mesh.Length; i++) 
 		{
 			mesh[i].enabled = false;
 		}

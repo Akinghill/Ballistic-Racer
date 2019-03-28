@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 33070684865531574}
   - component: {fileID: 64302542019570484}
   m_Layer: 13
-  m_Name: Ship Collider
+  m_Name: Ship Collider Reflector_Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -896,7 +896,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1974878453864624}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.573, z: -1.4930421}
+  m_LocalPosition: {x: 0, y: 1.573, z: -1.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4600819016678314}
@@ -1257,7 +1257,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1981381947019618}
-  m_LocalRotation: {x: -0.2297529, y: 0.00000014901161, z: -0.0000001937151, w: -0.9732491}
+  m_LocalRotation: {x: -0.22975287, y: 0.00000014901161, z: -0.00000018626451, w: -0.9732491}
   m_LocalPosition: {x: 0.00000047683696, y: 7.5, z: -4.9999986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1317,7 +1317,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1609244989411448}
-  m_LocalRotation: {x: 0.17842405, y: -0.000000059604638, z: -0, w: 0.98395365}
+  m_LocalRotation: {x: 0.17842403, y: -0.000000059604645, z: -0, w: 0.9839538}
   m_LocalPosition: {x: 0.0000009536743, y: 6.4285717, z: -11.42859}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000006}
   m_Children: []
@@ -2424,7 +2424,7 @@ MonoBehaviour:
   - {fileID: 198170954605543004}
   - {fileID: 198178218392123530}
   - {fileID: 198224266962100424}
-  shipCollider: {fileID: 1823843513197644}
+  shipCollider: {fileID: 1422353336883482}
   player: {fileID: 4887765040109378}
   respawnPoint: {fileID: 0}
   movement: {fileID: 114642555398816048}
@@ -2499,7 +2499,7 @@ MonoBehaviour:
   empEffectTime: 10
   shipPower: {fileID: 1531525743334360}
   empCollider: {fileID: 135752861892851134}
-  shipCollider: {fileID: 135107841045696054}
+  shipCollider: {fileID: 64302542019570484}
 --- !u!114 &114289747989293000
 MonoBehaviour:
   m_ObjectHideFlags: 1

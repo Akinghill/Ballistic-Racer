@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 33693731684484756}
   - component: {fileID: 64967911913097764}
   m_Layer: 13
-  m_Name: Ship Collider
+  m_Name: Ship Collider Hyper_Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -849,8 +849,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4014904390776002}
-  - {fileID: 4892976044632590}
   - {fileID: 4977854171591484}
+  - {fileID: 4892976044632590}
   - {fileID: 4323690851386518}
   - {fileID: 4853937564593692}
   - {fileID: 4747664625861042}
@@ -890,7 +890,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1287736377336286}
-  m_LocalRotation: {x: 0.17842403, y: -0.000000059604645, z: -0, w: 0.9839538}
+  m_LocalRotation: {x: 0.17842403, y: -0.000000059604645, z: 0.000000022351742, w: 0.9839538}
   m_LocalPosition: {x: 0.0000009536743, y: 6.4285717, z: -11.42859}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000006}
   m_Children: []
@@ -955,7 +955,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1690149707249022}
-  m_LocalRotation: {x: -0.22975293, y: 0.00000008940697, z: -0.00000012665987, w: -0.9732491}
+  m_LocalRotation: {x: -0.22975287, y: 0.00000014901161, z: -0.00000014156103, w: -0.9732491}
   m_LocalPosition: {x: 0.00000047683696, y: 7.5, z: -4.9999986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1008,7 +1008,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149515025717174}
-  m_LocalRotation: {x: 0.22975293, y: -0.00000008940697, z: 0.00000012665987, w: 0.9732491}
+  m_LocalRotation: {x: 0.22975287, y: -0.00000014901161, z: 0.00000014156103, w: 0.9732491}
   m_LocalPosition: {x: 0.0000009536739, y: 10, z: -9.999997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1027,7 +1027,7 @@ Transform:
   m_LocalScale: {x: 8.8200035, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4446548129985900}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4955894950111584
 Transform:
@@ -1056,7 +1056,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4446548129985900}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20114936969219254
 Camera:
@@ -1580,7 +1580,7 @@ MonoBehaviour:
   - {fileID: 198704325034445778}
   - {fileID: 198709324541376724}
   - {fileID: 198775613471110060}
-  shipCollider: {fileID: 1616231298083452}
+  shipCollider: {fileID: 1098056116075690}
   player: {fileID: 4416894541399988}
   respawnPoint: {fileID: 0}
   movement: {fileID: 114203870840696388}
@@ -1708,14 +1708,17 @@ MonoBehaviour:
     maximum: 1
   gravityWhileHovering: 20
   gravityWhileFalling: 80
-  thrusterParticle: []
-  particleStartSize: 0.78
+  thrusterParticle:
+  - {fileID: 198874882501432272}
+  - {fileID: 198704325034445778}
+  - {fileID: 198709324541376724}
+  particleStartSize: 0
   particleStartSpeed: 0.94
   particleStartLifeTime: 0.68
-  particleSize: 1.3
+  particleSize: 0
   particleSpeed: 5.28
   particleLifeTime: 0.58
-  particleBoostSize: 1.22
+  particleBoostSize: 0
   particleBoostSpeed: 5.18
   particleBoostLifeTime: 0.89
   emp: 0
@@ -2106,7 +2109,7 @@ MonoBehaviour:
   empEffectTime: 10
   shipPower: {fileID: 1512742281823082}
   empCollider: {fileID: 135777541921456350}
-  shipCollider: {fileID: 135897374442970582}
+  shipCollider: {fileID: 64967911913097764}
 --- !u!114 &114540055953640716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11782,7 +11785,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -16324,7 +16327,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -20866,7 +20869,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -25399,7 +25402,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1

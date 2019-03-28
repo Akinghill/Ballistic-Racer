@@ -76,6 +76,7 @@ public class EmpController : MonoBehaviour
         while (bursting)
         {
             empCollider.enabled = true;
+            electricParticle.Play();
             if (currentRadius < MaxBlastRadius)
             {
                 currentRadius += Time.deltaTime * 100f;
@@ -107,6 +108,7 @@ public class EmpController : MonoBehaviour
             }
             yield return null;
             empCollider.enabled = false;
+            electricParticle.Stop();
             shipPower.GetComponent<EmpController>().enabled = false;
         }
     }
