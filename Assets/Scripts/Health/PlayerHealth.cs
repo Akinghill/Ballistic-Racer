@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public MeshRenderer[] mesh;
     public MeshCollider[] meshCollider;
     public ParticleSystem[] particles;
+    public EmpController empController;
     public GameObject shipCollider;
 
     public Transform player;
@@ -81,6 +82,16 @@ public class PlayerHealth : MonoBehaviour
         {
             SparkFX.GetComponent<ParticleSystem>().Pause();
             SparkFX.GetComponent<ParticleSystem>().Clear();
+        }
+
+        if (empController.enabled)
+        {
+            empController.GetComponent<ParticleSystem>().Play();
+        }
+        else
+        {
+            empController.GetComponent<ParticleSystem>().Pause();
+            empController.GetComponent<ParticleSystem>().Clear();
         }
 
         if (isInvulnerable == true)
