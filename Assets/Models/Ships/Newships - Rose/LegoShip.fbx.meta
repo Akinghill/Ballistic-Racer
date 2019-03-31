@@ -147,7 +147,12 @@ ModelImporter:
     4300048: LegoStud1x1x1_4
     4300050: LegoSlope1x3x3_5
     4300052: LegoSlope1x1x1_4
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LegoShipTexture
+    second: {fileID: 2100000, guid: 793ff5e9d7abac848a98641ae164c7cd, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -178,7 +183,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 250
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
