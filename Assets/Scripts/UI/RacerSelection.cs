@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class RacerSelection : MonoBehaviour
 {
     public GameObject[] CharacterList;
+    public GameObject easterEggShip;
     public int index;
 
     public static string selectedShip_P1;
@@ -22,20 +23,13 @@ public class RacerSelection : MonoBehaviour
 
     void Start()
     {
-        //mainMenu = GetComponentInParent<MainMenu>();
-        //CharacterList = new GameObject[transform.childCount];
-
-        // Create an array that holds the number of racers.
-        // A new place is created for each gameObject that is attached to CharacterList.
-
-        //for (int i = 0; i < transform.childCount; i++)
-        //    CharacterList[i] = transform.GetChild(i).gameObject;
-
         //Deactivate the renders.
         foreach (GameObject go in CharacterList)
         {
             go.SetActive(false);
         }
+
+        easterEggShip.SetActive(false);
 
         // Activate the render for the first index.
 
@@ -53,6 +47,14 @@ public class RacerSelection : MonoBehaviour
                 CharacterList[pOne].SetActive(false);
                 index++;
                 CharacterList[index].SetActive(true);
+            }
+        }
+        else if (playerNumber == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                CharacterList[index].SetActive(false);
+                easterEggShip.SetActive(true);
             }
         }
         if (MainMenu.p2_Confirm)
@@ -86,6 +88,10 @@ public class RacerSelection : MonoBehaviour
 
     public void ToggleLeft()
     {
+        if (easterEggShip.activeInHierarchy)
+        {
+            easterEggShip.SetActive(false);
+        }
         // Toggle off current model
         CharacterList[index].SetActive(false);
 
@@ -128,6 +134,10 @@ public class RacerSelection : MonoBehaviour
 
     public void ToggleRight()
     {
+        if (easterEggShip.activeInHierarchy)
+        {
+            easterEggShip.SetActive(false);
+        }
         // Toggle off current model
         CharacterList[index].SetActive(false);
 
@@ -175,8 +185,15 @@ public class RacerSelection : MonoBehaviour
         }
         if (playerNumber == 1)
         {
-            selectedShip_P1 = CharacterList[index].name;
-            pOne = index;
+            if (easterEggShip.activeInHierarchy)
+            {
+                selectedShip_P1 = easterEggShip.name;
+            }
+            else
+            {
+                selectedShip_P1 = CharacterList[index].name;
+                pOne = index;
+            }
         }
         if (playerNumber == 2)
         {

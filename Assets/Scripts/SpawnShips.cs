@@ -105,20 +105,23 @@ public class SpawnShips : MonoBehaviour {
                 }
                 else
                 {
-                    shipsInstance[i] = Instantiate(ships[i]) as GameObject;
-                    shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    if (ships[i].name != "Lego_Ship")
+                    {
+                        shipsInstance[i] = Instantiate(ships[i]) as GameObject;
+                        shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
 
-                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
-                    playerHealth[i].respawnPoint = startPositions[i].transform;
+                        playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                        playerHealth[i].respawnPoint = startPositions[i].transform;
 
-                    shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
+                        shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
 
-                    //Disables all child cameras
-                    Component[] Cameras;
-                    Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
-                    foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
+                        //Disables all child cameras
+                        Component[] Cameras;
+                        Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                        foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
 
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
+                        shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
+                    }
                 }
             }
         }
@@ -189,20 +192,23 @@ public class SpawnShips : MonoBehaviour {
                 }
                 else
                 {
-                    shipsInstance[i] = Instantiate(ships[i]) as GameObject;
-                    shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    if (ships[i].name != "Lego_Ship")
+                    {
+                        shipsInstance[i] = Instantiate(ships[i]) as GameObject;
+                        shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
 
-                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
-                    playerHealth[i].respawnPoint = startPositions[i].transform;
+                        playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                        playerHealth[i].respawnPoint = startPositions[i].transform;
 
-                    shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
+                        shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
 
-                    //Disables all child cameras
-                    Component[] Cameras;
-                    Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
-                    foreach(Camera cam in Cameras) { cam.gameObject.SetActive(false); }
-                
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
+                        //Disables all child cameras
+                        Component[] Cameras;
+                        Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                        foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
+
+                        shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
+                    }
                 }
             }
         }
@@ -303,20 +309,23 @@ public class SpawnShips : MonoBehaviour {
                 }
                 else
                 {
-                    shipsInstance[i] = Instantiate(ships[i]) as GameObject;
-                    shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    if (ships[i].name != "Lego_Ship")
+                    {
+                        shipsInstance[i] = Instantiate(ships[i]) as GameObject;
+                        shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
 
-                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
-                    playerHealth[i].respawnPoint = startPositions[i].transform;
+                        playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                        playerHealth[i].respawnPoint = startPositions[i].transform;
 
-                    shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
+                        shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
 
-                    //Disables all child cameras
-                    Component[] Cameras;
-                    Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
-                    foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
+                        //Disables all child cameras
+                        Component[] Cameras;
+                        Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                        foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
 
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
+                        shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
+                    }
                 }
             }
         }
@@ -447,20 +456,23 @@ public class SpawnShips : MonoBehaviour {
                 }
                 else
                 {
-                    shipsInstance[i] = Instantiate(ships[i]) as GameObject;
-                    shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    if (ships[i].name != "Lego_Ship")
+                    {
+                        shipsInstance[i] = Instantiate(ships[i]) as GameObject;
+                        shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
 
-                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
-                    playerHealth[i].respawnPoint = startPositions[i].transform;
+                        playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                        playerHealth[i].respawnPoint = startPositions[i].transform;
 
-                    shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
+                        shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
 
-                    //Disables all child cameras
-                    Component[] Cameras;
-                    Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
-                    foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
+                        //Disables all child cameras
+                        Component[] Cameras;
+                        Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                        foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
 
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
+                        shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
+                    }
                 }
             }
         }
