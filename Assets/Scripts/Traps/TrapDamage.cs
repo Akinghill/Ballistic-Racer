@@ -7,7 +7,7 @@ public class TrapDamage : MonoBehaviour {
     void Update()
     {
 		if (rotate) {
-			transform.Rotate (0, (Time.deltaTime * 180), 0);
+			transform.Rotate (0, -(Time.deltaTime * 180), 0);
 		}
     }
 
