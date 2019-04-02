@@ -48,7 +48,7 @@ public class EmpController : MonoBehaviour
         if (input.powerUp)
         {
             bursting = true;
-            ultCharge.CancelInvoke("UltimateCharge");
+            //ultCharge.CancelInvoke("UltimateCharge");
             StartCoroutine(EMPBurst());
 
             ultCharge.ultPower = 0;
@@ -100,7 +100,7 @@ public class EmpController : MonoBehaviour
             }
             else
             {
-                ultCharge.InvokeRepeating("UltimateCharge", ultCharge.chargeRate, ultCharge.chargeRate);
+                //ultCharge.InvokeRepeating("UltimateCharge", ultCharge.chargeRate, ultCharge.chargeRate);
                 ChangeParticle(0.0001f, 1f);
                 currentRadius = EmpRest;
 

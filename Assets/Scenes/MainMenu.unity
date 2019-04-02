@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -519,6 +519,11 @@ Prefab:
     - target: {fileID: 1859794091670960, guid: afeb94a2afb9a36489b87ade8b742440, type: 2}
       propertyPath: m_TagString
       value: Camera Look Point P4
+      objectReference: {fileID: 0}
+    - target: {fileID: 108282650247640720, guid: afeb94a2afb9a36489b87ade8b742440,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 294711
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afeb94a2afb9a36489b87ade8b742440, type: 2}
@@ -2247,6 +2252,11 @@ Prefab:
       propertyPath: m_TagString
       value: Camera Look Point P4
       objectReference: {fileID: 0}
+    - target: {fileID: 108501099584855504, guid: 6f51fe52a10b5b146a900bbf7c386a3b,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 294711
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f51fe52a10b5b146a900bbf7c386a3b, type: 2}
   m_IsPrefabAsset: 0
@@ -2842,6 +2852,11 @@ Prefab:
       propertyPath: m_TagString
       value: Camera Look Point P4
       objectReference: {fileID: 0}
+    - target: {fileID: 108092033544183464, guid: 4ab088942425c684bad6f8d9b57479e9,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 294711
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ab088942425c684bad6f8d9b57479e9, type: 2}
   m_IsPrefabAsset: 0
@@ -2941,6 +2956,11 @@ Prefab:
     - target: {fileID: 1251866741633566, guid: 6f51fe52a10b5b146a900bbf7c386a3b, type: 2}
       propertyPath: m_TagString
       value: Camera Look Point P1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108501099584855504, guid: 6f51fe52a10b5b146a900bbf7c386a3b,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 65335
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f51fe52a10b5b146a900bbf7c386a3b, type: 2}
@@ -3193,6 +3213,11 @@ Prefab:
     - target: {fileID: 1859794091670960, guid: afeb94a2afb9a36489b87ade8b742440, type: 2}
       propertyPath: m_TagString
       value: Camera Look Point P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 108282650247640720, guid: afeb94a2afb9a36489b87ade8b742440,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 98103
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afeb94a2afb9a36489b87ade8b742440, type: 2}
@@ -4417,6 +4442,11 @@ Prefab:
       propertyPath: m_TagString
       value: Camera Look Point P2
       objectReference: {fileID: 0}
+    - target: {fileID: 108656810978265906, guid: c77dca99ee9abe040bec999a5240185f,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 98103
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c77dca99ee9abe040bec999a5240185f, type: 2}
   m_IsPrefabAsset: 0
@@ -5166,6 +5196,11 @@ Prefab:
       propertyPath: m_TagString
       value: Camera Look Point P1
       objectReference: {fileID: 0}
+    - target: {fileID: 108092033544183464, guid: 4ab088942425c684bad6f8d9b57479e9,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 65335
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ab088942425c684bad6f8d9b57479e9, type: 2}
   m_IsPrefabAsset: 0
@@ -5611,6 +5646,11 @@ Prefab:
       propertyPath: m_TagString
       value: Camera Look Point P3
       objectReference: {fileID: 0}
+    - target: {fileID: 108501099584855504, guid: 6f51fe52a10b5b146a900bbf7c386a3b,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 163639
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f51fe52a10b5b146a900bbf7c386a3b, type: 2}
   m_IsPrefabAsset: 0
@@ -5948,6 +5988,11 @@ Prefab:
     - target: {fileID: 1550148062730964, guid: f82ec065d8a11144d81b7885776a7886, type: 2}
       propertyPath: m_TagString
       value: Camera Look Point P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 108742297735496650, guid: f82ec065d8a11144d81b7885776a7886,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 98103
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f82ec065d8a11144d81b7885776a7886, type: 2}
@@ -7212,6 +7257,11 @@ Prefab:
       propertyPath: m_TagString
       value: Camera Look Point P2
       objectReference: {fileID: 0}
+    - target: {fileID: 108233978596838570, guid: 59f842409e6c3c54a8596252e7807d56,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 98103
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f842409e6c3c54a8596252e7807d56, type: 2}
   m_IsPrefabAsset: 0
@@ -7305,6 +7355,11 @@ Prefab:
     - target: {fileID: 1550148062730964, guid: f82ec065d8a11144d81b7885776a7886, type: 2}
       propertyPath: m_TagString
       value: Camera Look Point P4
+      objectReference: {fileID: 0}
+    - target: {fileID: 108742297735496650, guid: f82ec065d8a11144d81b7885776a7886,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 294711
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f82ec065d8a11144d81b7885776a7886, type: 2}
@@ -7936,6 +7991,11 @@ Prefab:
     - target: {fileID: 1911338960268086, guid: 669d1771c65dce449a93708e1ae01071, type: 2}
       propertyPath: m_TagString
       value: Camera Look Point P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 108260761032616454, guid: 669d1771c65dce449a93708e1ae01071,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 98103
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 669d1771c65dce449a93708e1ae01071, type: 2}
@@ -8862,6 +8922,11 @@ Prefab:
     - target: {fileID: 1652771411923298, guid: 4ab088942425c684bad6f8d9b57479e9, type: 2}
       propertyPath: m_TagString
       value: Camera Look Point P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 108092033544183464, guid: 4ab088942425c684bad6f8d9b57479e9,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 98103
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ab088942425c684bad6f8d9b57479e9, type: 2}
@@ -10532,6 +10597,11 @@ Prefab:
     - target: {fileID: 1550148062730964, guid: f82ec065d8a11144d81b7885776a7886, type: 2}
       propertyPath: m_TagString
       value: Camera Look Point P1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108742297735496650, guid: f82ec065d8a11144d81b7885776a7886,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 65335
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f82ec065d8a11144d81b7885776a7886, type: 2}
@@ -13254,6 +13324,11 @@ Prefab:
       propertyPath: m_TagString
       value: Camera Look Point P4
       objectReference: {fileID: 0}
+    - target: {fileID: 108656810978265906, guid: c77dca99ee9abe040bec999a5240185f,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 294711
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c77dca99ee9abe040bec999a5240185f, type: 2}
   m_IsPrefabAsset: 0
@@ -15467,6 +15542,11 @@ Prefab:
       propertyPath: m_TagString
       value: Camera Look Point P3
       objectReference: {fileID: 0}
+    - target: {fileID: 108282650247640720, guid: afeb94a2afb9a36489b87ade8b742440,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 163639
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afeb94a2afb9a36489b87ade8b742440, type: 2}
   m_IsPrefabAsset: 0
@@ -16343,6 +16423,11 @@ Prefab:
       propertyPath: m_TagString
       value: Camera Look Point P3
       objectReference: {fileID: 0}
+    - target: {fileID: 108233978596838570, guid: 59f842409e6c3c54a8596252e7807d56,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 163639
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f842409e6c3c54a8596252e7807d56, type: 2}
   m_IsPrefabAsset: 0
@@ -16548,6 +16633,11 @@ Prefab:
       propertyPath: m_TagString
       value: Camera Look Point P3
       objectReference: {fileID: 0}
+    - target: {fileID: 108092033544183464, guid: 4ab088942425c684bad6f8d9b57479e9,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 163639
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ab088942425c684bad6f8d9b57479e9, type: 2}
   m_IsPrefabAsset: 0
@@ -16633,6 +16723,11 @@ Prefab:
     - target: {fileID: 1987695313437086, guid: c77dca99ee9abe040bec999a5240185f, type: 2}
       propertyPath: m_TagString
       value: Camera Look Point P1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108656810978265906, guid: c77dca99ee9abe040bec999a5240185f,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 65335
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c77dca99ee9abe040bec999a5240185f, type: 2}
@@ -17643,6 +17738,11 @@ Prefab:
       propertyPath: m_TagString
       value: Camera Look Point P3
       objectReference: {fileID: 0}
+    - target: {fileID: 108656810978265906, guid: c77dca99ee9abe040bec999a5240185f,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 163639
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c77dca99ee9abe040bec999a5240185f, type: 2}
   m_IsPrefabAsset: 0
@@ -17952,6 +18052,11 @@ Prefab:
     - target: {fileID: 1251866741633566, guid: 6f51fe52a10b5b146a900bbf7c386a3b, type: 2}
       propertyPath: m_TagString
       value: Camera Look Point P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 108501099584855504, guid: 6f51fe52a10b5b146a900bbf7c386a3b,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 98103
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f51fe52a10b5b146a900bbf7c386a3b, type: 2}
@@ -18742,6 +18847,11 @@ Prefab:
       propertyPath: m_TagString
       value: Camera Look Point P1
       objectReference: {fileID: 0}
+    - target: {fileID: 108233978596838570, guid: 59f842409e6c3c54a8596252e7807d56,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 65335
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f842409e6c3c54a8596252e7807d56, type: 2}
   m_IsPrefabAsset: 0
@@ -19486,6 +19596,11 @@ Prefab:
       propertyPath: m_TagString
       value: Camera Look Point P4
       objectReference: {fileID: 0}
+    - target: {fileID: 108260761032616454, guid: 669d1771c65dce449a93708e1ae01071,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 294711
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 669d1771c65dce449a93708e1ae01071, type: 2}
   m_IsPrefabAsset: 0
@@ -19567,6 +19682,11 @@ Prefab:
     - target: {fileID: 1859794091670960, guid: afeb94a2afb9a36489b87ade8b742440, type: 2}
       propertyPath: m_TagString
       value: Camera Look Point P1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108282650247640720, guid: afeb94a2afb9a36489b87ade8b742440,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 65335
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afeb94a2afb9a36489b87ade8b742440, type: 2}
@@ -19765,6 +19885,11 @@ Prefab:
     - target: {fileID: 1452522609979488, guid: 59f842409e6c3c54a8596252e7807d56, type: 2}
       propertyPath: m_TagString
       value: Camera Look Point P4
+      objectReference: {fileID: 0}
+    - target: {fileID: 108233978596838570, guid: 59f842409e6c3c54a8596252e7807d56,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 294711
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59f842409e6c3c54a8596252e7807d56, type: 2}
@@ -20002,6 +20127,11 @@ Prefab:
     - target: {fileID: 1550148062730964, guid: f82ec065d8a11144d81b7885776a7886, type: 2}
       propertyPath: m_TagString
       value: Camera Look Point P3
+      objectReference: {fileID: 0}
+    - target: {fileID: 108742297735496650, guid: f82ec065d8a11144d81b7885776a7886,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 163639
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f82ec065d8a11144d81b7885776a7886, type: 2}
@@ -20592,6 +20722,11 @@ Prefab:
       propertyPath: m_TagString
       value: Camera Look Point P1
       objectReference: {fileID: 0}
+    - target: {fileID: 108260761032616454, guid: 669d1771c65dce449a93708e1ae01071,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 65335
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 669d1771c65dce449a93708e1ae01071, type: 2}
   m_IsPrefabAsset: 0
@@ -21118,6 +21253,11 @@ Prefab:
     - target: {fileID: 1911338960268086, guid: 669d1771c65dce449a93708e1ae01071, type: 2}
       propertyPath: m_TagString
       value: Camera Look Point P3
+      objectReference: {fileID: 0}
+    - target: {fileID: 108260761032616454, guid: 669d1771c65dce449a93708e1ae01071,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 163639
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 669d1771c65dce449a93708e1ae01071, type: 2}

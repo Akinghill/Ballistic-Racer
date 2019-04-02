@@ -52,10 +52,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4267211922121556}
-  - component: {fileID: 114370628988333380}
+  - component: {fileID: 114036203749566406}
   m_Layer: 0
   m_Name: Hyper_Ship
-  m_TagString: Ship
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -535,7 +535,7 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114370628988333380
+--- !u!114 &114036203749566406
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -543,12 +543,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1344304558737176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 047ec3068a67bf34b84c63b1381434a6, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f07b287e0ce52745bc76495765553fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotating: 1
-  rotation: {x: 0, y: 40, z: 0}
-  moving: 0
-  speed: 0
-  pos1: {fileID: 0}
-  pos2: {fileID: 0}
+  rotation: 40
