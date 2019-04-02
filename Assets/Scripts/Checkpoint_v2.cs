@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Checkpoint_v2 : MonoBehaviour {
-    public Transform playerTransform;
+    static Transform playerTransform;
     public Text checkpointNum;
     void Start()
     {
