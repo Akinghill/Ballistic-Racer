@@ -23,18 +23,18 @@ public class MovingPlatform : MonoBehaviour {
 	}
 	void OnTriggerStay (Collider other)
 	{
-		if (other.CompareTag ("Ship")) 
+		if (other.gameObject.transform.parent.tag == "Ship") 
 		{
-			other.gameObject.transform.parent.parent = this.gameObject.transform;
+			other.gameObject.transform.parent.parent.parent = this.gameObject.transform;
 			other.transform.Find("ConfineBox").gameObject.SetActive(true);
 		}
 	}
 
 	void OnTriggerExit (Collider other)
     {
-        if (other.CompareTag("Ship"))
+        if (other.gameObject.transform.parent.tag == "Ship")
         {
-            other.gameObject.transform.parent.parent = null;
+            other.gameObject.transform.parent.parent.parent = null;
 			other.transform.Find("ConfineBox").gameObject.SetActive(false);
         }
 	}

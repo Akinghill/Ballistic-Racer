@@ -95,6 +95,7 @@ public class ShipMovement : MonoBehaviour
     {
         foreach (ParticleSystem particle in thrusterParticle)
         {
+            particle.Play();
             var thrusterParticleMain = particle.main;
             var thrusterParticleTrails = particle.trails;
             if (!boost)

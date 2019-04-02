@@ -12,6 +12,7 @@ public class Laps : MonoBehaviour
     public static int currentLap = 0;
     public Vector3 startPos;
     public int Lap;
+    public int checkPoint;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class Laps : MonoBehaviour
     void Update()
     {
         Lap = currentLap;
+        checkPoint = currentCheckpoint;
         checkpointA = checkPointArray;
     }
 

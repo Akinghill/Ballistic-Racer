@@ -202,15 +202,17 @@ GameObject:
   m_Component:
   - component: {fileID: 4648643422074278}
   - component: {fileID: 54088354492243252}
+  - component: {fileID: 114396129376482084}
   - component: {fileID: 114143190639537360}
   - component: {fileID: 114409938145168828}
   - component: {fileID: 114142459484426216}
   - component: {fileID: 114249936399392228}
   - component: {fileID: 114414122501056710}
   - component: {fileID: 114813194222244180}
+  - component: {fileID: 114346794861638150}
   m_Layer: 0
   m_Name: Invincibility_Ship
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1660,6 +1662,30 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &114346794861638150
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1261881051784646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPointArray:
+  - {fileID: 4083743532204676, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4498948480288466, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4669623257051074, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4236581399299626, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4853850649855278, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4081841055078666, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4493532653450070, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4807985940022510, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4639983031955814, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  startPos: {x: 0, y: 0, z: 0}
+  Lap: 0
+  checkPoint: 0
 --- !u!114 &114388487055319860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1687,6 +1713,21 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114396129376482084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1261881051784646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPointArray: []
+  startPos: {x: 0, y: 0, z: 0}
+  Lap: 0
+  checkPoint: 0
 --- !u!114 &114409938145168828
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2115,6 +2156,7 @@ MonoBehaviour:
   - {fileID: 198200297588805286}
   - {fileID: 198700270425967444}
   - {fileID: 198817127357496290}
+  empController: {fileID: 114241390668042236}
   shipCollider: {fileID: 1788035090692886}
   player: {fileID: 4648643422074278}
   respawnPoint: {fileID: 0}
