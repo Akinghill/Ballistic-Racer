@@ -70,9 +70,10 @@ GameObject:
   - component: {fileID: 4310633920725568}
   - component: {fileID: 33693731684484756}
   - component: {fileID: 64967911913097764}
+  - component: {fileID: 114740259175080602}
   m_Layer: 13
   m_Name: Ship Collider Hyper_Ship
-  m_TagString: Untagged
+  m_TagString: Crash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -606,7 +607,6 @@ GameObject:
   - component: {fileID: 114372005660651920}
   - component: {fileID: 114181557270742880}
   - component: {fileID: 114093420317384104}
-  - component: {fileID: 114829183220049346}
   m_Layer: 0
   m_Name: Hyper_Ship
   m_TagString: Untagged
@@ -891,7 +891,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1287736377336286}
-  m_LocalRotation: {x: 0.17842403, y: -0.000000059604645, z: 0.000000022351742, w: 0.9839538}
+  m_LocalRotation: {x: 0.17842409, y: 0.000000059604638, z: -0, w: 0.98395365}
   m_LocalPosition: {x: 0.0000009536743, y: 6.4285717, z: -11.42859}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000006}
   m_Children: []
@@ -956,7 +956,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1690149707249022}
-  m_LocalRotation: {x: -0.22975287, y: 0.00000014901161, z: -0.00000014156103, w: -0.9732491}
+  m_LocalRotation: {x: -0.22975293, y: 0.00000008940697, z: -0.00000012665987, w: -0.9732491}
   m_LocalPosition: {x: 0.00000047683696, y: 7.5, z: -4.9999986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2286,6 +2286,21 @@ MonoBehaviour:
   damagePerShot: 20
   timeBetweenBullets: 0.15
   range: 100
+--- !u!114 &114740259175080602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1098056116075690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPointArray: []
+  startPos: {x: 0, y: 0, z: 0}
+  Lap: 0
+  checkPoint: 0
 --- !u!114 &114742391091257688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2372,30 +2387,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &114829183220049346
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1812726117545362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkPointArray:
-  - {fileID: 4083743532204676, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4498948480288466, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4669623257051074, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4236581399299626, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4853850649855278, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4081841055078666, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4493532653450070, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4807985940022510, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4639983031955814, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  startPos: {x: 0, y: 0, z: 0}
-  Lap: 0
-  checkPoint: 0
 --- !u!114 &114861958776264408
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Laps : MonoBehaviour
 {
-
     // These Static Variables are accessed in "checkpoint" Script
     public Transform[] checkPointArray;
     public static Transform[] checkpointA;
@@ -13,6 +12,18 @@ public class Laps : MonoBehaviour
     public Vector3 startPos;
     public int Lap;
     public int checkPoint;
+
+    void Awake()
+    {
+        GameObject check = GameObject.FindGameObjectWithTag("Checkpoint");
+        int checkChildren = check.transform.childCount;
+        checkPointArray = new Transform[checkChildren];
+
+        for (int i = 0; i < checkChildren; i++)
+        {
+            checkPointArray[i] = check.transform.GetChild(i);
+        }
+    }
 
     void Start()
     {

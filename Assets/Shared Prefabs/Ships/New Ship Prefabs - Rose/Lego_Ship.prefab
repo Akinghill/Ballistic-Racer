@@ -207,9 +207,10 @@ GameObject:
   - component: {fileID: 4984715605019910}
   - component: {fileID: 33635727481685452}
   - component: {fileID: 64560859007646572}
+  - component: {fileID: 114593634897779776}
   m_Layer: 13
   m_Name: Ship Collider Lego_Ship
-  m_TagString: Untagged
+  m_TagString: Crash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -347,7 +348,6 @@ GameObject:
   - component: {fileID: 114050579480115598}
   - component: {fileID: 114407444842768502}
   - component: {fileID: 114043574213765686}
-  - component: {fileID: 114998046363910478}
   m_Layer: 0
   m_Name: Lego_Ship
   m_TagString: Untagged
@@ -1214,8 +1214,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1091145033333520}
-  m_LocalRotation: {x: 0.22975287, y: -0.0000002682209, z: 0.00000078231096, w: 0.9732491}
-  m_LocalPosition: {x: -0.00000023841858, y: 10, z: -9.999998}
+  m_LocalRotation: {x: 0.2297529, y: -0.00000032782555, z: 0.0000008046627, w: 0.9732491}
+  m_LocalPosition: {x: 0.0000009536739, y: 10, z: -9.999997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4974384511496826}
@@ -1254,8 +1254,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1419848093051762}
-  m_LocalRotation: {x: 0.16018224, y: 0.00000008940697, z: -0.000000007450581, w: 0.9870875}
-  m_LocalPosition: {x: 0.00000011920901, y: 5, z: -14.999997}
+  m_LocalRotation: {x: 0.16018225, y: -0, z: -0, w: 0.98708755}
+  m_LocalPosition: {x: 0.0000019073478, y: 5, z: -14.999995}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000004}
   m_Children:
   - {fileID: 4919042903929530}
@@ -1490,8 +1490,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1493621967093050}
-  m_LocalRotation: {x: -0.22975284, y: 0.0000002682209, z: -0.0000006109476, w: -0.9732491}
-  m_LocalPosition: {x: -0.00000011920929, y: 7.5, z: -4.999999}
+  m_LocalRotation: {x: -0.2297529, y: 0.0000002682209, z: -0.0000006109476, w: -0.9732491}
+  m_LocalPosition: {x: 0.00000047683696, y: 7.5, z: -4.9999986}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4806623709683102}
@@ -1852,8 +1852,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1035617307044116}
-  m_LocalRotation: {x: 0.17842478, y: 0.00000008940697, z: -0.000000007450581, w: 0.9839536}
-  m_LocalPosition: {x: -0.0000004087177, y: 6.428571, z: -11.428574}
+  m_LocalRotation: {x: 0.17842405, y: -0.000000059604638, z: 0.00000002235174, w: 0.98395365}
+  m_LocalPosition: {x: 0.0000009536743, y: 6.4285717, z: -11.42859}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children: []
   m_Father: {fileID: 4711198857521720}
@@ -4155,6 +4155,21 @@ MonoBehaviour:
   particleBoostLifeTime: 0.89
   emp: 0
   normal: {x: 0, y: 0, z: 0}
+--- !u!114 &114593634897779776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1123083031251316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPointArray: []
+  startPos: {x: 0, y: 0, z: 0}
+  Lap: 0
+  checkPoint: 0
 --- !u!114 &114599901116308990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4535,30 +4550,6 @@ MonoBehaviour:
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
---- !u!114 &114998046363910478
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1222668057944974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkPointArray:
-  - {fileID: 4083743532204676, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4498948480288466, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4669623257051074, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4236581399299626, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4853850649855278, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4081841055078666, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4493532653450070, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4807985940022510, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4639983031955814, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  startPos: {x: 0, y: 0, z: 0}
-  Lap: 0
-  checkPoint: 0
 --- !u!120 &120743695192062796
 LineRenderer:
   m_ObjectHideFlags: 1
