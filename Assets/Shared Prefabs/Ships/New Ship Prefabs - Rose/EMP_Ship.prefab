@@ -88,6 +88,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4688445241371474}
   - component: {fileID: 54084559843767128}
+  - component: {fileID: 114771751308234558}
   - component: {fileID: 114996029568501626}
   - component: {fileID: 114021445923775542}
   - component: {fileID: 114292116202322978}
@@ -1032,13 +1033,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1646129451147886}
-  m_LocalRotation: {x: 0.17842478, y: 0.00000008940697, z: -0.000000007450581, w: 0.9839536}
+  m_LocalRotation: {x: 0.0919882, y: 0, z: 0, w: 0.99576014}
   m_LocalPosition: {x: -0.0000004087177, y: 6.428571, z: -11.428574}
-  m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
+  m_LocalScale: {x: 40, y: 1, z: 1.0000005}
   m_Children: []
   m_Father: {fileID: 4688445241371474}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 28.811, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10.556, y: 0, z: 0}
 --- !u!20 &20410519014908230
 Camera:
   m_ObjectHideFlags: 1
@@ -1057,14 +1058,14 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
-    height: 1
+    width: 2
+    height: 2
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 42
   orthographic: 0
   orthographic size: 5
-  m_Depth: 1
+  m_Depth: 10
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 12087
@@ -1101,7 +1102,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 40
+  field of view: 80.3
   orthographic: 0
   orthographic size: 5
   m_Depth: 1
@@ -2358,6 +2359,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: b15477c9c0ea04524a62f3a6252e65de, type: 2}
+--- !u!114 &114771751308234558
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1145275560798312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a117dbc2770b744933cd73427e73f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114811556827789776
 MonoBehaviour:
   m_ObjectHideFlags: 1
