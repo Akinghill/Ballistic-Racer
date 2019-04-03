@@ -19,6 +19,7 @@ public class Laps : MonoBehaviour
         startPos = transform.position;
         currentCheckpoint = 0;
         currentLap = 0;
+       
 
     }
 
