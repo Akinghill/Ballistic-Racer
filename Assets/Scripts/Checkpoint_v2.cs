@@ -8,7 +8,7 @@ public class Checkpoint_v2 : MonoBehaviour {
     public Text checkpointNum;
     void Start()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Crash").transform;
+        //playerTransform = GameObject.FindGameObjectWithTag("Crash").transform;
         if (GameObject.FindGameObjectWithTag("Crash") != null)
         {
             Debug.Log("It has been found.");
