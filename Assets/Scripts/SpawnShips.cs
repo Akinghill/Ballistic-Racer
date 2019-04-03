@@ -22,10 +22,10 @@ public class SpawnShips : MonoBehaviour {
     GameObject ship_P3;
     GameObject ship_P4;
 
-    Camera cam_P1;
-    Camera cam_P2;
-    Camera cam_P3;
-    Camera cam_P4;
+    //Camera cam_P1;
+    //Camera cam_P2;
+    //Camera cam_P3;
+    //Camera cam_P4;
 
     bool keyboard_P1;
     bool keyboard_P2;
@@ -83,10 +83,17 @@ public class SpawnShips : MonoBehaviour {
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 1;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P1;
-                    cam_P1 = shipsInstance[i].GetComponentInChildren<Camera>();
 
-                    cam_P1.rect = new Rect(0.0f, 0.0f, 1.0f, 1.0f);
-                    PlayerOneCullingMask(cam_P1);
+                    Component[] cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                    foreach (Camera cam in cameras)
+                    {
+                        cam.rect = new Rect(0.0f, 0.0f, 1.0f, 1.0f);
+
+                        if (cam.tag != "UI Camera")
+                        {
+                            PlayerOneCullingMask(cam);
+                        }
+                    }
 
                     shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerOneLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
@@ -98,22 +105,23 @@ public class SpawnShips : MonoBehaviour {
                 }
                 else
                 {
-                    shipsInstance[i] = Instantiate(ships[i]) as GameObject;
-                    shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    if (ships[i].name != "Lego_Ship")
+                    {
+                        shipsInstance[i] = Instantiate(ships[i]) as GameObject;
+                        shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
 
-                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
-                    playerHealth[i].respawnPoint = startPositions[i].transform;
+                        playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                        playerHealth[i].respawnPoint = startPositions[i].transform;
 
-                    //shipsInstance[i].GetComponentInChildren<PlayerHealth>().respawnPoint.transform.position = startPositions[i].transform.position;
+                        shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
 
-                    shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
+                        //Disables all child cameras
+                        Component[] Cameras;
+                        Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                        foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
 
-                    //Disables all child cameras
-                    Component[] Cameras;
-                    Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
-                    foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
-
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
+                        shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
+                    }
                 }
             }
         }
@@ -132,10 +140,17 @@ public class SpawnShips : MonoBehaviour {
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 1;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P1;
-                    cam_P1 = shipsInstance[i].GetComponentInChildren<Camera>();
 
-                    cam_P1.rect = new Rect(0.0f, 0.0f, 0.5f, 1.0f);
-                    PlayerOneCullingMask(cam_P1);
+                    Component[] cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                    foreach (Camera cam in cameras)
+                    {
+                        cam.rect = new Rect(0.0f, 0.0f, 0.5f, 1.0f);
+
+                        if (cam.tag != "UI Camera")
+                        {
+                            PlayerOneCullingMask(cam);
+                        }
+                    }
 
                     shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerOneLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
@@ -155,10 +170,17 @@ public class SpawnShips : MonoBehaviour {
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 2;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P2;
-                    cam_P2 = shipsInstance[i].GetComponentInChildren<Camera>();
 
-                    cam_P2.rect = new Rect(0.5f, 0.0f, 0.5f, 1.0f);
-                    PlayerTwoCullingMask(cam_P2);
+                    Component[] cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                    foreach (Camera cam in cameras)
+                    {
+                        cam.rect = new Rect(0.5f, 0.0f, 0.5f, 1.0f);
+
+                        if (cam.tag != "UI Camera")
+                        {
+                            PlayerTwoCullingMask(cam);
+                        }
+                    }
 
                     shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerTwoLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
@@ -170,20 +192,23 @@ public class SpawnShips : MonoBehaviour {
                 }
                 else
                 {
-                    shipsInstance[i] = Instantiate(ships[i]) as GameObject;
-                    shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    if (ships[i].name != "Lego_Ship")
+                    {
+                        shipsInstance[i] = Instantiate(ships[i]) as GameObject;
+                        shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
 
-                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
-                    playerHealth[i].respawnPoint = startPositions[i].transform;
+                        playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                        playerHealth[i].respawnPoint = startPositions[i].transform;
 
-                    shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
+                        shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
 
-                    //Disables all child cameras
-                    Component[] Cameras;
-                    Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
-                    foreach(Camera cam in Cameras) { cam.gameObject.SetActive(false); }
-                
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
+                        //Disables all child cameras
+                        Component[] Cameras;
+                        Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                        foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
+
+                        shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
+                    }
                 }
             }
         }
@@ -202,10 +227,17 @@ public class SpawnShips : MonoBehaviour {
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 1;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P1;
-                    cam_P1 = shipsInstance[i].GetComponentInChildren<Camera>();
 
-                    cam_P1.rect = new Rect(0.0f, 0.5f, 0.5f, 0.5f);
-                    PlayerOneCullingMask(cam_P1);
+                    Component[] cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                    foreach (Camera cam in cameras)
+                    {
+                        cam.rect = new Rect(0.0f, 0.5f, 0.5f, 0.5f);
+
+                        if (cam.tag != "UI Camera")
+                        {
+                            PlayerOneCullingMask(cam);
+                        }
+                    }
 
                     shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerOneLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
@@ -225,10 +257,17 @@ public class SpawnShips : MonoBehaviour {
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 2;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P2;
-                    cam_P2 = shipsInstance[i].GetComponentInChildren<Camera>();
 
-                    cam_P2.rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
-                    PlayerTwoCullingMask(cam_P2);
+                    Component[] cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                    foreach (Camera cam in cameras)
+                    {
+                        cam.rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
+
+                        if (cam.tag != "UI Camera")
+                        {
+                            PlayerTwoCullingMask(cam);
+                        }
+                    }
 
                     shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerTwoLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
@@ -248,10 +287,17 @@ public class SpawnShips : MonoBehaviour {
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 3;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P3;
-                    cam_P3 = shipsInstance[i].GetComponentInChildren<Camera>();
 
-                    cam_P3.rect = new Rect(0.0f, 0.0f, 1.0f, 0.5f);
-                    PlayerThreeCullingMask(cam_P3);
+                    Component[] cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                    foreach (Camera cam in cameras)
+                    {
+                        cam.rect = new Rect(0.0f, 0.0f, 1.0f, 0.5f);
+
+                        if (cam.tag != "UI Camera")
+                        {
+                            PlayerThreeCullingMask(cam);
+                        }
+                    }
 
                     shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerThreeLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
@@ -263,20 +309,23 @@ public class SpawnShips : MonoBehaviour {
                 }
                 else
                 {
-                    shipsInstance[i] = Instantiate(ships[i]) as GameObject;
-                    shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    if (ships[i].name != "Lego_Ship")
+                    {
+                        shipsInstance[i] = Instantiate(ships[i]) as GameObject;
+                        shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
 
-                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
-                    playerHealth[i].respawnPoint = startPositions[i].transform;
+                        playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                        playerHealth[i].respawnPoint = startPositions[i].transform;
 
-                    shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
+                        shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
 
-                    //Disables all child cameras
-                    Component[] Cameras;
-                    Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
-                    foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
+                        //Disables all child cameras
+                        Component[] Cameras;
+                        Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                        foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
 
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
+                        shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
+                    }
                 }
             }
         }
@@ -295,10 +344,17 @@ public class SpawnShips : MonoBehaviour {
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 1;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P1;
-                    cam_P1 = shipsInstance[i].GetComponentInChildren<Camera>();
 
-                    cam_P1.rect = new Rect(0.0f, 0.5f, 0.5f, 0.5f);
-                    PlayerOneCullingMask(cam_P1);
+                    Component[] cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                    foreach (Camera cam in cameras)
+                    {
+                        cam.rect = new Rect(0.0f, 0.5f, 0.5f, 0.5f);
+
+                        if (cam.tag != "UI Camera")
+                        {
+                            PlayerOneCullingMask(cam);
+                        }
+                    }
 
                     shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerOneLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
@@ -318,10 +374,17 @@ public class SpawnShips : MonoBehaviour {
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 2;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P2;
-                    cam_P2 = shipsInstance[i].GetComponentInChildren<Camera>();
 
-                    cam_P2.rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
-                    PlayerTwoCullingMask(cam_P2);
+                    Component[] cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                    foreach (Camera cam in cameras)
+                    {
+                        cam.rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f);
+
+                        if (cam.tag != "UI Camera")
+                        {
+                            PlayerTwoCullingMask(cam);
+                        }
+                    }
 
                     shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerTwoLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
@@ -341,10 +404,17 @@ public class SpawnShips : MonoBehaviour {
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 3;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P3;
-                    cam_P3 = shipsInstance[i].GetComponentInChildren<Camera>();
 
-                    cam_P3.rect = new Rect(0.0f, 0.0f, 0.5f, 0.5f);
-                    PlayerThreeCullingMask(cam_P3);
+                    Component[] cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                    foreach (Camera cam in cameras)
+                    {
+                        cam.rect = new Rect(0.0f, 0.0f, 0.5f, 0.5f);
+
+                        if (cam.tag != "UI Camera")
+                        {
+                            PlayerThreeCullingMask(cam);
+                        }
+                    }
 
                     shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerThreeLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
@@ -364,10 +434,17 @@ public class SpawnShips : MonoBehaviour {
 
                     shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 4;
                     shipsInstance[i].GetComponent<PlayerInput>().usingKeyboard = keyboard_P4;
-                    cam_P4 = shipsInstance[i].GetComponentInChildren<Camera>();
 
-                    cam_P4.rect = new Rect(0.5f, 0.0f, 0.5f, 0.5f);
-                    PlayerFourCullingMask(cam_P4);
+                    Component[] cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                    foreach (Camera cam in cameras)
+                    {
+                        cam.rect = new Rect(0.5f, 0.0f, 0.5f, 0.5f);
+
+                        if (cam.tag != "UI Camera")
+                        {
+                            PlayerFourCullingMask(cam);
+                        }
+                    }
 
                     shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.layer = playerFourLayer;
                     Component[] vCams = shipsInstance[i].GetComponentsInChildren(typeof(Cinemachine.CinemachineVirtualCamera));
@@ -379,30 +456,34 @@ public class SpawnShips : MonoBehaviour {
                 }
                 else
                 {
-                    shipsInstance[i] = Instantiate(ships[i]) as GameObject;
-                    shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    if (ships[i].name != "Lego_Ship")
+                    {
+                        shipsInstance[i] = Instantiate(ships[i]) as GameObject;
+                        shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
 
-                    playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
-                    playerHealth[i].respawnPoint = startPositions[i].transform;
+                        playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
+                        playerHealth[i].respawnPoint = startPositions[i].transform;
 
-                    shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
+                        shipsInstance[i].GetComponent<PlayerInput>().controllerNumber = 0;
 
-                    //Disables all child cameras
-                    Component[] Cameras;
-                    Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
-                    foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
+                        //Disables all child cameras
+                        Component[] Cameras;
+                        Cameras = shipsInstance[i].GetComponentsInChildren<Camera>();
+                        foreach (Camera cam in Cameras) { cam.gameObject.SetActive(false); }
 
-                    shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
+                        shipsInstance[i].GetComponentInChildren(typeof(Cinemachine.CinemachineMixingCamera)).gameObject.SetActive(false);
+                    }
                 }
             }
         }
     }
 
 
-    // Set the culling masks for each camera to everything, and then disable the minimap, ricochet, and the other player's layers
+    // Set the culling masks for each camera to everything, and then disable the UI, minimap, ricochet, and the other player's layers
     void PlayerOneCullingMask(Camera cam)
     {
         cam.cullingMask = -1;
+        cam.cullingMask &= ~(1 << LayerMask.NameToLayer("UI"));
         cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Minimap"));
         cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Ricochet"));
         cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Player2"));
@@ -413,6 +494,7 @@ public class SpawnShips : MonoBehaviour {
     void PlayerTwoCullingMask(Camera cam)
     {
         cam.cullingMask = -1;
+        cam.cullingMask &= ~(1 << LayerMask.NameToLayer("UI"));
         cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Minimap"));
         cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Ricochet"));
         cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Player1"));
@@ -423,6 +505,7 @@ public class SpawnShips : MonoBehaviour {
     void PlayerThreeCullingMask(Camera cam)
     {
         cam.cullingMask = -1;
+        cam.cullingMask &= ~(1 << LayerMask.NameToLayer("UI"));
         cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Minimap"));
         cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Ricochet"));
         cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Player1"));
@@ -433,6 +516,7 @@ public class SpawnShips : MonoBehaviour {
     void PlayerFourCullingMask(Camera cam)
     {
         cam.cullingMask = -1;
+        cam.cullingMask &= ~(1 << LayerMask.NameToLayer("UI"));
         cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Minimap"));
         cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Ricochet"));
         cam.cullingMask &= ~(1 << LayerMask.NameToLayer("Player1"));

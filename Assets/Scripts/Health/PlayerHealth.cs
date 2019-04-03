@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public MeshRenderer[] mesh;
     public MeshCollider[] meshCollider;
     public ParticleSystem[] particles;
+    public EmpController empController;
     public GameObject shipCollider;
 
     public Transform player;
@@ -80,6 +81,17 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             SparkFX.GetComponent<ParticleSystem>().Pause();
+            SparkFX.GetComponent<ParticleSystem>().Clear();
+        }
+
+        if (empController.enabled)
+        {
+            empController.GetComponent<ParticleSystem>().Play();
+        }
+        else
+        {
+            empController.GetComponent<ParticleSystem>().Pause();
+            empController.GetComponent<ParticleSystem>().Clear();
         }
 
         if (isInvulnerable == true)
@@ -106,7 +118,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (transform.position.y <= -160)
         {
-            SparkFX.GetComponent<ParticleSystem>().Pause();
+            //SparkFX.GetComponent<ParticleSystem>().Pause();
             Death();
         }
     }
@@ -156,9 +168,12 @@ public class PlayerHealth : MonoBehaviour
         }
         foreach (ParticleSystem particle in particles)
         {
-            particle.Stop();
+            if (particle.isPlaying || particle.isEmitting)
+            {
+                particle.Stop();
+            }
         }
-		for (int i = 0; i < mesh.Length; i++) 
+        for (int i = 0; i < mesh.Length; i++) 
 		{
 			mesh[i].enabled = false;
 		}

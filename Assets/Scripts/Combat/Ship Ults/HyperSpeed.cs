@@ -37,7 +37,7 @@ public class HyperSpeed : MonoBehaviour
         {
             boosting = true;
             StartCoroutine(SpeedBoost());
-            ultCharge.CancelInvoke("UltimateCharge");
+            //ultCharge.CancelInvoke("UltimateCharge");
 
             ultCharge.ultPower = 0;
             GetComponent<HyperSpeed>().enabled = false;
@@ -55,7 +55,7 @@ public class HyperSpeed : MonoBehaviour
         movement.maxSpeed = maxBoostSpeed;
 
         yield return new WaitForSeconds(boostTime);
-        ultCharge.InvokeRepeating("UltimateCharge", ultCharge.chargeRate, ultCharge.chargeRate);
+        //ultCharge.InvokeRepeating("UltimateCharge", ultCharge.chargeRate, ultCharge.chargeRate);
         movement.acceleration = returnAcceleration;
         movement.maxSpeed = returnMaxSpeed;
         boosting = false;

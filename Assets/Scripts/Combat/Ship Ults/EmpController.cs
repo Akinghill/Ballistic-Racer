@@ -48,7 +48,7 @@ public class EmpController : MonoBehaviour
         if (input.powerUp)
         {
             bursting = true;
-            ultCharge.CancelInvoke("UltimateCharge");
+            //ultCharge.CancelInvoke("UltimateCharge");
             StartCoroutine(EMPBurst());
 
             ultCharge.ultPower = 0;
@@ -76,6 +76,7 @@ public class EmpController : MonoBehaviour
         while (bursting)
         {
             empCollider.enabled = true;
+            electricParticle.Play();
             if (currentRadius < MaxBlastRadius)
             {
                 currentRadius += Time.deltaTime * 100f;
@@ -99,7 +100,7 @@ public class EmpController : MonoBehaviour
             }
             else
             {
-                ultCharge.InvokeRepeating("UltimateCharge", ultCharge.chargeRate, ultCharge.chargeRate);
+                //ultCharge.InvokeRepeating("UltimateCharge", ultCharge.chargeRate, ultCharge.chargeRate);
                 ChangeParticle(0.0001f, 1f);
                 currentRadius = EmpRest;
 
@@ -107,6 +108,7 @@ public class EmpController : MonoBehaviour
             }
             yield return null;
             empCollider.enabled = false;
+            electricParticle.Stop();
             shipPower.GetComponent<EmpController>().enabled = false;
         }
     }

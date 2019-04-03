@@ -510,9 +510,10 @@ GameObject:
   - component: {fileID: 114870808216159844}
   - component: {fileID: 114838613991628938}
   - component: {fileID: 114479225886115416}
+  - component: {fileID: 114936181957880640}
   m_Layer: 0
   m_Name: Mine_Ship
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2225,6 +2226,7 @@ MonoBehaviour:
   - {fileID: 198133555836585568}
   - {fileID: 198241977149467968}
   - {fileID: 198283056043124984}
+  empController: {fileID: 114349179303353362}
   shipCollider: {fileID: 1772134507948074}
   player: {fileID: 4665736950699264}
   respawnPoint: {fileID: 0}
@@ -2472,6 +2474,30 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 4852431696648346}
+--- !u!114 &114936181957880640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1860032808850842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPointArray:
+  - {fileID: 4083743532204676, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4498948480288466, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4669623257051074, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4236581399299626, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4853850649855278, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4081841055078666, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4493532653450070, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4807985940022510, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4639983031955814, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  startPos: {x: 0, y: 0, z: 0}
+  Lap: 0
+  checkPoint: 0
 --- !u!114 &114957341241397194
 MonoBehaviour:
   m_ObjectHideFlags: 1

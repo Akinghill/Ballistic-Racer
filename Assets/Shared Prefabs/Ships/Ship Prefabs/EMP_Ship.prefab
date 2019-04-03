@@ -47,9 +47,10 @@ GameObject:
   - component: {fileID: 114192094821945348}
   - component: {fileID: 114612477954586320}
   - component: {fileID: 114181047256473216}
+  - component: {fileID: 114903419415044280}
   m_Layer: 0
   m_Name: EMP_Ship
-  m_TagString: Untagged
+  m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1871,6 +1872,7 @@ MonoBehaviour:
   - {fileID: 198373445597788188}
   - {fileID: 198714005246970418}
   - {fileID: 198232512345737716}
+  empController: {fileID: 0}
   shipCollider: {fileID: 0}
   player: {fileID: 4715061106082354}
   respawnPoint: {fileID: 0}
@@ -2840,6 +2842,7 @@ MonoBehaviour:
   - {fileID: 198306146599754584}
   - {fileID: 198980768982140840}
   - {fileID: 198576819866778152}
+  empController: {fileID: 0}
   shipCollider: {fileID: 1882889822476936}
   player: {fileID: 4715061106082354}
   respawnPoint: {fileID: 0}
@@ -2896,6 +2899,30 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 1st
+--- !u!114 &114903419415044280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1059410551070870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPointArray:
+  - {fileID: 4083743532204676, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4498948480288466, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4669623257051074, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4236581399299626, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4853850649855278, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4081841055078666, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4493532653450070, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4807985940022510, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 4639983031955814, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  startPos: {x: 0, y: 0, z: 0}
+  Lap: 0
+  checkPoint: 0
 --- !u!114 &114930640103666070
 MonoBehaviour:
   m_ObjectHideFlags: 1
