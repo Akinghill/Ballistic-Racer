@@ -24,7 +24,7 @@ public class ShipAI : MonoBehaviour
 
     PlayerShooting shooting;
 
-    PlayerHealth playerHealth;
+    //PlayerHealth playerHealth;
 
     [HideInInspector] public GameObject pathOne;
     [HideInInspector] public Transform[] m_pathOne;
@@ -43,7 +43,7 @@ public class ShipAI : MonoBehaviour
         //path = FindObjectOfType<AIPath>();
         input = GetComponent<PlayerInput>();
         shooting = GetComponentInChildren<PlayerShooting>();
-        playerHealth = GetComponentInChildren<PlayerHealth>();
+        //playerHealth = GetComponentInChildren<PlayerHealth>();
         shipMovement = GetComponent<ShipMovement>();
 
         //Transform[] pathTransforms = path.GetComponentsInChildren<Transform>();
@@ -83,16 +83,30 @@ public class ShipAI : MonoBehaviour
             m_pathThree[i] = pathThree.transform.GetChild(i);
         }
 
-        randomPath = Random.Range(1, 11);
+        randomPath = Random.Range(1, 13);
     }
 
     void FixedUpdate()
     {
-        if (input.controllerNumber == 0)
+        if (randomPath <= 4)
+        {
+            nodes = m_pathOne;
+        }
+        else if (randomPath > 4 || randomPath <= 8)
+        {
+            nodes = m_pathTwo;
+        }
+        else
+        {
+            nodes = m_pathThree;
+        }
+
+        CheckNodeDistance();
+
+        if (input.controllerNumber == 0 && shipMovement.isRaceStarted)
         {
             Rudder();
             Accelerate();
-            CheckNodeDistance();
             if (input.canShoot)
             {
                 DetectEnemy();
@@ -118,21 +132,21 @@ public class ShipAI : MonoBehaviour
 
     void Rudder()
     {
-        if (playerHealth.currentHealth < 75)
-        {
-            if (randomPath <= 5)
-            {
-                nodes = m_pathTwo;
-            }
-            else
-            {
-                nodes = m_pathThree;
-            }
-        }
-        else
-        {
-            nodes = m_pathOne;
-        }
+        //if (playerHealth.currentHealth < 75)
+        //{
+        //    if (randomPath <= 5)
+        //    {
+        //        nodes = m_pathTwo;
+        //    }
+        //    else
+        //    {
+        //        nodes = m_pathThree;
+        //    }
+        //}
+        //else
+        //{
+        //    nodes = m_pathOne;
+        //}
 
         Vector3 relativeVector = transform.InverseTransformPoint(nodes[currentNode].position);
 
@@ -207,7 +221,7 @@ public class ShipAI : MonoBehaviour
             if (currentNode == nodes.Length - 1)
             {
                 currentNode = 0;
-                randomPath = Random.Range(1, 11);
+                randomPath = Random.Range(1, 13);
             }
             else
             {

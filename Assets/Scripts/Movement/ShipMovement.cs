@@ -65,6 +65,10 @@ public class ShipMovement : MonoBehaviour
 
     [HideInInspector] public Vector3 normal;
 
+    [HideInInspector] public bool isRaceStarted;
+
+    bool isFlippedOver;
+
     void Start()
     {
         playerHealth = GetComponentInChildren<PlayerHealth>();
@@ -72,6 +76,8 @@ public class ShipMovement : MonoBehaviour
         input = GetComponent<PlayerInput>();
 
         drag = acceleration / maxSpeed;
+
+        StartCoroutine(RaceCountdown());
     }
 
     void FixedUpdate()
@@ -79,13 +85,17 @@ public class ShipMovement : MonoBehaviour
         speed = Vector3.Dot(shipRigidbody.velocity, transform.forward);
 
         Hover();
-        if (!emp)
+
+        if (isRaceStarted)
         {
-            Movement();
-        }
-        else
-        {
-            EMPMovement();
+            if (!emp)
+            {
+                Movement();
+            }
+            else
+            {
+                EMPMovement();
+            }
         }
 
         ThrusterParticle();
@@ -140,10 +150,17 @@ public class ShipMovement : MonoBehaviour
         //Vector3 normal;
 
         Ray ray = new Ray(transform.position, -transform.up);
-
         RaycastHit hit;
-
         isOnGround = Physics.Raycast(ray, out hit, maxHoveringDistance, whatIsGround);
+
+        Ray rayUp = new Ray(transform.position, transform.up);
+        RaycastHit hitUp;
+        isFlippedOver = Physics.Raycast(rayUp, out hitUp, 5.0f, whatIsGround);
+
+        if (isFlippedOver)
+        {
+            StartCoroutine(DestroyUpsideDownShip());
+        }
 
         if (isOnGround)
         {
@@ -171,13 +188,13 @@ public class ShipMovement : MonoBehaviour
         Vector3 project = Vector3.ProjectOnPlane(transform.forward, normal);
         Quaternion rotation = Quaternion.LookRotation(project, normal);
 
-        shipRigidbody.MoveRotation(Quaternion.Slerp(shipRigidbody.rotation, rotation, Time.deltaTime * 10f));
+        shipRigidbody.MoveRotation(Quaternion.Slerp(shipRigidbody.rotation, rotation, Time.fixedDeltaTime * 10f));
 
         float angle = bankingAngle * -input.rudder;
 
         Quaternion bodyRotation = transform.rotation * Quaternion.Euler(0f, 0f, angle);
 
-        ship.rotation = Quaternion.Slerp(ship.rotation, bodyRotation, Time.deltaTime * 10f);
+        ship.rotation = Quaternion.Slerp(ship.rotation, bodyRotation, Time.fixedDeltaTime * 10f);
     }
 
     void Movement()
@@ -188,7 +205,7 @@ public class ShipMovement : MonoBehaviour
 
         Quaternion bodyRotation = transform.rotation * Quaternion.Euler(0f, turn, 0f);
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, bodyRotation, Time.deltaTime * 10f);
+        transform.rotation = Quaternion.Lerp(transform.rotation, bodyRotation, Time.fixedDeltaTime * 10f);
 
         float driftSpeed = Vector3.Dot(shipRigidbody.velocity, transform.right);
 
@@ -270,5 +287,17 @@ public class ShipMovement : MonoBehaviour
     void SubtractHealth()
     {
         playerHealth.currentHealth--;
+    }
+
+    IEnumerator RaceCountdown()
+    {
+        yield return new WaitForSeconds(3);
+        isRaceStarted = true;
+    }
+
+    IEnumerator DestroyUpsideDownShip()
+    {
+        yield return new WaitForSeconds(2);
+        playerHealth.Death();
     }
 }

@@ -25,22 +25,16 @@ public class LookAt : MonoBehaviour {
 
         if (PlayerManager.numOfPlayers == 2)
         {
-            OnePlayerSelect();
             TwoPlayerSelect();
         }
 
         if (PlayerManager.numOfPlayers == 3)
         {
-            OnePlayerSelect();
-            TwoPlayerSelect();
             ThreePlayerSelect();
         }
 
         if (PlayerManager.numOfPlayers == 4)
         {
-            OnePlayerSelect();
-            TwoPlayerSelect();
-            ThreePlayerSelect();
             FourPlayerSelect();
         }
     }
