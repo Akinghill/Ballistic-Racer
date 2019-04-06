@@ -67,7 +67,17 @@ public class ShipMovement : MonoBehaviour
 
     [HideInInspector] public bool isRaceStarted;
 
+    float height;
     bool isFlippedOver;
+
+    public Transform backLeft;
+    public Transform backRight;
+    public Transform frontLeft;
+    public Transform frontRight;
+    public RaycastHit lr;
+    public RaycastHit rr;
+    public RaycastHit lf;
+    public RaycastHit rf;
 
     void Start()
     {
@@ -147,8 +157,6 @@ public class ShipMovement : MonoBehaviour
 
     void Hover()
     {
-        //Vector3 normal;
-
         Ray ray = new Ray(transform.position, -transform.up);
         RaycastHit hit;
         isOnGround = Physics.Raycast(ray, out hit, maxHoveringDistance, whatIsGround);
@@ -164,9 +172,35 @@ public class ShipMovement : MonoBehaviour
 
         if (isOnGround)
         {
-            float height = hit.distance;
+            Physics.Raycast(backLeft.position, -transform.up, out lr, maxHoveringDistance, whatIsGround);
+            Physics.Raycast(backRight.position, -transform.up, out rr, maxHoveringDistance, whatIsGround);
+            Physics.Raycast(frontLeft.position, -transform.up, out lf, maxHoveringDistance, whatIsGround);
+            Physics.Raycast(frontRight.position, -transform.up, out rf, maxHoveringDistance, whatIsGround);
 
-            normal = hit.normal.normalized;
+            Debug.DrawRay(backLeft.position, -transform.up * lr.distance);
+            Debug.DrawRay(backRight.position, -transform.up * rr.distance);
+            Debug.DrawRay(frontLeft.position, -transform.up * lf.distance);
+            Debug.DrawRay(frontRight.position, -transform.up * rf.distance);
+
+            // Get the vectors that connect the raycast hit points
+
+            Vector3 a = rr.point - lr.point;
+            Vector3 b = rf.point - rr.point;
+            Vector3 c = lf.point - rf.point;
+            Vector3 d = rr.point - lf.point;
+
+            // Get the normal at each corner
+
+            Vector3 crossBA = Vector3.Cross(b, a);
+            Vector3 crossCB = Vector3.Cross(c, b);
+            Vector3 crossDC = Vector3.Cross(d, c);
+            Vector3 crossAD = Vector3.Cross(a, d);
+
+            // Calculate composite normal
+
+            normal = (crossBA + crossCB + crossDC + crossAD + hit.normal).normalized;
+
+            height = (lr.distance + rr.distance + lf.distance + rf.distance + hit.distance) / 5;
 
             float forceSmooth = hoverSmooth.Seek(hoveringDistance, height);
 
@@ -191,9 +225,7 @@ public class ShipMovement : MonoBehaviour
         shipRigidbody.MoveRotation(Quaternion.Slerp(shipRigidbody.rotation, rotation, Time.fixedDeltaTime * 10f));
 
         float angle = bankingAngle * -input.rudder;
-
         Quaternion bodyRotation = transform.rotation * Quaternion.Euler(0f, 0f, angle);
-
         ship.rotation = Quaternion.Slerp(ship.rotation, bodyRotation, Time.fixedDeltaTime * 10f);
     }
 

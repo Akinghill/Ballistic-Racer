@@ -116,7 +116,7 @@ public class PlayerHealth : MonoBehaviour
 
         healthSlider.value = currentHealth;
 
-        if (transform.position.y <= -160)
+        if (transform.position.y <= -250)
         {
             //SparkFX.GetComponent<ParticleSystem>().Pause();
             Death();
