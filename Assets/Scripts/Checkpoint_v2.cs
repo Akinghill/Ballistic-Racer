@@ -8,7 +8,7 @@ public class Checkpoint_v2 : MonoBehaviour {
     public Text checkpointNum;
     void Start()
     {
-        //playerTransform = GameObject.FindGameObjectWithTag("Crash").transform;
+        playerTransform = GameObject.FindGameObjectWithTag("Crash").transform;
         if (GameObject.FindGameObjectWithTag("Crash") != null)
         {
             Debug.Log("It has been found.");
@@ -21,8 +21,8 @@ public class Checkpoint_v2 : MonoBehaviour {
     {
        
 
-        Debug.Log("This is me", transform);
-        Debug.Log("This is Checkpoint 0", Laps.checkpointA[Laps.currentCheckpoint].transform);
+        //Debug.Log("This is me", transform);
+        //Debug.Log("This is Checkpoint 0", Laps.checkpointA[Laps.currentCheckpoint].transform);
         //Is it the Ship that enters the collider?
         if (other.gameObject.transform.tag != "Crash")
         {
