@@ -86,7 +86,7 @@ public class ShipAI : MonoBehaviour
         randomPath = Random.Range(1, 13);
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (randomPath <= 4)
         {
@@ -148,15 +148,15 @@ public class ShipAI : MonoBehaviour
         //    nodes = m_pathOne;
         //}
 
-        Vector3 relativeVector = transform.InverseTransformPoint(nodes[currentNode].position);
+        //Vector3 relativeVector = transform.InverseTransformPoint(nodes[currentNode].position);
 
-        float directionX;
+        //float directionX;
         //float directionY;
-        float directionZ;
+        //float directionZ;
 
-        directionX = relativeVector.x / relativeVector.magnitude;
+        //directionX = relativeVector.x / relativeVector.magnitude;
         //directionY = relativeVector.y / relativeVector.magnitude;
-        directionZ = relativeVector.z / relativeVector.magnitude;
+        //directionZ = relativeVector.z / relativeVector.magnitude;
 
         Vector3 nextNodeDirection = nodes[currentNode].position - transform.position;
 
@@ -168,13 +168,15 @@ public class ShipAI : MonoBehaviour
             if (angle < -40.0f)
             {
                 input.brake = 1.0f;
-                input.rudder = directionX;
+                //input.rudder = directionX;
+                input.rudder = 0.0f;
                 input.brake = 0.0f;
             }
             else
             {
                 input.brake = 1.0f;
-                input.rudder = -directionZ;
+                //input.rudder = -directionZ;
+                input.rudder = -1.0f;
                 input.brake = 0.0f;
             }
         }
@@ -183,19 +185,22 @@ public class ShipAI : MonoBehaviour
             if (angle > 40.0f)
             {
                 input.brake = 1.0f;
-                input.rudder = directionX;
+                //input.rudder = directionX;
+                input.rudder = 0.0f;
                 input.brake = 0.0f;
             }
             else
             {
                 input.brake = 1.0f;
-                input.rudder = directionZ;
+                //input.rudder = directionZ;
+                input.rudder = 1.0f;
                 input.brake = 0.0f;
             }
         }
         else
         {
-            input.rudder = directionX;
+            //input.rudder = directionX;
+            input.rudder = 0.0f;
         }
 
         // If next node is greater than 2000 away from ship, then boost.

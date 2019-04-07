@@ -77,6 +77,7 @@ public class SpawnShips : MonoBehaviour {
                 {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    shipsInstance[i].GetComponent<Transform>().rotation = startPositions[i].GetComponent<Transform>().rotation;
 
                     playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
                     playerHealth[i].respawnPoint = startPositions[i].transform;
@@ -109,6 +110,7 @@ public class SpawnShips : MonoBehaviour {
                     {
                         shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                         shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                        shipsInstance[i].GetComponent<Transform>().rotation = startPositions[i].GetComponent<Transform>().rotation;
 
                         playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
                         playerHealth[i].respawnPoint = startPositions[i].transform;
@@ -134,6 +136,7 @@ public class SpawnShips : MonoBehaviour {
                 {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    shipsInstance[i].GetComponent<Transform>().rotation = startPositions[i].GetComponent<Transform>().rotation;
 
                     playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
                     playerHealth[i].respawnPoint = startPositions[i].transform;
@@ -164,6 +167,7 @@ public class SpawnShips : MonoBehaviour {
                 {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    shipsInstance[i].GetComponent<Transform>().rotation = startPositions[i].GetComponent<Transform>().rotation;
 
                     playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
                     playerHealth[i].respawnPoint = startPositions[i].transform;
@@ -196,6 +200,7 @@ public class SpawnShips : MonoBehaviour {
                     {
                         shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                         shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                        shipsInstance[i].GetComponent<Transform>().rotation = startPositions[i].GetComponent<Transform>().rotation;
 
                         playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
                         playerHealth[i].respawnPoint = startPositions[i].transform;
@@ -221,6 +226,7 @@ public class SpawnShips : MonoBehaviour {
                 {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    shipsInstance[i].GetComponent<Transform>().rotation = startPositions[i].GetComponent<Transform>().rotation;
 
                     playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
                     playerHealth[i].respawnPoint = startPositions[i].transform;
@@ -251,6 +257,7 @@ public class SpawnShips : MonoBehaviour {
                 {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    shipsInstance[i].GetComponent<Transform>().rotation = startPositions[i].GetComponent<Transform>().rotation;
 
                     playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
                     playerHealth[i].respawnPoint = startPositions[i].transform;
@@ -281,6 +288,7 @@ public class SpawnShips : MonoBehaviour {
                 {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    shipsInstance[i].GetComponent<Transform>().rotation = startPositions[i].GetComponent<Transform>().rotation;
 
                     playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
                     playerHealth[i].respawnPoint = startPositions[i].transform;
@@ -313,6 +321,7 @@ public class SpawnShips : MonoBehaviour {
                     {
                         shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                         shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                        shipsInstance[i].GetComponent<Transform>().rotation = startPositions[i].GetComponent<Transform>().rotation;
 
                         playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
                         playerHealth[i].respawnPoint = startPositions[i].transform;
@@ -338,6 +347,7 @@ public class SpawnShips : MonoBehaviour {
                 {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    shipsInstance[i].GetComponent<Transform>().rotation = startPositions[i].GetComponent<Transform>().rotation;
 
                     playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
                     playerHealth[i].respawnPoint = startPositions[i].transform;
@@ -368,6 +378,7 @@ public class SpawnShips : MonoBehaviour {
                 {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    shipsInstance[i].GetComponent<Transform>().rotation = startPositions[i].GetComponent<Transform>().rotation;
 
                     playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
                     playerHealth[i].respawnPoint = startPositions[i].transform;
@@ -398,6 +409,7 @@ public class SpawnShips : MonoBehaviour {
                 {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    shipsInstance[i].GetComponent<Transform>().rotation = startPositions[i].GetComponent<Transform>().rotation;
 
                     playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
                     playerHealth[i].respawnPoint = startPositions[i].transform;
@@ -428,6 +440,7 @@ public class SpawnShips : MonoBehaviour {
                 {
                     shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                     shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                    shipsInstance[i].GetComponent<Transform>().rotation = startPositions[i].GetComponent<Transform>().rotation;
 
                     playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
                     playerHealth[i].respawnPoint = startPositions[i].transform;
@@ -460,6 +473,7 @@ public class SpawnShips : MonoBehaviour {
                     {
                         shipsInstance[i] = Instantiate(ships[i]) as GameObject;
                         shipsInstance[i].GetComponent<Transform>().position = startPositions[i].GetComponent<Transform>().position;
+                        shipsInstance[i].GetComponent<Transform>().rotation = startPositions[i].GetComponent<Transform>().rotation;
 
                         playerHealth[i] = shipsInstance[i].GetComponentInChildren<PlayerHealth>();
                         playerHealth[i].respawnPoint = startPositions[i].transform;

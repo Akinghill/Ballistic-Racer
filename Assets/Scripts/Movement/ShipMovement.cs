@@ -177,10 +177,10 @@ public class ShipMovement : MonoBehaviour
             Physics.Raycast(frontLeft.position, -transform.up, out lf, maxHoveringDistance, whatIsGround);
             Physics.Raycast(frontRight.position, -transform.up, out rf, maxHoveringDistance, whatIsGround);
 
-            Debug.DrawRay(backLeft.position, -transform.up * lr.distance);
-            Debug.DrawRay(backRight.position, -transform.up * rr.distance);
-            Debug.DrawRay(frontLeft.position, -transform.up * lf.distance);
-            Debug.DrawRay(frontRight.position, -transform.up * rf.distance);
+            Debug.DrawRay(backLeft.position, -transform.up * lr.distance, Color.blue);
+            Debug.DrawRay(backRight.position, -transform.up * rr.distance, Color.blue);
+            Debug.DrawRay(frontLeft.position, -transform.up * lf.distance, Color.blue);
+            Debug.DrawRay(frontRight.position, -transform.up * rf.distance, Color.blue);
 
             // Get the vectors that connect the raycast hit points
 
@@ -224,8 +224,10 @@ public class ShipMovement : MonoBehaviour
 
         shipRigidbody.MoveRotation(Quaternion.Slerp(shipRigidbody.rotation, rotation, Time.fixedDeltaTime * 10f));
 
+        Quaternion shipRotate = Quaternion.FromToRotation(Vector3.up, normal);
+
         float angle = bankingAngle * -input.rudder;
-        Quaternion bodyRotation = transform.rotation * Quaternion.Euler(0f, 0f, angle);
+        Quaternion bodyRotation = transform.rotation * Quaternion.Euler(shipRotate.x, shipRotate.y, angle);
         ship.rotation = Quaternion.Slerp(ship.rotation, bodyRotation, Time.fixedDeltaTime * 10f);
     }
 
@@ -235,9 +237,9 @@ public class ShipMovement : MonoBehaviour
 
         float turn = turnAngle * input.rudder;
 
-        Quaternion bodyRotation = transform.rotation * Quaternion.Euler(0f, turn, 0f);
+        Quaternion bodyRotation = shipRigidbody.rotation * Quaternion.Euler(0f, turn, 0f);
 
-        transform.rotation = Quaternion.Lerp(transform.rotation, bodyRotation, Time.fixedDeltaTime * 10f);
+        shipRigidbody.rotation = Quaternion.Lerp(shipRigidbody.rotation, bodyRotation, Time.fixedDeltaTime * 10f);
 
         float driftSpeed = Vector3.Dot(shipRigidbody.velocity, transform.right);
 
