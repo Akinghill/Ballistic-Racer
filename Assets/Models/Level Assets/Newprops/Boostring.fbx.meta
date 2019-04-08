@@ -37,9 +37,19 @@ ModelImporter:
     4300006: Glow1
     4300008: Cap
     4300010: Cap1
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OpaqueBoostRing
+    second: {fileID: 2100000, guid: 5e848646e9ba7004a82a99c1eef6ade3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TransparentBoostRing
+    second: {fileID: 2100000, guid: 6a387b018cdd9134d8972c0ed7c2218b, type: 2}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -68,7 +78,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 250
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -87,7 +97,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
