@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4275228127869078}
   - component: {fileID: 136212299987426900}
-  - component: {fileID: 114226564733250282}
+  - component: {fileID: 114681839098978668}
   m_Layer: 0
   m_Name: Check
   m_TagString: Check
@@ -41,7 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114226564733250282
+--- !u!114 &114681839098978668
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -49,19 +49,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1138179080028146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e91ff455057b97942b2f6681f658641a, type: 3}
+  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lapNumber: {fileID: 0}
-  racePosition: {fileID: 0}
-  finish: {fileID: 0}
-  lapsCompleted: 0
-  playerHealth: {fileID: 0}
-  checkpointReached: 0
-  miniMapIcon: {fileID: 0}
-  position: 0
-  lastPointDistance: 0
-  pointID: 0
+  checkPointArray:
+  - {fileID: 4394226333652536, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4923133012201446, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4627515579386490, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4250708700892712, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4113409759940956, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4833057000340076, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4147376816921988, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4860516321762242, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4035875373151696, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  startPos: {x: 0, y: 0, z: 0}
+  Lap: 0
+  checkPoint: 0
 --- !u!136 &136212299987426900
 CapsuleCollider:
   m_ObjectHideFlags: 1

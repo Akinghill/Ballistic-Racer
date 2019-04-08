@@ -395,7 +395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4207100985406228}
   - component: {fileID: 136419951934489374}
-  - component: {fileID: 114604673510004744}
+  - component: {fileID: 114405574446276226}
   m_Layer: 0
   m_Name: Check
   m_TagString: Check
@@ -2324,6 +2324,11 @@ MonoBehaviour:
   particleBoostLifeTime: 0.89
   emp: 0
   normal: {x: 0, y: 0, z: 0}
+  isRaceStarted: 0
+  backLeft: {fileID: 0}
+  backRight: {fileID: 0}
+  frontLeft: {fileID: 0}
+  frontRight: {fileID: 0}
 --- !u!114 &114313407764527084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2412,6 +2417,30 @@ MonoBehaviour:
         Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 4874498586817038}
+--- !u!114 &114405574446276226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1498565044743932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPointArray:
+  - {fileID: 4394226333652536, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4923133012201446, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4627515579386490, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4250708700892712, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4113409759940956, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4833057000340076, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4147376816921988, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4860516321762242, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4035875373151696, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  startPos: {x: 0, y: 0, z: 0}
+  Lap: 0
+  checkPoint: 0
 --- !u!114 &114424952090960862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2636,28 +2665,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: b15477c9c0ea04524a62f3a6252e65de, type: 2}
---- !u!114 &114604673510004744
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1498565044743932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e91ff455057b97942b2f6681f658641a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lapNumber: {fileID: 114075217911972150}
-  racePosition: {fileID: 114875789910954504}
-  finish: {fileID: 1868141052678544}
-  lapsCompleted: 0
-  racerFinished: 0
-  playerHealth: {fileID: 114829288538799616}
-  checkpointReached: 0
-  miniMapIcon: {fileID: 1866853391744194}
-  position: 0
-  lastPointDistance: 0
-  pointID: 0
 --- !u!114 &114612477954586320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2911,15 +2918,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkPointArray:
-  - {fileID: 4083743532204676, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4498948480288466, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4669623257051074, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4236581399299626, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4853850649855278, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4081841055078666, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4493532653450070, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4807985940022510, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
-  - {fileID: 4639983031955814, guid: efc65d3cc5b3eb441a1cf2d950501310, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   startPos: {x: 0, y: 0, z: 0}
   Lap: 0
   checkPoint: 0

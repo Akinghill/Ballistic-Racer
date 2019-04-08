@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Checkpoint_v2 : MonoBehaviour {
     static Transform playerTransform;
     public Text checkpointNum;
+    public Text lapNum;
     void Start()
     {
         playerTransform = GameObject.FindGameObjectWithTag("Crash").transform;
@@ -46,6 +47,8 @@ public class Checkpoint_v2 : MonoBehaviour {
                 //If we dont have any Checkpoints left, go back to 0
                 Laps.currentCheckpoint = 0;
             }
+            checkpointNum.text = "Checkpoints: " + Laps.currentCheckpoint;
+            lapNum.text = "Lap Number: " + Laps.currentLap;
         }
 
 

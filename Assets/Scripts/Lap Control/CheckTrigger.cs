@@ -57,8 +57,8 @@ public class CheckTrigger : MonoBehaviour
 
     void Update()
     {
-        /*lastPointDistance = Vector3.Distance(transform.position, lastPoint.transform.position);
-        lapNumber.text = lapsCompleted + "/" + checkpoint.numberOfLaps;
+        lastPointDistance = Vector3.Distance(transform.position, lastPoint.transform.position);
+        //lapNumber.text = lapsCompleted + "/" + checkpoint.numberOfLaps;
         switch(position)
         {
             case 1:
@@ -134,7 +134,7 @@ public class CheckTrigger : MonoBehaviour
         else if (position >= numberOfRacers)
         {
             position = numberOfRacers;
-        }*/
+        }
     }
 
     private void OnTriggerEnter(Collider other)
