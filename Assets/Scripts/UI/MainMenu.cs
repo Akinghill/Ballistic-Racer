@@ -34,6 +34,8 @@ public class MainMenu : MonoBehaviour
 
     public static bool oneKeyboard, twoKeyboard, threeKeyboard, fourKeyboard;
 
+    public static int pOne, pTwo, pThree, pFour;
+
     void Start()
     {
         Reset();

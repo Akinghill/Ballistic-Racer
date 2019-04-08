@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class RacerSelection : MonoBehaviour
 {
     public GameObject[] CharacterList;
-    public GameObject easterEggShip;
+    public bool easterEggShipActivated;
     public int index;
 
     public static string selectedShip_P1;
@@ -19,8 +19,6 @@ public class RacerSelection : MonoBehaviour
 
     public Button[] selectionButtons;
 
-    int pOne, pTwo, pThree, pFour;
-
     void Start()
     {
         //Deactivate the renders.
@@ -29,57 +27,56 @@ public class RacerSelection : MonoBehaviour
             go.SetActive(false);
         }
 
-        easterEggShip.SetActive(false);
-
         // Activate the render for the first index.
-
         if (CharacterList[0])
             CharacterList[0].SetActive(true);
-
     }
 
     void Update()
     {
-        if (MainMenu.p1_Confirm)
-        {
-            if (pOne == index && playerNumber != 1)
-            {
-                CharacterList[pOne].SetActive(false);
-                index++;
-                CharacterList[index].SetActive(true);
-            }
-        }
-        else if (playerNumber == 1)
+        if (playerNumber == 1 && !MainMenu.p1_Confirm)
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                CharacterList[index].SetActive(false);
-                easterEggShip.SetActive(true);
+                easterEggShipActivated = true;
             }
         }
+
+        if (MainMenu.p1_Confirm)
+        {
+            if (MainMenu.pOne == index && playerNumber != 1)
+            {
+                CharacterList[MainMenu.pOne].SetActive(false);
+                index++;
+                CharacterList[index].SetActive(true);
+            }
+        }
+
         if (MainMenu.p2_Confirm)
         {
-            if (pTwo == index && playerNumber != 2)
+            if (MainMenu.pTwo == index && playerNumber != 2)
             {
-                CharacterList[pTwo].SetActive(false);
+                CharacterList[MainMenu.pTwo].SetActive(false);
                 index++;
                 CharacterList[index].SetActive(true);
             }
         }
+
         if (MainMenu.p3_Confirm)
         {
-            if (pThree == index && playerNumber != 3)
+            if (MainMenu.pThree == index && playerNumber != 3)
             {
-                CharacterList[pThree].SetActive(false);
+                CharacterList[MainMenu.pThree].SetActive(false);
                 index++;
                 CharacterList[index].SetActive(true);
             }
         }
+
         if (MainMenu.p4_Confirm)
         {
-            if (pFour == index && playerNumber != 4)
+            if (MainMenu.pFour == index && playerNumber != 4)
             {
-                CharacterList[pFour].SetActive(false);
+                CharacterList[MainMenu.pFour].SetActive(false);
                 index++;
                 CharacterList[index].SetActive(true);
             }
@@ -88,92 +85,112 @@ public class RacerSelection : MonoBehaviour
 
     public void ToggleLeft()
     {
-        if (easterEggShip.activeInHierarchy)
-        {
-            easterEggShip.SetActive(false);
-        }
         // Toggle off current model
         CharacterList[index].SetActive(false);
 
         index--;
+
         if (MainMenu.p1_Confirm)
         {
-            if (pOne == index)
+            if (MainMenu.pOne == index)
             {
-                index--;
+                ToggleLeft();
             }
         }
+
         if (MainMenu.p2_Confirm)
         {
-            if (pTwo == index)
+            if (MainMenu.pTwo == index)
             {
-                index--;
+                ToggleLeft();
             }
         }
+
         if (MainMenu.p3_Confirm)
         {
-            if (pThree == index)
+            if (MainMenu.pThree == index)
             {
-                index--;
+                ToggleLeft();
             }
         }
+
         if (MainMenu.p4_Confirm)
         {
-            if (pFour == index)
+            if (MainMenu.pFour == index)
             {
-                index--;
+                ToggleLeft();
             }
         }
+
         if (index < 0)
         {
             index = CharacterList.Length - 1;
         }
+
+        if (CharacterList[index].name == "Lego_Ship")
+        {
+            if (!easterEggShipActivated)
+            {
+                ToggleLeft();
+            }
+        }
+
         //Toggle on current model
         CharacterList[index].SetActive(true);
     }
 
     public void ToggleRight()
     {
-        if (easterEggShip.activeInHierarchy)
-        {
-            easterEggShip.SetActive(false);
-        }
         // Toggle off current model
         CharacterList[index].SetActive(false);
 
         index++;
+
         if (MainMenu.p1_Confirm)
         {
-            if (pOne == index)
+            if (MainMenu.pOne == index)
             {
-                index++;
+                ToggleRight();
             }
         }
+
         if (MainMenu.p2_Confirm)
         {
-            if (pTwo == index)
+            if (MainMenu.pTwo == index)
             {
-                index++;
+                ToggleRight();
             }
         }
+
         if (MainMenu.p3_Confirm)
         {
-            if (pThree == index)
+            if (MainMenu.pThree == index)
             {
-                index++;
+                ToggleRight();
             }
         }
+
         if (MainMenu.p4_Confirm)
         {
-            if (pFour == index)
+            if (MainMenu.pFour == index)
             {
-                index++;
+                ToggleRight();
             }
         }
+
         if (index == CharacterList.Length)
         {
             index = 0;
         }
+
+        if (CharacterList[index].name == "Lego_Ship")
+        {
+            if (!easterEggShipActivated)
+            {
+                ToggleRight();
+            }
+        }
+
         //Toggle on current model
         CharacterList[index].SetActive(true);
     }
@@ -183,35 +200,30 @@ public class RacerSelection : MonoBehaviour
         {
             button.interactable = false;
         }
+
         if (playerNumber == 1)
         {
-            if (easterEggShip.activeInHierarchy)
-            {
-                selectedShip_P1 = easterEggShip.name;
-            }
-            else
-            {
-                selectedShip_P1 = CharacterList[index].name;
-                pOne = index;
-            }
+            selectedShip_P1 = CharacterList[index].name;
+            MainMenu.pOne = index;
         }
+
         if (playerNumber == 2)
         {
             selectedShip_P2 = CharacterList[index].name;
-            pTwo = index;
+            MainMenu.pTwo = index;
         }
+
         if (playerNumber == 3)
         {
             selectedShip_P3 = CharacterList[index].name;
-            pThree = index;
+            MainMenu.pThree = index;
         }
+
         if (playerNumber == 4)
         {
             selectedShip_P4 = CharacterList[index].name;
-            pFour = index;
+            MainMenu.pFour = index;
         }
-        //selectedShip_P1 = CharacterList[index].name;
-        //SceneManager.LoadScene("Track_1");
     }
 
     public void Back()
@@ -220,8 +232,16 @@ public class RacerSelection : MonoBehaviour
         {
             button.interactable = true;
         }
+
         CharacterList[index].SetActive(false);
         index = 0;
         CharacterList[index].SetActive(true);
+
+        easterEggShipActivated = false;
+
+        MainMenu.pOne = 0;
+        MainMenu.pTwo = 0;
+        MainMenu.pThree = 0;
+        MainMenu.pFour = 0;
     }
 }
