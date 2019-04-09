@@ -24,7 +24,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Pause"))
         {
             if (GameIsPaused)
             {
