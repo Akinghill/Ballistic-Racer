@@ -8,12 +8,12 @@ public class Laps : MonoBehaviour
     public Transform[] checkPointArray;
     public static Transform[] checkpointA;
     public static int currentCheckpoint = 0;
-    public static int currentLap = 0;
+    public static int currentLap = 1;
     public Vector3 startPos;
     public int Lap;
     public int checkPoint;
 
-    void Awake()
+    /*void Awake()
     {
         GameObject check = GameObject.FindGameObjectWithTag("Checkpoint");
         int checkChildren = check.transform.childCount;
@@ -23,7 +23,7 @@ public class Laps : MonoBehaviour
         {
             checkPointArray[i] = check.transform.GetChild(i);
         }
-    }
+    }*/
 
     void Start()
     {

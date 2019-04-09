@@ -440,7 +440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4149289351923322}
   - component: {fileID: 136381060656257696}
-  - component: {fileID: 114684856366080446}
+  - component: {fileID: 114853196850869698}
   m_Layer: 0
   m_Name: Check
   m_TagString: Check
@@ -2592,28 +2592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114684856366080446
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1468956853020300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e91ff455057b97942b2f6681f658641a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lapNumber: {fileID: 114701397760231024}
-  racePosition: {fileID: 114277100783359250}
-  finish: {fileID: 1077390363340030}
-  lapsCompleted: 0
-  racerFinished: 0
-  playerHealth: {fileID: 114192317597915130}
-  checkpointReached: 0
-  miniMapIcon: {fileID: 1634084203096754}
-  position: 0
-  lastPointDistance: 0
-  pointID: 0
 --- !u!114 &114701397760231024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2875,6 +2853,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 114192317597915130}
   ReflectCollider: {fileID: 135080303442100594}
+--- !u!114 &114853196850869698
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1468956853020300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPointArray:
+  - {fileID: 4422707427462280, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  - {fileID: 4657326997282968, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  - {fileID: 4954211121617256, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  - {fileID: 4507677184002172, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  - {fileID: 4550978604332366, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  - {fileID: 4486324447511552, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  - {fileID: 4021905337399768, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  - {fileID: 4944541486678774, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  - {fileID: 4456167846076404, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  startPos: {x: 0, y: 0, z: 0}
+  Lap: 0
+  checkPoint: 0
 --- !u!114 &114869536406825614
 MonoBehaviour:
   m_ObjectHideFlags: 1

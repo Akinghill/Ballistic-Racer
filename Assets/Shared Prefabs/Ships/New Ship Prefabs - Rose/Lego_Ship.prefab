@@ -189,10 +189,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4962437370601396}
   - component: {fileID: 136298104081812924}
-  - component: {fileID: 114493309024238178}
+  - component: {fileID: 114172963183898822}
   m_Layer: 0
   m_Name: Check
-  m_TagString: Check
+  m_TagString: Crash
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3777,6 +3777,30 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
+--- !u!114 &114172963183898822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1109258073425414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPointArray:
+  - {fileID: 4422707427462280, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  - {fileID: 4657326997282968, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  - {fileID: 4954211121617256, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  - {fileID: 4507677184002172, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  - {fileID: 4550978604332366, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  - {fileID: 4486324447511552, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  - {fileID: 4021905337399768, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  - {fileID: 4944541486678774, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  - {fileID: 4456167846076404, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  startPos: {x: 0, y: 0, z: 0}
+  Lap: 0
+  checkPoint: 0
 --- !u!114 &114189514849046464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4149,28 +4173,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114493309024238178
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1109258073425414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e91ff455057b97942b2f6681f658641a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lapNumber: {fileID: 114428824596004432}
-  racePosition: {fileID: 114078346607454222}
-  finish: {fileID: 1064152963872672}
-  lapsCompleted: 0
-  racerFinished: 0
-  playerHealth: {fileID: 114367070943782094}
-  checkpointReached: 0
-  miniMapIcon: {fileID: 1418586969577578}
-  position: 0
-  lastPointDistance: 0
-  pointID: 0
 --- !u!114 &114501174192155240
 MonoBehaviour:
   m_ObjectHideFlags: 1

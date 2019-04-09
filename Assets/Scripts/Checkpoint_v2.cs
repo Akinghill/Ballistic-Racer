@@ -14,7 +14,7 @@ public class Checkpoint_v2 : MonoBehaviour {
         {
             Debug.Log("It has been found.");
         }
-       
+        
 
     }
 
@@ -36,7 +36,7 @@ public class Checkpoint_v2 : MonoBehaviour {
             //Check so we dont exceed our checkpoint quantity
             if (Laps.currentCheckpoint + 1 < Laps.checkpointA.Length)
             {
-                Debug.Log("You just passed a checkpoint");
+                //Debug.Log("You just passed a checkpoint");
                 //Add to currentLap if currentCheckpoint is 0
                 if (Laps.currentCheckpoint == 0)
                     Laps.currentLap++;
@@ -47,8 +47,8 @@ public class Checkpoint_v2 : MonoBehaviour {
                 //If we dont have any Checkpoints left, go back to 0
                 Laps.currentCheckpoint = 0;
             }
-            checkpointNum.text = "Checkpoints: " + Laps.currentCheckpoint;
-            lapNum.text = "Lap Number: " + Laps.currentLap;
+            checkpointNum.text = "Checkpoints:" + Laps.currentCheckpoint;
+            lapNum.text = "Lap Number:" + Laps.currentLap;
         }
 
 
