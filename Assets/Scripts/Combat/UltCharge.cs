@@ -16,9 +16,7 @@ public class UltCharge : MonoBehaviour {
     public Texture hyperTex;
 
     public Texture invulnTex;
-
-    public Texture reflectTex;
-
+    
     public int ultPower;
 
     public int ultPowerMax;
@@ -81,7 +79,7 @@ public class UltCharge : MonoBehaviour {
             {
                 ultPower = ultPowerMax;
                 ultimateSlider.value = ultPowerMax;
-                powerUpNum = Random.Range(0, 4);
+                powerUpNum = Random.Range(0, 3);
                 if (powerUpNum == 0)
                 {
                     GetComponent<Invulnerability>().enabled = true;
@@ -105,14 +103,6 @@ public class UltCharge : MonoBehaviour {
                     GetComponent<HyperSpeed>().enabled = true;
                     reflectCollider.GetComponent<ReflectorShield>().enabled = false;
                     ultPic.texture = hyperTex;
-                }
-                if (powerUpNum == 3)
-                {
-                    GetComponent<Invulnerability>().enabled = false;
-                    empParticles.GetComponent<EmpController>().enabled = false;
-                    GetComponent<HyperSpeed>().enabled = false;
-                    reflectCollider.GetComponent<ReflectorShield>().enabled = true;
-                    ultPic.texture = reflectTex;
                 }
             }
         }
