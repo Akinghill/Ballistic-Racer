@@ -10461,7 +10461,6 @@ GameObject:
   - component: {fileID: 1421310174}
   - component: {fileID: 1421310173}
   - component: {fileID: 1421310172}
-  - component: {fileID: 1421310176}
   m_Layer: 0
   m_Name: Fog
   m_TagString: Untagged
@@ -10538,19 +10537,6 @@ Transform:
   m_Father: {fileID: 339279309}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1421310176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1421310171}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db4b421c51e98394680193c97cc0c28d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: 0.1
-  mat: {fileID: 2100000, guid: 1cc9441e1e42e4dd99c8e1d4a505e981, type: 2}
 --- !u!1 &1434538731
 GameObject:
   m_ObjectHideFlags: 0
