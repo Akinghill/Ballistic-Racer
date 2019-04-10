@@ -79,6 +79,12 @@ public class ShipMovement : MonoBehaviour
     public RaycastHit lf;
     public RaycastHit rf;
 
+    double speed2;
+
+    double hurt;
+
+    Vector3 lastPosition = Vector3.zero;
+
     void Start()
     {
         playerHealth = GetComponentInChildren<PlayerHealth>();
@@ -93,6 +99,8 @@ public class ShipMovement : MonoBehaviour
     void FixedUpdate()
     {
         speed = Vector3.Dot(shipRigidbody.velocity, transform.forward);
+        speed2 = (transform.position - lastPosition).magnitude;
+        lastPosition = transform.position;
 
         Hover();
 
@@ -271,13 +279,13 @@ public class ShipMovement : MonoBehaviour
 
         if (input.brake <= 0)
         {
-            if (input.boost && playerHealth.currentHealth > 10)
+            if (input.boost && playerHealth.currentNRG > 1)
             {
                 float thruster = boostAcceleration * 1f - drag * Mathf.Clamp(speed, 0f, maxBoostSpeed);
                 shipRigidbody.AddForce(transform.forward * thruster, ForceMode.Acceleration);
                 if (!boost)
                 {
-                    InvokeRepeating("SubtractHealth", 0f, boostEnergyDrain);
+                    InvokeRepeating("SubtractNRG", 0f, boostEnergyDrain);
                     Debug.Log("Boost");
                     boost = true;
                 }
@@ -323,6 +331,11 @@ public class ShipMovement : MonoBehaviour
         playerHealth.currentHealth--;
     }
 
+    void SubtractNRG()
+    {
+        playerHealth.currentNRG--;
+    }
+
     IEnumerator RaceCountdown()
     {
         yield return new WaitForSeconds(3);
@@ -334,4 +347,12 @@ public class ShipMovement : MonoBehaviour
         yield return new WaitForSeconds(2);
         playerHealth.Death();
     }
+
+     void OnCollisionEnter(Collider col) {
+         if (col.CompareTag(""))
+         {
+            hurt = speed2 * .7;
+            playerHealth.currentHealth--;
+         }
+     }
 }
