@@ -23,7 +23,7 @@ public class EnergyRing : MonoBehaviour
         {
             if (!deactivated)
             {
-                other.GetComponentInParent<PlayerHealth>().currentHealth += energyAmmount;
+                other.GetComponentInParent<PlayerHealth>().currentNRG += energyAmmount;
                 StartCoroutine(ActivationTime());
             }
         }
