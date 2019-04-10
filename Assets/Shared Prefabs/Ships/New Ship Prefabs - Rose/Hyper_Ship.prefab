@@ -753,7 +753,7 @@ GameObject:
   - component: {fileID: 136801658785678592}
   m_Layer: 0
   m_Name: Check
-  m_TagString: Crash
+  m_TagString: Check
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1025,7 +1025,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1287736377336286}
-  m_LocalRotation: {x: 0.17842476, y: -0, z: 0.0000000074505797, w: 0.98395354}
+  m_LocalRotation: {x: 0.17842485, y: 0.00000008940697, z: -0.000000014901161, w: 0.9839536}
   m_LocalPosition: {x: -0.0000004087177, y: 6.428571, z: -11.428574}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000006}
   m_Children: []
@@ -1103,7 +1103,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1690149707249022}
-  m_LocalRotation: {x: -0.22975284, y: 0.00000014901161, z: -0.00000014901161, w: -0.9732491}
+  m_LocalRotation: {x: -0.22975287, y: 0.00000008940697, z: -0.00000012665987, w: -0.9732491}
   m_LocalPosition: {x: -0.00000011920929, y: 7.5, z: -4.999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1173,7 +1173,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149515025717174}
-  m_LocalRotation: {x: 0.22975284, y: -0.00000014901161, z: 0.00000017136335, w: 0.9732491}
+  m_LocalRotation: {x: 0.22975287, y: -0.00000008940697, z: 0.00000014156103, w: 0.9732491}
   m_LocalPosition: {x: -0.00000023841858, y: 10, z: -9.999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2490,16 +2490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkPointArray:
-  - {fileID: 4422707427462280, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  - {fileID: 4657326997282968, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  - {fileID: 4954211121617256, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  - {fileID: 4507677184002172, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  - {fileID: 4550978604332366, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  - {fileID: 4486324447511552, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  - {fileID: 4021905337399768, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  - {fileID: 4944541486678774, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  - {fileID: 4456167846076404, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
+  checkPointArray: []
   startPos: {x: 0, y: 0, z: 0}
   Lap: 0
   checkPoint: 0
