@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 114895702815317224}
   - component: {fileID: 114168716250843048}
   - component: {fileID: 114963204446587016}
+  - component: {fileID: 114958470393795636}
   m_Layer: 5
   m_Name: Pause_Canvas
   m_TagString: Untagged
@@ -256,7 +257,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1857799327421562
 GameObject:
   m_ObjectHideFlags: 1
@@ -1087,6 +1088,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Main Menu
+--- !u!114 &114958470393795636
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1259947805495810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b83df83f229d48941ba10469557d8935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedButton: {fileID: 114347409190543852}
 --- !u!114 &114963204446587016
 MonoBehaviour:
   m_ObjectHideFlags: 1
