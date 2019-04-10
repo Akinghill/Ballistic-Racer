@@ -32,7 +32,17 @@ ModelImporter:
     4300004: Glow1
     4300006: Cap
     4300008: Cap1
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: OpaqueBoostRing
+    second: {fileID: 2100000, guid: 3747e8815de02574e8a9f0e55c58a470, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TransparentBoostRing
+    second: {fileID: 2100000, guid: 4da76b9980a8e834ba821b3a63d235fa, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
