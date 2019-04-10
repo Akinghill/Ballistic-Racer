@@ -14,13 +14,13 @@ public class SpawnShips : MonoBehaviour {
     string selectedRacer_P3;
     string selectedRacer_P4;
 
-    GameObject[] spawnOrder;
+    //GameObject[] spawnOrder;
     GameObject[] shipsInstance;
 
-    GameObject ship_P1;
-    GameObject ship_P2;
-    GameObject ship_P3;
-    GameObject ship_P4;
+    //GameObject ship_P1;
+    //GameObject ship_P2;
+    //GameObject ship_P3;
+    //GameObject ship_P4;
 
     //Camera cam_P1;
     //Camera cam_P2;
