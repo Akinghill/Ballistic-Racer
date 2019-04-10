@@ -13,7 +13,7 @@ public class Laps : MonoBehaviour
     public int Lap;
     public int checkPoint;
 
-    /*void Awake()
+    void Awake()
     {
         GameObject check = GameObject.FindGameObjectWithTag("Checkpoint");
         int checkChildren = check.transform.childCount;
@@ -23,7 +23,7 @@ public class Laps : MonoBehaviour
         {
             checkPointArray[i] = check.transform.GetChild(i);
         }
-    }*/
+    }
 
     void Start()
     {

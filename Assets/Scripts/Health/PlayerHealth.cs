@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     public int startingNRG = 100;
     public int currentNRG;
     public Slider healthSlider;
+    public Slider energySlider;
     public Image damageImage;
     public float flashSpeed = 5f;
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
@@ -52,6 +53,7 @@ public class PlayerHealth : MonoBehaviour
         rb = GetComponentInParent<Rigidbody>();
         meshCollider = GetComponentsInChildren<MeshCollider>();
         currentHealth = startingHealth;
+        currentNRG = startingNRG;
         ricochetLayer = LayerMask.NameToLayer("Ricochet");
         shootableLayer = LayerMask.NameToLayer("Shootable");
         ultimate = GetComponentInParent<UltCharge>();
@@ -117,6 +119,7 @@ public class PlayerHealth : MonoBehaviour
         damaged = false;
 
         healthSlider.value = currentHealth;
+        energySlider.value = currentNRG;
 
         if (transform.position.y <= -250)
         {
