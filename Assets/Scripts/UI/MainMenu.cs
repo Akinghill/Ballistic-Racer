@@ -78,6 +78,7 @@ public class MainMenu : MonoBehaviour
             if (p1_Confirm)
             {
                 SceneManager.LoadScene(level);
+                DontDestroy.menuMusic.GetComponent<AudioSource>().Stop();
             }
         }
         if (playerManager.twoPlayer)
@@ -85,6 +86,7 @@ public class MainMenu : MonoBehaviour
             if (p1_Confirm && p2_Confirm)
             {
                 SceneManager.LoadScene(level);
+                DontDestroy.menuMusic.GetComponent<AudioSource>().Stop();
             }
         }
         if (playerManager.threePlayer)
@@ -92,6 +94,7 @@ public class MainMenu : MonoBehaviour
             if (p1_Confirm && p2_Confirm && p3_Confirm)
             {
                 SceneManager.LoadScene(level);
+                DontDestroy.menuMusic.GetComponent<AudioSource>().Stop();
             }
         }
         if (playerManager.fourPlayer)
@@ -99,6 +102,7 @@ public class MainMenu : MonoBehaviour
             if (p1_Confirm && p2_Confirm && p3_Confirm && p4_Confirm)
             {
                 SceneManager.LoadScene(level);
+                DontDestroy.menuMusic.GetComponent<AudioSource>().Stop();
             }
         }
 

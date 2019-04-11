@@ -53,6 +53,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(mainMenu);
+        DontDestroy.menuMusic.GetComponent<AudioSource>().Play();
     }
 
     public void ExitGame()
