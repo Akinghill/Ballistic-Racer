@@ -15,7 +15,7 @@ public class TitleCard : MonoBehaviour {
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("MainMenu");
         asyncOperation.allowSceneActivation = false;
 
-        yield return new WaitForSeconds(10.0f);
+        yield return new WaitForSeconds(13.0f);
 
         asyncOperation.allowSceneActivation = true;
     }
