@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
     public GameObject threePlayerShipSelect;
     public GameObject fourPlayerShipSelect;
     //AudioSource audioData;
-    public string level;
+    public static string level;
 
     public PlayerManager playerManager;
 
@@ -36,12 +36,15 @@ public class MainMenu : MonoBehaviour
 
     public static int pOne, pTwo, pThree, pFour;
 
+    public static bool isShipSelected;
+
     void Start()
     {
         Reset();
        // audioData = GetComponent<AudioSource>();
         //audioData.Play(0);
         Debug.Log("started");
+        StartCoroutine(LoadScene());
     }
 
     void Update()
@@ -77,7 +80,8 @@ public class MainMenu : MonoBehaviour
         {
             if (p1_Confirm)
             {
-                SceneManager.LoadScene(level);
+                isShipSelected = true;
+                //SceneManager.LoadScene(level);
                 DontDestroy.menuMusic.GetComponent<AudioSource>().Stop();
             }
         }
@@ -85,7 +89,8 @@ public class MainMenu : MonoBehaviour
         {
             if (p1_Confirm && p2_Confirm)
             {
-                SceneManager.LoadScene(level);
+                isShipSelected = true;
+                //SceneManager.LoadScene(level);
                 DontDestroy.menuMusic.GetComponent<AudioSource>().Stop();
             }
         }
@@ -93,7 +98,8 @@ public class MainMenu : MonoBehaviour
         {
             if (p1_Confirm && p2_Confirm && p3_Confirm)
             {
-                SceneManager.LoadScene(level);
+                isShipSelected = true;
+                //SceneManager.LoadScene(level);
                 DontDestroy.menuMusic.GetComponent<AudioSource>().Stop();
             }
         }
@@ -101,7 +107,8 @@ public class MainMenu : MonoBehaviour
         {
             if (p1_Confirm && p2_Confirm && p3_Confirm && p4_Confirm)
             {
-                SceneManager.LoadScene(level);
+                isShipSelected = true;
+                //SceneManager.LoadScene(level);
                 DontDestroy.menuMusic.GetComponent<AudioSource>().Stop();
             }
         }
@@ -291,7 +298,19 @@ public class MainMenu : MonoBehaviour
             p2_Confirm = false;
             p3_Confirm = false;
             p4_Confirm = false;
+
+            isShipSelected = false;
         }
+    }
+
+    IEnumerator LoadScene()
+    {
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("LoadTrack");
+        asyncOperation.allowSceneActivation = false;
+
+        yield return new WaitUntil(() => isShipSelected);
+
+        asyncOperation.allowSceneActivation = true;
     }
 
     public void ExitGame()

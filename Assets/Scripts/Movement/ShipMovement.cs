@@ -79,6 +79,8 @@ public class ShipMovement : MonoBehaviour
     public RaycastHit lf;
     public RaycastHit rf;
 
+    LayerMask whatAreWalls;
+
     double speed2;
 
     double hurt;
@@ -90,6 +92,7 @@ public class ShipMovement : MonoBehaviour
         playerHealth = GetComponentInChildren<PlayerHealth>();
         shipRigidbody = GetComponent<Rigidbody>();
         input = GetComponent<PlayerInput>();
+        whatAreWalls = LayerMask.GetMask("Walls");
 
         drag = acceleration / maxSpeed;
 
@@ -348,8 +351,8 @@ public class ShipMovement : MonoBehaviour
         playerHealth.Death();
     }
 
-     void OnCollisionEnter(Collider col) {
-         if (col.CompareTag(""))
+     void OnCollisionEnter(Collision col) {
+         if (col.gameObject.layer == whatAreWalls)
          {
             hurt = speed2 * .7;
             playerHealth.currentHealth--;
