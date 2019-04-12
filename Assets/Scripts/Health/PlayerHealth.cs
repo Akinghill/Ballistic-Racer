@@ -78,6 +78,11 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = startingHealth;
         }
 
+        if (currentNRG > startingNRG)
+        {
+            currentNRG = startingNRG;
+        }
+
         if(currentHealth < 50)
         {
             SparkFX.GetComponent<ParticleSystem>().Play();
