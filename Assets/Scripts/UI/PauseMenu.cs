@@ -17,9 +17,13 @@ public class PauseMenu : MonoBehaviour
 
     public string mainMenu;
 
+    bool loadMainMenu;
+
     void Start()
     {
+        loadMainMenu = false;
         GameIsPaused = false;
+        StartCoroutine(LoadScene());
     }
 
     void Update()
@@ -52,7 +56,8 @@ public class PauseMenu : MonoBehaviour
     public void StartMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene(mainMenu);
+        loadMainMenu = true;
+        MainMenu.level = "MainMenu";
         DontDestroy.menuMusic.GetComponent<AudioSource>().Play();
     }
 
@@ -77,5 +82,15 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+    }
+
+    IEnumerator LoadScene()
+    {
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("LoadingScene");
+        asyncOperation.allowSceneActivation = false;
+
+        yield return new WaitUntil(() => loadMainMenu);
+
+        asyncOperation.allowSceneActivation = true;
     }
 }

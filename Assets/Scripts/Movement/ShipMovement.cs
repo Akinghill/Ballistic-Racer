@@ -188,10 +188,10 @@ public class ShipMovement : MonoBehaviour
             Physics.Raycast(frontLeft.position, -transform.up, out lf, maxHoveringDistance, whatIsGround);
             Physics.Raycast(frontRight.position, -transform.up, out rf, maxHoveringDistance, whatIsGround);
 
-            Debug.DrawRay(backLeft.position, -transform.up * lr.distance, Color.blue);
-            Debug.DrawRay(backRight.position, -transform.up * rr.distance, Color.blue);
-            Debug.DrawRay(frontLeft.position, -transform.up * lf.distance, Color.blue);
-            Debug.DrawRay(frontRight.position, -transform.up * rf.distance, Color.blue);
+            //Debug.DrawRay(backLeft.position, -transform.up * lr.distance, Color.blue);
+            //Debug.DrawRay(backRight.position, -transform.up * rr.distance, Color.blue);
+            //Debug.DrawRay(frontLeft.position, -transform.up * lf.distance, Color.blue);
+            //Debug.DrawRay(frontRight.position, -transform.up * rf.distance, Color.blue);
 
             // Get the vectors that connect the raycast hit points
 
@@ -261,7 +261,7 @@ public class ShipMovement : MonoBehaviour
         if (input.airBrake)
         {
             Vector3 airBrakeForce = transform.right * input.rudder * airBrakeSpeed;
-            Debug.Log(airBrakeForce);
+            //Debug.Log(airBrakeForce);
             shipRigidbody.AddForce(airBrakeForce, ForceMode.Acceleration);
         }
 
@@ -289,7 +289,7 @@ public class ShipMovement : MonoBehaviour
                 if (!boost)
                 {
                     InvokeRepeating("SubtractNRG", 0f, boostEnergyDrain);
-                    Debug.Log("Boost");
+                    //Debug.Log("Boost");
                     boost = true;
                 }
             }

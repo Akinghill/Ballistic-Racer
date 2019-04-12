@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class LoadTrack : MonoBehaviour {
+public class LoadingScene : MonoBehaviour {
 
     public Slider progressBar;
 
@@ -26,7 +26,6 @@ public class LoadTrack : MonoBehaviour {
         {
             //Output the current progress
             progressBar.value = asyncOperation.progress * 100;
-            Debug.Log("Loading: " + asyncOperation.progress * 100);
 
             // Check if the load has finished
             if (asyncOperation.progress >= 0.9f)

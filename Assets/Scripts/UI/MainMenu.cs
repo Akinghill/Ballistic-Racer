@@ -36,14 +36,14 @@ public class MainMenu : MonoBehaviour
 
     public static int pOne, pTwo, pThree, pFour;
 
-    public static bool isShipSelected;
+    public bool isShipSelected;
 
     void Start()
     {
         Reset();
        // audioData = GetComponent<AudioSource>();
         //audioData.Play(0);
-        Debug.Log("started");
+        //Debug.Log("started");
         StartCoroutine(LoadScene());
     }
 
@@ -81,7 +81,6 @@ public class MainMenu : MonoBehaviour
             if (p1_Confirm)
             {
                 isShipSelected = true;
-                //SceneManager.LoadScene(level);
                 DontDestroy.menuMusic.GetComponent<AudioSource>().Stop();
             }
         }
@@ -90,7 +89,6 @@ public class MainMenu : MonoBehaviour
             if (p1_Confirm && p2_Confirm)
             {
                 isShipSelected = true;
-                //SceneManager.LoadScene(level);
                 DontDestroy.menuMusic.GetComponent<AudioSource>().Stop();
             }
         }
@@ -99,7 +97,6 @@ public class MainMenu : MonoBehaviour
             if (p1_Confirm && p2_Confirm && p3_Confirm)
             {
                 isShipSelected = true;
-                //SceneManager.LoadScene(level);
                 DontDestroy.menuMusic.GetComponent<AudioSource>().Stop();
             }
         }
@@ -108,7 +105,6 @@ public class MainMenu : MonoBehaviour
             if (p1_Confirm && p2_Confirm && p3_Confirm && p4_Confirm)
             {
                 isShipSelected = true;
-                //SceneManager.LoadScene(level);
                 DontDestroy.menuMusic.GetComponent<AudioSource>().Stop();
             }
         }
@@ -305,7 +301,7 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator LoadScene()
     {
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("LoadTrack");
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("LoadingScene");
         asyncOperation.allowSceneActivation = false;
 
         yield return new WaitUntil(() => isShipSelected);
