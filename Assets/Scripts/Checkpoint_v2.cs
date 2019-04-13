@@ -7,20 +7,21 @@ public class Checkpoint_v2 : MonoBehaviour {
     static Transform playerTransform;
     public Text checkpointNum;
     public Text lapNum;
-    public Text timerText;
-    float startTime;
+    
+    /*float startTime;
     float endTime;
     float levelTimer;
     bool updateTimer;
-    bool alapCompleted = false;
+    
     string minutes;
     string seconds;
-    float t;
-    
+    float t;*/
+    bool alapCompleted = false;
+
     void Start()
     {
 
-        startTime = Time.timeSinceLevelLoad;
+        
         
         playerTransform = GameObject.FindGameObjectWithTag("Crash").transform;
         if (GameObject.FindGameObjectWithTag("Crash") != null)
@@ -34,18 +35,6 @@ public class Checkpoint_v2 : MonoBehaviour {
     void Update()
     {
       
-        float t = Time.timeSinceLevelLoad - startTime;
-        string minutes = Mathf.Floor((int)t / 60).ToString("00");
-        string seconds = Mathf.Floor(t % 60).ToString("00");
-        timerText.text = "Time Elapsed:" + minutes + ":" + seconds;
- 
-        if(updateTimer)
-        {
-            levelTimer += startTime;
-        }
-
-
-
     }
 
     void OnTriggerEnter(Collider other)
