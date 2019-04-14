@@ -55,7 +55,11 @@ public class ShipMovement : MonoBehaviour
     Rigidbody shipRigidbody;
     PlayerInput input;
     float drag;
-    bool isOnGround;
+    public bool isOnGround;
+    public bool m_lrOnGround;
+    public bool m_rrOnGround;
+    public bool m_lfOnGround;
+    public bool m_rfOnGround;
 
     bool reverse;
     bool boost;
@@ -176,23 +180,24 @@ public class ShipMovement : MonoBehaviour
         RaycastHit hitUp;
         isFlippedOver = Physics.Raycast(rayUp, out hitUp, 5.0f, whatIsGround);
 
+        m_lrOnGround = Physics.Raycast(backLeft.position, -transform.up, out lr, maxHoveringDistance, whatIsGround);
+        m_rrOnGround = Physics.Raycast(backRight.position, -transform.up, out rr, maxHoveringDistance, whatIsGround);
+        m_lfOnGround = Physics.Raycast(frontLeft.position, -transform.up, out lf, maxHoveringDistance, whatIsGround);
+        m_rfOnGround = Physics.Raycast(frontRight.position, -transform.up, out rf, maxHoveringDistance, whatIsGround);
+
+        Debug.DrawRay(transform.position, -transform.up * hit.distance, Color.blue);
+        Debug.DrawRay(backLeft.position, -transform.up * lr.distance, Color.blue);
+        Debug.DrawRay(backRight.position, -transform.up * rr.distance, Color.blue);
+        Debug.DrawRay(frontLeft.position, -transform.up * lf.distance, Color.blue);
+        Debug.DrawRay(frontRight.position, -transform.up * rf.distance, Color.blue);
+
         if (isFlippedOver)
         {
             StartCoroutine(DestroyUpsideDownShip());
         }
 
-        if (isOnGround)
+        if (isOnGround && m_lrOnGround && m_rrOnGround && m_lfOnGround && m_rfOnGround)
         {
-            Physics.Raycast(backLeft.position, -transform.up, out lr, maxHoveringDistance, whatIsGround);
-            Physics.Raycast(backRight.position, -transform.up, out rr, maxHoveringDistance, whatIsGround);
-            Physics.Raycast(frontLeft.position, -transform.up, out lf, maxHoveringDistance, whatIsGround);
-            Physics.Raycast(frontRight.position, -transform.up, out rf, maxHoveringDistance, whatIsGround);
-
-            //Debug.DrawRay(backLeft.position, -transform.up * lr.distance, Color.blue);
-            //Debug.DrawRay(backRight.position, -transform.up * rr.distance, Color.blue);
-            //Debug.DrawRay(frontLeft.position, -transform.up * lf.distance, Color.blue);
-            //Debug.DrawRay(frontRight.position, -transform.up * rf.distance, Color.blue);
-
             // Get the vectors that connect the raycast hit points
 
             Vector3 a = rr.point - lr.point;
@@ -270,10 +275,10 @@ public class ShipMovement : MonoBehaviour
             shipRigidbody.velocity *= decceleration;
         }
 
-        if (!isOnGround)
-        {
-            return;
-        }
+        //if (!isOnGround && !m_lrOnGround && !m_rrOnGround && !m_lfOnGround && !m_rfOnGround)
+        //{
+        //    return;
+        //}
 
         if (input.brake > 0)
         {

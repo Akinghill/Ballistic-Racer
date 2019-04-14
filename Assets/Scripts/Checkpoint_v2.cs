@@ -68,8 +68,8 @@ public class Checkpoint_v2 : MonoBehaviour {
                 alapCompleted = true;
             }
             Visual();
-            playerTransform.GetComponent<Laps>().checkpointNum.text = "Checkpoints:" + Laps.currentCheckpoint;
-            playerTransform.GetComponent<Laps>().lapNum.text = "Lap Number:" + Laps.currentLap;
+            playerTransform.GetComponent<Laps>().checkpointNum.text = "Checkpoints: " + Laps.currentCheckpoint;
+            playerTransform.GetComponent<Laps>().lapNum.text = "Lap Number: " + Laps.currentLap;
         }
 
 
