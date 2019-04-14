@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Checkpoint_v2 : MonoBehaviour {
     static Transform playerTransform;
-    public Text checkpointNum;
-    public Text lapNum;
+    //public Text checkpointNum;
+    //public Text lapNum;
     
     /*float startTime;
     float endTime;
@@ -68,8 +68,8 @@ public class Checkpoint_v2 : MonoBehaviour {
                 alapCompleted = true;
             }
             Visual();
-            checkpointNum.text = "Checkpoints:" + Laps.currentCheckpoint;
-            lapNum.text = "Lap Number:" + Laps.currentLap;
+            playerTransform.GetComponent<Laps>().checkpointNum.text = "Checkpoints:" + Laps.currentCheckpoint;
+            playerTransform.GetComponent<Laps>().lapNum.text = "Lap Number:" + Laps.currentLap;
         }
 
 

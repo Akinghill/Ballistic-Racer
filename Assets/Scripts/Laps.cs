@@ -22,6 +22,8 @@ public class Laps : MonoBehaviour
     string seconds;
     float t;
     public Text timerText;
+    public Text checkpointNum;
+    public Text lapNum;
 
     void Awake()
     {
