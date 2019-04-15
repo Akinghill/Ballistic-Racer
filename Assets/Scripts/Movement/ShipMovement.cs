@@ -55,11 +55,6 @@ public class ShipMovement : MonoBehaviour
     Rigidbody shipRigidbody;
     PlayerInput input;
     float drag;
-    public bool isOnGround;
-    public bool m_lrOnGround;
-    public bool m_rrOnGround;
-    public bool m_lfOnGround;
-    public bool m_rfOnGround;
 
     bool reverse;
     bool boost;
@@ -74,6 +69,7 @@ public class ShipMovement : MonoBehaviour
     float height;
     bool isFlippedOver;
 
+    [Header("Raycasts")]
     public Transform backLeft;
     public Transform backRight;
     public Transform frontLeft;
@@ -82,6 +78,12 @@ public class ShipMovement : MonoBehaviour
     public RaycastHit rr;
     public RaycastHit lf;
     public RaycastHit rf;
+
+    public bool isOnGround;
+    public bool m_lrOnGround;
+    public bool m_rrOnGround;
+    public bool m_lfOnGround;
+    public bool m_rfOnGround;
 
     LayerMask whatAreWalls;
 

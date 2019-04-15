@@ -1051,7 +1051,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1886762655815188}
-  m_LocalRotation: {x: 0.17842478, y: 0.00000008940697, z: -0.000000007450581, w: 0.9839536}
+  m_LocalRotation: {x: 0.17842484, y: 0.00000008940697, z: -0.000000007450581, w: 0.9839536}
   m_LocalPosition: {x: -0.0000004087177, y: 6.428571, z: -11.428574}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children: []
@@ -1185,7 +1185,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1477008217598716}
-  m_LocalRotation: {x: -0.22975287, y: 0.00000014901161, z: -0.0000005289912, w: -0.9732491}
+  m_LocalRotation: {x: -0.22975284, y: 0.0000002682209, z: -0.0000005438924, w: -0.9732491}
   m_LocalPosition: {x: -0.00000011920929, y: 7.5, z: -4.999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1242,7 +1242,7 @@ Transform:
   m_GameObject: {fileID: 1663357698123798}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.91, z: -0.08}
-  m_LocalScale: {x: 2.8, y: 2.5, z: 2.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4986618959052766}
   m_Father: {fileID: 4407667956939524}
@@ -2045,11 +2045,6 @@ MonoBehaviour:
   particleBoostSize: 1.22
   particleBoostSpeed: 5.18
   particleBoostLifeTime: 0.89
-  isOnGround: 0
-  m_lrOnGround: 0
-  m_rrOnGround: 0
-  m_lfOnGround: 0
-  m_rfOnGround: 0
   emp: 0
   normal: {x: 0, y: 0, z: 0}
   isRaceStarted: 0
@@ -2057,6 +2052,11 @@ MonoBehaviour:
   backRight: {fileID: 4969442676592400}
   frontLeft: {fileID: 4264124317284358}
   frontRight: {fileID: 4873999341411064}
+  isOnGround: 0
+  m_lrOnGround: 0
+  m_rrOnGround: 0
+  m_lfOnGround: 0
+  m_rfOnGround: 0
 --- !u!114 &114046877725405758
 MonoBehaviour:
   m_ObjectHideFlags: 1

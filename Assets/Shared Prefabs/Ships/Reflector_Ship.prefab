@@ -1273,8 +1273,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1422353336883482}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.90999985, z: -0.07995606}
-  m_LocalScale: {x: 2.8000038, y: 2.5, z: 2.8000038}
+  m_LocalPosition: {x: 0, y: 0.91, z: -0.08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4480182245513840}
   m_Father: {fileID: 4390461398781176}
@@ -1368,7 +1368,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1998308274938418}
-  m_LocalRotation: {x: 0.22975281, y: -0, z: 0.000000044703484, w: 0.9732491}
+  m_LocalRotation: {x: 0.22975287, y: -0.00000008940697, z: 0.000000067055225, w: 0.9732491}
   m_LocalPosition: {x: -0.00000023841858, y: 10, z: -9.999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1523,7 +1523,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1981381947019618}
-  m_LocalRotation: {x: -0.22975284, y: 0.00000014901161, z: -0.00000018626451, w: -0.9732491}
+  m_LocalRotation: {x: -0.22975287, y: 0.00000008940697, z: -0.00000017136335, w: -0.9732491}
   m_LocalPosition: {x: -0.00000011920929, y: 7.5, z: -4.999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1596,7 +1596,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1609244989411448}
-  m_LocalRotation: {x: 0.17842484, y: 0.00000008940697, z: -0.000000007450581, w: 0.9839536}
+  m_LocalRotation: {x: 0.17842478, y: 0.00000008940697, z: -0.000000007450581, w: 0.9839536}
   m_LocalPosition: {x: -0.0000004087177, y: 6.428571, z: -11.428574}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000006}
   m_Children: []
@@ -3290,6 +3290,11 @@ MonoBehaviour:
   backRight: {fileID: 4865953631815750}
   frontLeft: {fileID: 4504942238725470}
   frontRight: {fileID: 4056169572454636}
+  isOnGround: 0
+  m_lrOnGround: 0
+  m_rrOnGround: 0
+  m_lfOnGround: 0
+  m_rfOnGround: 0
 --- !u!114 &114646007182382508
 MonoBehaviour:
   m_ObjectHideFlags: 1
