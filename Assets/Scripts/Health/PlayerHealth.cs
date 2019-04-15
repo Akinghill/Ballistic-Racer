@@ -222,6 +222,8 @@ public class PlayerHealth : MonoBehaviour
                 particle.Play();
             }
             currentHealth = startingHealth;
+
+            player.GetComponentInParent<ShipAI>().currentNode = player.GetComponentInParent<ShipAI>().tempNode;
             //healthSlider.value = startingHealth;
             isDead = false;
         }

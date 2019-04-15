@@ -10,6 +10,7 @@ public class ShipAI : MonoBehaviour
 
     Transform[] nodes;
     public int currentNode = 0;
+    public int tempNode = 0;
 
     int shootableMask;
 
@@ -104,7 +105,7 @@ public class ShipAI : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, shooting.range, shootableMask))
+        if (Physics.Raycast(ray, out hit, 25.0f, shootableMask))
         {
             input.shoot = true;
         }

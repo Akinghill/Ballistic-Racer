@@ -20,21 +20,22 @@ public class Checkpoint_v2 : MonoBehaviour {
 
     void Start()
     {
+        StartCoroutine(FindShips());
+    }
+    void Update()
+    {
+      
+    }
 
-        
-        
+    IEnumerator FindShips()
+    {
+        yield return new WaitForEndOfFrame();
         playerTransform = GameObject.FindGameObjectWithTag("Crash").transform;
         if (GameObject.FindGameObjectWithTag("Crash") != null)
         {
             Debug.Log("It has been found.");
         }
         Visual();
-        
-
-    }
-    void Update()
-    {
-      
     }
 
     void OnTriggerEnter(Collider other)
@@ -70,6 +71,12 @@ public class Checkpoint_v2 : MonoBehaviour {
             Visual();
             playerTransform.GetComponent<Laps>().checkpointNum.text = "Checkpoints: " + Laps.currentCheckpoint;
             playerTransform.GetComponent<Laps>().lapNum.text = "Lap Number: " + Laps.currentLap;
+
+            // Set the respawn point for the ship to the last checkpoint
+            playerTransform.GetComponentInParent<PlayerHealth>().respawnPoint = Laps.checkpointA[Laps.currentCheckpoint - 1].transform;
+
+            // Set the tempNode for the AI to the currentNode at the checkpoint (when they respawn, currentNode gets set to tempNode)
+            playerTransform.GetComponentInParent<ShipAI>().tempNode = playerTransform.GetComponentInParent<ShipAI>().currentNode;
         }
 
 
