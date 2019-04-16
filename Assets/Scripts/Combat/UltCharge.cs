@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class UltCharge : MonoBehaviour {
 
-    public Slider ultimateSlider;
+    //public Slider ultimateSlider;
 
     public RawImage ultPic;
 
@@ -46,7 +46,7 @@ public class UltCharge : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        ultimateSlider.value = ultPower / (ultPowerMax * 1f);
+        //ultimateSlider.value = ultPower / (ultPowerMax * 1f);
         if(ultPower == ultPowerMax)
         {
             ultCharged = true;
@@ -78,7 +78,7 @@ public class UltCharge : MonoBehaviour {
             if (other.gameObject.CompareTag("Pick Up"))
             {
                 ultPower = ultPowerMax;
-                ultimateSlider.value = ultPowerMax;
+                //ultimateSlider.value = ultPowerMax;
                 powerUpNum = Random.Range(0, 3);
                 if (powerUpNum == 0)
                 {
