@@ -9,10 +9,11 @@ using UnityEditor;
 
 public class MainMenu : MonoBehaviour
 {
-    public enum MenuStates { MainMenu, Credits, PlayerSelect, TrackSelect, ShipSelect };
+    public enum MenuStates { MainMenu, Credits, PlayerSelect, TrackSelect, ShipSelect, Options };
     public MenuStates currentState;
     public GameObject mainUI;
     public GameObject creditUI;
+    public GameObject optionsUI;
     public GameObject playerSelectUI;
     public GameObject trackSelectUI;
 
@@ -55,6 +56,7 @@ public class MainMenu : MonoBehaviour
                 mainUI.SetActive(true);
                 creditUI.SetActive(false);
                 playerSelectUI.SetActive(false);
+                optionsUI.SetActive(false);
                 break;
             case MenuStates.Credits:
                 mainUI.SetActive(false);
@@ -73,6 +75,12 @@ public class MainMenu : MonoBehaviour
             case MenuStates.ShipSelect:
                 playerSelectUI.SetActive(false);
                 trackSelectUI.SetActive(false);
+                break;
+            case MenuStates.Options:
+                optionsUI.SetActive(true);
+                playerSelectUI.SetActive(false);
+                trackSelectUI.SetActive(false);
+                creditUI.SetActive(false);
                 break;
         }
 
@@ -263,6 +271,11 @@ public class MainMenu : MonoBehaviour
         currentState = MenuStates.Credits;
     }
 
+    public void Options()
+    {
+        currentState = MenuStates.Options;
+    }
+
     public void Back()
     {
         if (currentState == MenuStates.Credits)
@@ -270,6 +283,10 @@ public class MainMenu : MonoBehaviour
             currentState = MenuStates.MainMenu;
         }
         if (currentState == MenuStates.PlayerSelect)
+        {
+            currentState = MenuStates.MainMenu;
+        }
+        if (currentState == MenuStates.Options)
         {
             currentState = MenuStates.MainMenu;
         }
