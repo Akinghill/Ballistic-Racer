@@ -88,8 +88,8 @@ public class ShipMovement : MonoBehaviour
     LayerMask whatAreWalls;
 
     double speed2;
-
     double hurt;
+    public float DamageCalc;
 
     Vector3 lastPosition = Vector3.zero;
 
@@ -126,6 +126,8 @@ public class ShipMovement : MonoBehaviour
         }
 
         ThrusterParticle();
+
+        DamageCalc = (speed*.1f);
     }
 
     void ThrusterParticle()
@@ -359,10 +361,10 @@ public class ShipMovement : MonoBehaviour
     }
 
      void OnCollisionEnter(Collision col) {
-         if (col.gameObject.layer == whatAreWalls)
+         if(col.collider.tag == "Wall")
          {
-            hurt = speed2 * .7;
-            playerHealth.currentHealth--;
+            playerHealth.TakeDamage((int) DamageCalc);
          }
+         
      }
 }
