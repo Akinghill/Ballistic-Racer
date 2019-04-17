@@ -14,7 +14,7 @@ public class PlayerShooting : MonoBehaviour
     int shootableMask;
     int ricochetMask;
     ParticleSystem gunParticles;
-    LineRenderer gunLine;
+    public LineRenderer gunLine;
     AudioSource gunAudio;
     Light gunLight;
     float effectsDisplayTime = 0.2f;
@@ -72,7 +72,7 @@ public class PlayerShooting : MonoBehaviour
 
         if (Physics.Raycast(shootRay, out shootHit, range, shootableMask))
         {
-            PlayerHealth playerHealth = shootHit.collider.GetComponentInParent<PlayerHealth>();
+            PlayerHealth playerHealth = shootHit.collider.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damagePerShot, shootHit.point);
