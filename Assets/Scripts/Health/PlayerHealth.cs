@@ -131,6 +131,11 @@ public class PlayerHealth : MonoBehaviour
             //SparkFX.GetComponent<ParticleSystem>().Pause();
             Death();
         }
+
+        if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            Death();
+        }
     }
 
     public void TakeDamage(int amount)

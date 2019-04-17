@@ -85,11 +85,11 @@ public class ShipMovement : MonoBehaviour
     public bool m_lfOnGround;
     public bool m_rfOnGround;
 
-    LayerMask whatAreWalls;
+    //LayerMask whatAreWalls;
 
     double speed2;
-
     double hurt;
+    public float DamageCalc;
 
     Vector3 lastPosition = Vector3.zero;
 
@@ -98,7 +98,7 @@ public class ShipMovement : MonoBehaviour
         playerHealth = GetComponentInChildren<PlayerHealth>();
         shipRigidbody = GetComponent<Rigidbody>();
         input = GetComponent<PlayerInput>();
-        whatAreWalls = LayerMask.GetMask("Walls");
+        //whatAreWalls = LayerMask.GetMask("Walls");
 
         drag = acceleration / maxSpeed;
 
@@ -126,6 +126,8 @@ public class ShipMovement : MonoBehaviour
         }
 
         ThrusterParticle();
+
+        DamageCalc = (speed*.1f);
     }
 
     void ThrusterParticle()
@@ -359,10 +361,10 @@ public class ShipMovement : MonoBehaviour
     }
 
      void OnCollisionEnter(Collision col) {
-         if (col.gameObject.layer == whatAreWalls)
+         if(col.collider.tag == "Wall")
          {
-            hurt = speed2 * .7;
-            playerHealth.currentHealth--;
+            playerHealth.TakeDamage((int) DamageCalc);
          }
+         
      }
 }

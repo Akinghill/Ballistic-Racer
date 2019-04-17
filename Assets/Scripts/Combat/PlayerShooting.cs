@@ -14,7 +14,7 @@ public class PlayerShooting : MonoBehaviour
     int shootableMask;
     int ricochetMask;
     ParticleSystem gunParticles;
-    LineRenderer gunLine;
+    public LineRenderer gunLine;
     AudioSource gunAudio;
     Light gunLight;
     float effectsDisplayTime = 0.2f;

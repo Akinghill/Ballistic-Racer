@@ -546,6 +546,7 @@ GameObject:
   - component: {fileID: 114912802644119174}
   - component: {fileID: 114181460268353334}
   - component: {fileID: 114053630111991590}
+  - component: {fileID: 114718985653854616}
   m_Layer: 0
   m_Name: Reflector_Ship
   m_TagString: Untagged
@@ -2931,6 +2932,7 @@ MonoBehaviour:
   damagePerShot: 20
   timeBetweenBullets: 0.15
   range: 100
+  gunLine: {fileID: 0}
 --- !u!114 &114426514296849096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3205,6 +3207,7 @@ MonoBehaviour:
   damagePerShot: 20
   timeBetweenBullets: 0.15
   range: 100
+  gunLine: {fileID: 0}
 --- !u!114 &114640967340266366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3295,6 +3298,7 @@ MonoBehaviour:
   m_rrOnGround: 0
   m_lfOnGround: 0
   m_rfOnGround: 0
+  DamageCalc: 0
 --- !u!114 &114646007182382508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3429,6 +3433,17 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114718985653854616
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1491761285608872}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab26dc7ad24547c4e9e36c7ca7acc79c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114719209973766560
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3708,7 +3723,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7504bef83c78aed47b1f7fef0df3b6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ultimateSlider: {fileID: 114766239153906776}
   ultPic: {fileID: 114958283741119768}
   nullTex: {fileID: 2800000, guid: fb965be10ac62e446ba37095042bb3b0, type: 3}
   empTex: {fileID: 2800000, guid: fd535b5ab1ec14709874e25a656de4bd, type: 3}
