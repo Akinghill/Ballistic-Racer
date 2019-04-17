@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 114063860638194690}
   - component: {fileID: 114710204634185576}
   - component: {fileID: 114285993316640944}
+  - component: {fileID: 114740506903803722}
   m_Layer: 0
   m_Name: Invincibility_Ship
   m_TagString: Untagged
@@ -884,7 +885,6 @@ GameObject:
   - component: {fileID: 4456838560435666}
   - component: {fileID: 33229143758247616}
   - component: {fileID: 64093067129124308}
-  - component: {fileID: 114438467489204762}
   m_Layer: 13
   m_Name: Ship Collider Invincibility_Ship
   m_TagString: Crash
@@ -1083,7 +1083,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1837498771329298}
-  m_LocalRotation: {x: -0.22975287, y: 0.00000014901161, z: -0.00000063329935, w: -0.9732491}
+  m_LocalRotation: {x: -0.22975284, y: 0.0000002682209, z: -0.0000006556511, w: -0.9732491}
   m_LocalPosition: {x: -0.00000011920929, y: 7.5, z: -4.999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1268,7 +1268,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1787679566969832}
-  m_LocalRotation: {x: 0.17842485, y: 0.00000008940697, z: -0.000000014901161, w: 0.9839536}
+  m_LocalRotation: {x: 0.17842476, y: -0, z: 0.0000000074505797, w: 0.98395354}
   m_LocalPosition: {x: -0.0000004087177, y: 6.428571, z: -11.428574}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children: []
@@ -2688,24 +2688,6 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 
---- !u!114 &114438467489204762
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1945338685338258}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkPointArray: []
-  startPos: {x: 0, y: 0, z: 0}
-  Lap: 0
-  checkPoint: 0
-  timerText: {fileID: 114057195511291414}
-  checkpointNum: {fileID: 114643967895673738}
-  lapNum: {fileID: 114772290674344444}
 --- !u!114 &114443716114079972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3019,6 +3001,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   invincibilityTime: 5
   shipCollider: {fileID: 1377098054843338}
+--- !u!114 &114740506903803722
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1107369556846044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32199039ce029fd4da090affde508d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPointArray: []
+  currentCheckpoint: 0
+  currentLap: 0
+  startPos: {x: 0, y: 0, z: 0}
+  timerText: {fileID: 114057195511291414}
+  checkpointNum: {fileID: 114643967895673738}
+  lapNum: {fileID: 114772290674344444}
 --- !u!114 &114756075155293086
 MonoBehaviour:
   m_ObjectHideFlags: 1

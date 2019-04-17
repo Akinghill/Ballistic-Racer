@@ -471,7 +471,6 @@ GameObject:
   - component: {fileID: 4343216341451380}
   - component: {fileID: 33070684865531574}
   - component: {fileID: 64302542019570484}
-  - component: {fileID: 114646007182382508}
   m_Layer: 13
   m_Name: Ship Collider Reflector_Ship
   m_TagString: Crash
@@ -547,6 +546,7 @@ GameObject:
   - component: {fileID: 114181460268353334}
   - component: {fileID: 114053630111991590}
   - component: {fileID: 114718985653854616}
+  - component: {fileID: 114903431334318094}
   m_Layer: 0
   m_Name: Reflector_Ship
   m_TagString: Untagged
@@ -681,7 +681,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4592895219095274}
   - component: {fileID: 136897331116318630}
-  - component: {fileID: 114927348638575674}
   m_Layer: 0
   m_Name: Check
   m_TagString: Untagged
@@ -1369,7 +1368,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1998308274938418}
-  m_LocalRotation: {x: 0.22975287, y: -0.00000008940697, z: 0.000000067055225, w: 0.9732491}
+  m_LocalRotation: {x: 0.22975281, y: -0, z: 0.000000044703484, w: 0.9732491}
   m_LocalPosition: {x: -0.00000023841858, y: 10, z: -9.999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1524,7 +1523,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1981381947019618}
-  m_LocalRotation: {x: -0.22975287, y: 0.00000008940697, z: -0.00000017136335, w: -0.9732491}
+  m_LocalRotation: {x: -0.22975284, y: 0.00000014901161, z: -0.00000018626451, w: -0.9732491}
   m_LocalPosition: {x: -0.00000011920929, y: 7.5, z: -4.999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1597,7 +1596,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1609244989411448}
-  m_LocalRotation: {x: 0.17842485, y: 0.00000008940697, z: -0.000000014901161, w: 0.9839536}
+  m_LocalRotation: {x: 0.17842478, y: 0.00000008940697, z: -0.000000007450581, w: 0.9839536}
   m_LocalPosition: {x: -0.0000004087177, y: 6.428571, z: -11.428574}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000006}
   m_Children: []
@@ -3299,24 +3298,6 @@ MonoBehaviour:
   m_lfOnGround: 0
   m_rfOnGround: 0
   DamageCalc: 0
---- !u!114 &114646007182382508
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1422353336883482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkPointArray: []
-  startPos: {x: 0, y: 0, z: 0}
-  Lap: 0
-  checkPoint: 0
-  timerText: {fileID: 114664607841844196}
-  checkpointNum: {fileID: 114724110464188214}
-  lapNum: {fileID: 114571654857596374}
 --- !u!114 &114658045671147742
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3636,6 +3617,24 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
+--- !u!114 &114903431334318094
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1491761285608872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32199039ce029fd4da090affde508d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPointArray: []
+  currentCheckpoint: 0
+  currentLap: 0
+  startPos: {x: 0, y: 0, z: 0}
+  timerText: {fileID: 114664607841844196}
+  checkpointNum: {fileID: 114724110464188214}
+  lapNum: {fileID: 114571654857596374}
 --- !u!114 &114912802644119174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3659,33 +3658,6 @@ MonoBehaviour:
   pathThree: {fileID: 0}
   m_pathThree: []
   randomPath: 0
---- !u!114 &114927348638575674
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1627812879091886}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkPointArray:
-  - {fileID: 4422707427462280, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  - {fileID: 4657326997282968, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  - {fileID: 4954211121617256, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  - {fileID: 4507677184002172, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  - {fileID: 4550978604332366, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  - {fileID: 4486324447511552, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  - {fileID: 4021905337399768, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  - {fileID: 4944541486678774, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  - {fileID: 4456167846076404, guid: f8c086ca0923c5f429261c054b2edae7, type: 2}
-  startPos: {x: 0, y: 0, z: 0}
-  Lap: 0
-  checkPoint: 0
-  timerText: {fileID: 0}
-  checkpointNum: {fileID: 0}
-  lapNum: {fileID: 0}
 --- !u!114 &114958283741119768
 MonoBehaviour:
   m_ObjectHideFlags: 1

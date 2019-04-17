@@ -610,7 +610,6 @@ GameObject:
   - component: {fileID: 4791801403803910}
   - component: {fileID: 33837788255868822}
   - component: {fileID: 64846222624035592}
-  - component: {fileID: 114306670939648746}
   m_Layer: 13
   m_Name: Ship Collider EMP_Ship
   m_TagString: Crash
@@ -907,7 +906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1998333006346368
 GameObject:
   m_ObjectHideFlags: 1
@@ -1228,7 +1227,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1215705026502216}
-  m_LocalRotation: {x: 0.22975284, y: -0.0000002682209, z: 0.000001013279, w: 0.9732491}
+  m_LocalRotation: {x: 0.22975287, y: -0.00000032782555, z: 0.0000010356307, w: 0.9732491}
   m_LocalPosition: {x: -0.00000023841858, y: 10, z: -9.999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2241,6 +2240,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32199039ce029fd4da090affde508d50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkPointArray: []
+  currentCheckpoint: 0
+  currentLap: 0
+  startPos: {x: 0, y: 0, z: 0}
+  timerText: {fileID: 114951722030253374}
+  checkpointNum: {fileID: 114905356373443716}
+  lapNum: {fileID: 114345497103729226}
 --- !u!114 &114114937349731188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2434,33 +2440,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114306670939648746
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1663357698123798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkPointArray:
-  - {fileID: 4729208524447096, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
-  - {fileID: 4264068530911498, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
-  - {fileID: 4495340084048480, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
-  - {fileID: 4098159475514394, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
-  - {fileID: 4403680347669564, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
-  - {fileID: 4963760620988888, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
-  - {fileID: 4692215969619316, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
-  - {fileID: 4906504191557880, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
-  - {fileID: 4772924155822480, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
-  startPos: {x: 0, y: 0, z: 0}
-  Lap: 0
-  checkPoint: 0
-  timerText: {fileID: 114951722030253374}
-  checkpointNum: {fileID: 114905356373443716}
-  lapNum: {fileID: 114345497103729226}
 --- !u!114 &114344526399595426
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -240,7 +240,6 @@ GameObject:
   - component: {fileID: 4984715605019910}
   - component: {fileID: 33635727481685452}
   - component: {fileID: 64560859007646572}
-  - component: {fileID: 114593634897779776}
   m_Layer: 13
   m_Name: Ship Collider Lego_Ship
   m_TagString: Crash
@@ -380,6 +379,7 @@ GameObject:
   - component: {fileID: 114407444842768502}
   - component: {fileID: 114043574213765686}
   - component: {fileID: 114427337878947570}
+  - component: {fileID: 114747277435440046}
   m_Layer: 0
   m_Name: Lego_Ship
   m_TagString: Untagged
@@ -1405,7 +1405,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1091145033333520}
-  m_LocalRotation: {x: 0.22975287, y: -0.0000002682209, z: 0.0000007972121, w: 0.9732491}
+  m_LocalRotation: {x: 0.22975284, y: -0.00000014901161, z: 0.00000078231096, w: 0.9732491}
   m_LocalPosition: {x: -0.00000023841858, y: 10, z: -9.999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1707,7 +1707,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1493621967093050}
-  m_LocalRotation: {x: -0.22975287, y: 0.00000014901161, z: -0.0000006183982, w: -0.9732491}
+  m_LocalRotation: {x: -0.22975284, y: 0.0000002682209, z: -0.00000063329935, w: -0.9732491}
   m_LocalPosition: {x: -0.00000011920929, y: 7.5, z: -4.999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2113,7 +2113,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1035617307044116}
-  m_LocalRotation: {x: 0.17842484, y: 0.00000008940697, z: -0.000000007450581, w: 0.9839536}
+  m_LocalRotation: {x: 0.17842478, y: 0.00000008940697, z: -0.000000007450581, w: 0.9839536}
   m_LocalPosition: {x: -0.0000004087177, y: 6.428571, z: -11.428574}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children: []
@@ -4615,24 +4615,6 @@ MonoBehaviour:
   m_lfOnGround: 0
   m_rfOnGround: 0
   DamageCalc: 0
---- !u!114 &114593634897779776
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1123083031251316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  checkPointArray: []
-  startPos: {x: 0, y: 0, z: 0}
-  Lap: 0
-  checkPoint: 0
-  timerText: {fileID: 114167926003792950}
-  checkpointNum: {fileID: 114360816484344692}
-  lapNum: {fileID: 114353568140403394}
 --- !u!114 &114599901116308990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4764,6 +4746,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: {fileID: 114367070943782094}
   ReflectCollider: {fileID: 135896467929557686}
+--- !u!114 &114747277435440046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1222668057944974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32199039ce029fd4da090affde508d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkPointArray: []
+  currentCheckpoint: 0
+  currentLap: 0
+  startPos: {x: 0, y: 0, z: 0}
+  timerText: {fileID: 114167926003792950}
+  checkpointNum: {fileID: 114360816484344692}
+  lapNum: {fileID: 114353568140403394}
 --- !u!114 &114747590089018182
 MonoBehaviour:
   m_ObjectHideFlags: 1

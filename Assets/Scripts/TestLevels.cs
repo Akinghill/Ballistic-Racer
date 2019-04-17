@@ -15,6 +15,7 @@ public class TestLevels : MonoBehaviour {
 
     public void RespawnTestTrack()
     {
+        DontDestroy.menuMusic.GetComponent<AudioSource>().Stop();
         SceneManager.LoadScene("RespawnTest");
     }
 }
