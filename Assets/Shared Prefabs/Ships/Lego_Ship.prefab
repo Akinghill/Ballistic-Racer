@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 114050579480115598}
   - component: {fileID: 114407444842768502}
   - component: {fileID: 114043574213765686}
+  - component: {fileID: 114427337878947570}
   m_Layer: 0
   m_Name: Lego_Ship
   m_TagString: Untagged
@@ -4382,6 +4383,18 @@ MonoBehaviour:
   damagePerShot: 20
   timeBetweenBullets: 0.15
   range: 100
+  gunLine: {fileID: 0}
+--- !u!114 &114427337878947570
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1222668057944974}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab26dc7ad24547c4e9e36c7ca7acc79c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114470827445828884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4423,6 +4436,7 @@ MonoBehaviour:
   damagePerShot: 20
   timeBetweenBullets: 0.15
   range: 100
+  gunLine: {fileID: 0}
 --- !u!114 &114504325707405418
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4472,7 +4486,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7504bef83c78aed47b1f7fef0df3b6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ultimateSlider: {fileID: 114747590089018182}
   ultPic: {fileID: 114887780440785402}
   nullTex: {fileID: 2800000, guid: fb965be10ac62e446ba37095042bb3b0, type: 3}
   empTex: {fileID: 2800000, guid: fd535b5ab1ec14709874e25a656de4bd, type: 3}
@@ -4601,6 +4614,7 @@ MonoBehaviour:
   m_rrOnGround: 0
   m_lfOnGround: 0
   m_rfOnGround: 0
+  DamageCalc: 0
 --- !u!114 &114593634897779776
 MonoBehaviour:
   m_ObjectHideFlags: 1

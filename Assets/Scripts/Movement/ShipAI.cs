@@ -90,6 +90,7 @@ public class ShipAI : MonoBehaviour
 
         if (input.controllerNumber == 0 && shipMovement.isRaceStarted)
         {
+            GetComponent<AiUltimate>().enabled = true;
             Rudder();
             Accelerate();
             if (input.canShoot)
