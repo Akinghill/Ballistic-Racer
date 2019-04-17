@@ -51,7 +51,8 @@ public class Laps : MonoBehaviour
     {
         float t = Time.timeSinceLevelLoad - startTime;
         string minutes = Mathf.Floor((int)t / 60).ToString("00");
-        string seconds = Mathf.Floor(t % 60).ToString("00");
+        string seconds = (t % 60).ToString("f2");
+
         timerText.text = "Time Running: " + minutes + ":" + seconds;
 
         if (updateTimer)
