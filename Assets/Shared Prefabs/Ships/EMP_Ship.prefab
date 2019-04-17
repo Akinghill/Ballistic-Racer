@@ -900,13 +900,14 @@ GameObject:
   - component: {fileID: 114075080940263736}
   - component: {fileID: 114406037284988482}
   - component: {fileID: 114976526636071676}
+  - component: {fileID: 114106951805612382}
   m_Layer: 0
   m_Name: EMP_Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1998333006346368
 GameObject:
   m_ObjectHideFlags: 1
@@ -1052,7 +1053,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1886762655815188}
-  m_LocalRotation: {x: 0.17842476, y: -0, z: 0.0000000074505797, w: 0.98395354}
+  m_LocalRotation: {x: 0.17842484, y: 0.00000008940697, z: -0.000000007450581, w: 0.9839536}
   m_LocalPosition: {x: -0.0000004087177, y: 6.428571, z: -11.428574}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children: []
@@ -1186,7 +1187,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1477008217598716}
-  m_LocalRotation: {x: -0.22975284, y: 0.0000002682209, z: -0.0000005438924, w: -0.9732491}
+  m_LocalRotation: {x: -0.22975287, y: 0.00000014901161, z: -0.0000005289912, w: -0.9732491}
   m_LocalPosition: {x: -0.00000011920929, y: 7.5, z: -4.999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1227,7 +1228,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1215705026502216}
-  m_LocalRotation: {x: 0.22975287, y: -0.00000032782555, z: 0.0000010356307, w: 0.9732491}
+  m_LocalRotation: {x: 0.22975284, y: -0.0000002682209, z: 0.000001013279, w: 0.9732491}
   m_LocalPosition: {x: -0.00000023841858, y: 10, z: -9.999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2229,6 +2230,17 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &114106951805612382
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1981352136956114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32199039ce029fd4da090affde508d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114114937349731188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2433,7 +2445,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44bec040893b9ea4d81d46c0331e3026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  checkPointArray: []
+  checkPointArray:
+  - {fileID: 4729208524447096, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4264068530911498, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4495340084048480, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4098159475514394, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4403680347669564, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4963760620988888, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4692215969619316, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4906504191557880, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
+  - {fileID: 4772924155822480, guid: b1d81993ada224d448317f98648fa1e7, type: 2}
   startPos: {x: 0, y: 0, z: 0}
   Lap: 0
   checkPoint: 0
