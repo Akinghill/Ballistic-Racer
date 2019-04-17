@@ -85,7 +85,7 @@ public class ShipMovement : MonoBehaviour
     public bool m_lfOnGround;
     public bool m_rfOnGround;
 
-    LayerMask whatAreWalls;
+    //LayerMask whatAreWalls;
 
     double speed2;
     double hurt;
@@ -98,7 +98,7 @@ public class ShipMovement : MonoBehaviour
         playerHealth = GetComponentInChildren<PlayerHealth>();
         shipRigidbody = GetComponent<Rigidbody>();
         input = GetComponent<PlayerInput>();
-        whatAreWalls = LayerMask.GetMask("Walls");
+        //whatAreWalls = LayerMask.GetMask("Walls");
 
         drag = acceleration / maxSpeed;
 
