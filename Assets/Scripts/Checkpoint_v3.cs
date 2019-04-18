@@ -65,7 +65,7 @@ public class Checkpoint_v3 : MonoBehaviour
         minutes = Mathf.Floor((int)t / 60).ToString("00");
         seconds = (t % 60).ToString("f2");
 
-        timerText.text = "Time Running: " + minutes + ":" + seconds;
+        timerText.text =  minutes + ":" + seconds;
 
         if (updateTimer)
         {
