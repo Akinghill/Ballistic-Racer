@@ -77,7 +77,7 @@ public class ShipAI : MonoBehaviour
         {
             nodes = m_pathOne;
         }
-        else if (randomPath > 4 || randomPath <= 8)
+        else if (randomPath > 4 && randomPath <= 8)
         {
             nodes = m_pathTwo;
         }
