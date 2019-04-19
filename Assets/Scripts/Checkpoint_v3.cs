@@ -24,6 +24,8 @@ public class Checkpoint_v3 : MonoBehaviour
     public Text timerText;
     public Text checkpointNum;
     public Text lapNum;
+    
+    
 
     void Awake()
     {
@@ -39,11 +41,14 @@ public class Checkpoint_v3 : MonoBehaviour
 
     void Start()
     {
+       
+       
         startTime = Time.timeSinceLevelLoad;
         startPos = transform.position;
         currentCheckpoint = 0;
         currentLap = 1;
         updateTimer = true;
+
 
         StartCoroutine(FindCheckPoints());
     }
@@ -57,27 +62,40 @@ public class Checkpoint_v3 : MonoBehaviour
             //Debug.Log("the checkpoints have been found.");
         }
     }
+    IEnumerator WaitThreeSeconds()
+    {
+       
+        yield return new WaitForSeconds(3);
+        timerStarted();
+
+    }
 
 
     void Update()
     {
-        t = Time.timeSinceLevelLoad - startTime;
-        minutes = Mathf.Floor((int)t / 60).ToString("00");
-        seconds = (t % 60).ToString("f2");
+        StartCoroutine(WaitThreeSeconds());
 
-        timerText.text =  minutes + ":" + seconds;
-
-        if (updateTimer)
-        {
-            levelTimer += startTime;
-        }
 
         //Lap = currentLap;
         //checkPoint = currentCheckpoint;
         //checkpointA = checkPointArray;
     }
+    void timerStarted()
+    {
+       
+        t = Time.timeSinceLevelLoad - startTime;
+        minutes = Mathf.Floor((int)t / 60).ToString("00");
+        seconds = (t % 60).ToString("f2");
 
-    void OnTriggerEnter(Collider other)
+        timerText.text = minutes + ":" + seconds;
+
+        if (updateTimer)
+        {
+            levelTimer += startTime;
+        }
+    }
+
+void OnTriggerEnter(Collider other)
     {
         //Debug.Log("This is me", transform);
         //Debug.Log("This is Checkpoint 0", Laps.checkpointA[Laps.currentCheckpoint].transform);
