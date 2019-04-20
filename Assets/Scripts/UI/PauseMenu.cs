@@ -29,6 +29,8 @@ public class PauseMenu : MonoBehaviour
 
     bool loadMainMenu;
 
+    public GameObject gamepadCursor;
+
     void Start()
     {
         loadMainMenu = false;
@@ -49,6 +51,15 @@ public class PauseMenu : MonoBehaviour
         m_P2State = GamePad.GetState(PlayerIndex.Two);
         m_P3State = GamePad.GetState(PlayerIndex.Three);
         m_P4State = GamePad.GetState(PlayerIndex.Four);
+
+        if (m_P1PrevState.IsConnected && GameIsPaused)
+        {
+            gamepadCursor.SetActive(true);
+        }
+        else
+        {
+            gamepadCursor.SetActive(false);
+        }
 
         // Check if player 1 pressed the Start button this frame
         if (m_P1PrevState.Buttons.Start == ButtonState.Released && m_P1State.Buttons.Start == ButtonState.Pressed)
