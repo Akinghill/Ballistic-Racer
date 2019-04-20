@@ -199,6 +199,7 @@ public class RacerSelection : MonoBehaviour
         foreach (Button button in selectionButtons)
         {
             button.interactable = false;
+            button.GetComponent<Image>().raycastTarget = false;
         }
 
         if (playerNumber == 1)
@@ -231,6 +232,7 @@ public class RacerSelection : MonoBehaviour
         foreach (Button button in selectionButtons)
         {
             button.interactable = true;
+            button.GetComponent<Image>().raycastTarget = true;
         }
 
         CharacterList[index].SetActive(false);

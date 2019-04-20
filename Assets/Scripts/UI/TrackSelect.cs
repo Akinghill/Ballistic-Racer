@@ -62,7 +62,5 @@ public class TrackSelect : MonoBehaviour
         trackList[index].SetActive(false);
         index = 0;
         trackList[index].SetActive(true);
-
-        MainMenu.level = "";
     }
 }

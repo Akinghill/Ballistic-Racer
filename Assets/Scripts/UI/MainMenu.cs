@@ -91,30 +91,42 @@ public class MainMenu : MonoBehaviour
                 creditUI.SetActive(false);
                 playerSelectUI.SetActive(false);
                 optionsUI.SetActive(false);
+                trackSelectUI.SetActive(false);
                 break;
             case MenuStates.Credits:
                 mainUI.SetActive(false);
                 creditUI.SetActive(true);
+                playerSelectUI.SetActive(false);
+                optionsUI.SetActive(false);
+                trackSelectUI.SetActive(false);
                 break;
             case MenuStates.PlayerSelect:
                 mainUI.SetActive(false);
-                //shipSelectUI.SetActive(false);
+                creditUI.SetActive(false);
                 playerSelectUI.SetActive(true);
+                optionsUI.SetActive(false);
                 trackSelectUI.SetActive(false);
                 break;
             case MenuStates.TrackSelect:
-                trackSelectUI.SetActive(true);
+                mainUI.SetActive(false);
+                creditUI.SetActive(false);
                 playerSelectUI.SetActive(false);
+                optionsUI.SetActive(false);
+                trackSelectUI.SetActive(true);
                 break;
             case MenuStates.ShipSelect:
+                mainUI.SetActive(false);
+                creditUI.SetActive(false);
                 playerSelectUI.SetActive(false);
+                optionsUI.SetActive(false);
                 trackSelectUI.SetActive(false);
                 break;
             case MenuStates.Options:
-                optionsUI.SetActive(true);
-                playerSelectUI.SetActive(false);
-                trackSelectUI.SetActive(false);
+                mainUI.SetActive(false);
                 creditUI.SetActive(false);
+                playerSelectUI.SetActive(false);
+                optionsUI.SetActive(true);
+                trackSelectUI.SetActive(false);
                 break;
         }
 
@@ -332,6 +344,7 @@ public class MainMenu : MonoBehaviour
             playerManager.twoPlayer = false;
             playerManager.threePlayer = false;
             playerManager.fourPlayer = false;
+            level = "";
         }
         if (currentState == MenuStates.ShipSelect)
         {

@@ -89,19 +89,25 @@ public class MenuCursor : MonoBehaviour
         {
             if (result.gameObject.CompareTag("Button"))
             {
-                result.gameObject.GetComponent<Button>().Select();
+                new WaitForEndOfFrame();
+
+                EventSystem.current.SetSelectedGameObject(result.gameObject);
 
                 if (m_P1PrevState.Buttons.A == ButtonState.Released && m_P1State.Buttons.A == ButtonState.Pressed)
                 {
                     result.gameObject.GetComponent<Button>().onClick.Invoke();
                 }
-
-                return;
+                else
+                {
+                    break;
+                }
             }
             else
             {
                 EventSystem.current.SetSelectedGameObject(null);
+                break;
             }
+            //Debug.Log(result.gameObject.name);
         }
     }
 }
