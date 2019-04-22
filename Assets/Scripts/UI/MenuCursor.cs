@@ -97,15 +97,15 @@ public class MenuCursor : MonoBehaviour
                 {
                     result.gameObject.GetComponent<Button>().onClick.Invoke();
                 }
-                else
-                {
-                    break;
-                }
+                //else
+                //{
+                //    break;
+                //}
             }
             else
             {
                 EventSystem.current.SetSelectedGameObject(null);
-                break;
+                //break;
             }
             //Debug.Log(result.gameObject.name);
         }
