@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class Checkpoint_v3 : MonoBehaviour
 {
@@ -131,6 +133,15 @@ void OnTriggerEnter(Collider other)
 
             checkpointNum.text = "Checkpoints: " + currentCheckpoint;
             lapNum.text = "Lap Number: " + currentLap;
+        }
+    }
+    void LevelFinished()
+    {
+        if (currentLap == 3)
+        {
+            updateTimer = false;
+            SceneManager.LoadScene("MainMenu");
+            
         }
     }
 }
