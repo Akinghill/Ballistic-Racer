@@ -23,6 +23,9 @@ public class MenuCursor : MonoBehaviour
     public float right;
     public float top;
 
+    public RectTransform cursorRectTransform;
+    public RectTransform rectTransformTwo;
+
     private void Start()
     {
         right = canvas.transform.position.x * 2;
@@ -60,17 +63,17 @@ public class MenuCursor : MonoBehaviour
             transform.position += new Vector3(0.0f, m_P1State.ThumbSticks.Left.Y * Time.unscaledDeltaTime * 500.0f, 0.0f);
         }
 
-        if (transform.position.x < 0)
+        if (transform.position.x < 25)
         {
-            transform.position = new Vector3(0, transform.position.y);
+            transform.position = new Vector3(25, transform.position.y);
         }
         if (transform.position.x > right - 25)
         {
             transform.position = new Vector3(right - 25, transform.position.y);
         }
-        if (transform.position.y < 0)
+        if (transform.position.y < 25)
         {
-            transform.position = new Vector3(transform.position.x, 0);
+            transform.position = new Vector3(transform.position.x, 25);
         }
         if (transform.position.y > top -25)
         {
@@ -87,27 +90,38 @@ public class MenuCursor : MonoBehaviour
 
         foreach (RaycastResult result in results)
         {
-            if (result.gameObject.CompareTag("Button"))
-            {
-                new WaitForEndOfFrame();
-
-                EventSystem.current.SetSelectedGameObject(result.gameObject);
-
-                if (m_P1PrevState.Buttons.A == ButtonState.Released && m_P1State.Buttons.A == ButtonState.Pressed)
-                {
-                    result.gameObject.GetComponent<Button>().onClick.Invoke();
-                }
-                //else
-                //{
-                //    break;
-                //}
-            }
-            else
-            {
-                EventSystem.current.SetSelectedGameObject(null);
-                //break;
-            }
-            //Debug.Log(result.gameObject.name);
+            rectTransformTwo = result.gameObject.GetComponent<RectTransform>();
+            break;
         }
+
+        if (RectOverlaps(cursorRectTransform, rectTransformTwo))
+        {
+            rectTransformTwo.gameObject.GetComponent<MenuControl>().OnPointerEnter(pointerEventData);
+        }
+        else
+        {
+            rectTransformTwo.gameObject.GetComponent<MenuControl>().OnPointerExit(pointerEventData);
+        }
+
+        if (EventSystem.current.currentSelectedGameObject.CompareTag("Button"))
+        {
+            if (m_P1PrevState.Buttons.A == ButtonState.Pressed && m_P1State.Buttons.A == ButtonState.Pressed)
+            {
+                rectTransformTwo.gameObject.GetComponent<MenuControl>().OnButtonDown(pointerEventData);
+            }
+
+            if (m_P1PrevState.Buttons.A == ButtonState.Pressed && m_P1State.Buttons.A == ButtonState.Released)
+            {
+                rectTransformTwo.gameObject.GetComponent<MenuControl>().OnButtonUp(pointerEventData);
+            }
+        }
+    }
+
+    bool RectOverlaps(RectTransform rectTransOne, RectTransform rectTransTwo)
+    {
+        Rect rectOne = new Rect(rectTransOne.rect.x, rectTransOne.rect.y, rectTransOne.rect.width, rectTransOne.rect.height);
+        Rect rectTwo = new Rect(rectTransTwo.rect.x, rectTransTwo.rect.y, rectTransTwo.rect.width, rectTransTwo.rect.height);
+
+        return rectOne.Overlaps(rectTwo);
     }
 }
