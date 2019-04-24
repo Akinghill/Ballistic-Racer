@@ -50,7 +50,7 @@ public class MenuControl : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnButtonDown(PointerEventData eventData)
     {
-        if (EventSystem.current.currentSelectedGameObject == gameObject)
+        if (EventSystem.current.currentSelectedGameObject == gameObject && GetComponentInParent<MainMenu>().gamepadCursor.activeInHierarchy)
         {
             updateButtonState.SetPressedState();
         }
@@ -58,7 +58,7 @@ public class MenuControl : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnButtonUp(PointerEventData eventData)
     {
-        if (EventSystem.current.currentSelectedGameObject == gameObject)
+        if (EventSystem.current.currentSelectedGameObject == gameObject && GetComponentInParent<MainMenu>().gamepadCursor.activeInHierarchy)
         {
             updateButtonState.SetHighlightedState();
             ExecuteEvents.Execute(gameObject, new BaseEventData(EventSystem.current), ExecuteEvents.submitHandler);
