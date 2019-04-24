@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class MenuControl : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public UpdateButtonState updateButtonState;
+    public GameObject gamepadCursor;
 
     void Start()
     {
@@ -50,7 +51,7 @@ public class MenuControl : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnButtonDown(PointerEventData eventData)
     {
-        if (EventSystem.current.currentSelectedGameObject == gameObject && GetComponentInParent<MainMenu>().gamepadCursor.activeInHierarchy)
+        if (EventSystem.current.currentSelectedGameObject == gameObject && gamepadCursor.activeInHierarchy)
         {
             updateButtonState.SetPressedState();
         }
@@ -58,7 +59,7 @@ public class MenuControl : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnButtonUp(PointerEventData eventData)
     {
-        if (EventSystem.current.currentSelectedGameObject == gameObject && GetComponentInParent<MainMenu>().gamepadCursor.activeInHierarchy)
+        if (EventSystem.current.currentSelectedGameObject == gameObject && gamepadCursor.activeInHierarchy)
         {
             updateButtonState.SetHighlightedState();
             ExecuteEvents.Execute(gameObject, new BaseEventData(EventSystem.current), ExecuteEvents.submitHandler);
