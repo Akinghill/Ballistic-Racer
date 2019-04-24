@@ -68,7 +68,7 @@ public class Checkpoint_v3 : MonoBehaviour
     {
        
         yield return new WaitForSeconds(3);
-        timerStarted();
+        TimerStarted();
 
     }
 
@@ -82,7 +82,7 @@ public class Checkpoint_v3 : MonoBehaviour
         //checkPoint = currentCheckpoint;
         //checkpointA = checkPointArray;
     }
-    void timerStarted()
+    void TimerStarted()
     {
        
         t = Time.timeSinceLevelLoad - startTime;

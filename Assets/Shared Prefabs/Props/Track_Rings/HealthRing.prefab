@@ -105,6 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4536295625721338}
   - component: {fileID: 114289913924478684}
+  - component: {fileID: 65945621905330662}
   m_Layer: 0
   m_Name: HealthRing
   m_TagString: Untagged
@@ -405,6 +406,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1712987821351820}
   m_Mesh: {fileID: 4300004, guid: 550423c2bfddcd74089fa3f0bfeae674, type: 3}
+--- !u!65 &65945621905330662
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1854752904715314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.04, y: 0.04, z: 0.01}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114289913924478684
 MonoBehaviour:
   m_ObjectHideFlags: 1
