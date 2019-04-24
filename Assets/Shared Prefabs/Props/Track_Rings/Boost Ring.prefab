@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4758567841047622}
   - component: {fileID: 33357493520266004}
   - component: {fileID: 23902398105667384}
+  - component: {fileID: 64384720828791094}
   m_Layer: 0
   m_Name: Cap
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,9 +54,10 @@ GameObject:
   - component: {fileID: 4087488577262682}
   - component: {fileID: 33773344980125986}
   - component: {fileID: 23080751707737544}
+  - component: {fileID: 64403768930545874}
   m_Layer: 0
   m_Name: Cap1
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,9 +72,10 @@ GameObject:
   - component: {fileID: 4349913112058080}
   - component: {fileID: 33827642877391408}
   - component: {fileID: 23673751930576518}
+  - component: {fileID: 64236903414705258}
   m_Layer: 0
   m_Name: InnerRing
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,9 +107,10 @@ GameObject:
   - component: {fileID: 4327232378928146}
   - component: {fileID: 33204014625950562}
   - component: {fileID: 23884403315436248}
+  - component: {fileID: 64834440982156582}
   m_Layer: 0
   m_Name: OuterRing
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,15 +198,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1640453133567334}
-  m_LocalRotation: {x: -0, y: -0.37656724, z: -0, w: 0.9263893}
-  m_LocalPosition: {x: 1040.9, y: 13, z: 2062.1}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -609.1001, y: 37.300053, z: 1471.9956}
+  m_LocalScale: {x: 10, y: 10, z: 6}
   m_Children:
   - {fileID: 4064802255688834}
   - {fileID: 4836899634870450}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -44.242, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4327232378928146
 Transform:
   m_ObjectHideFlags: 1
@@ -537,6 +541,62 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1804109331780816}
   m_Mesh: {fileID: 4300002, guid: bfe4a663cd51395409366f583e4d7533, type: 3}
+--- !u!64 &64236903414705258
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1804109331780816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300002, guid: bfe4a663cd51395409366f583e4d7533, type: 3}
+--- !u!64 &64384720828791094
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1121552837682000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300008, guid: bfe4a663cd51395409366f583e4d7533, type: 3}
+--- !u!64 &64403768930545874
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1721903310589976}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300010, guid: bfe4a663cd51395409366f583e4d7533, type: 3}
+--- !u!64 &64834440982156582
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1948664708394182}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: bfe4a663cd51395409366f583e4d7533, type: 3}
 --- !u!65 &65452440267697506
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -561,4 +621,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyAmmount: 20
-  timeToRestart: 3
+  timeToRestart: 0
