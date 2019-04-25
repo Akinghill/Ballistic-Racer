@@ -1108,7 +1108,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1287736377336286}
-  m_LocalRotation: {x: 0.17842484, y: 0.00000008940697, z: -0.000000007450581, w: 0.9839536}
+  m_LocalRotation: {x: 0.17842485, y: 0.00000008940697, z: -0.000000014901161, w: 0.9839536}
   m_LocalPosition: {x: -0.0000004087177, y: 6.428571, z: -11.428574}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000006}
   m_Children: []
@@ -1256,7 +1256,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1149515025717174}
-  m_LocalRotation: {x: 0.22975284, y: -0.00000014901161, z: 0.00000017136335, w: 0.9732491}
+  m_LocalRotation: {x: 0.22975287, y: -0.00000008940697, z: 0.00000014156103, w: 0.9732491}
   m_LocalPosition: {x: -0.00000023841858, y: 10, z: -9.999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1877,7 +1877,8 @@ MonoBehaviour:
   player: {fileID: 4416894541399988}
   respawnPoint: {fileID: 0}
   movement: {fileID: 114203870840696388}
-  playerShooting: []
+  playerShooting:
+  - {fileID: 114732212932727154}
   DeathXplosion: {fileID: 1751335438653384, guid: 8d2164bd5b3b2854497e678508a3753e,
     type: 2}
   SparkFX: {fileID: 1749817478741764}
@@ -2483,6 +2484,7 @@ MonoBehaviour:
   timerText: {fileID: 114953284042080978}
   checkpointNum: {fileID: 114388074880312156}
   lapNum: {fileID: 114212194429193394}
+  finish: {fileID: 1456414933596018}
 --- !u!114 &114517037780038490
 MonoBehaviour:
   m_ObjectHideFlags: 1

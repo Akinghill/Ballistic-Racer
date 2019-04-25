@@ -31,11 +31,17 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject gamepadCursor;
 
+    GameObject finish;
+    FinishLap finishLap;
+
     void Start()
     {
         loadMainMenu = false;
         GameIsPaused = false;
         StartCoroutine(LoadScene());
+
+        finish = GameObject.FindGameObjectWithTag("Finish");
+        finishLap = finish.GetComponent<FinishLap>();
     }
 
     void Update()
@@ -124,6 +130,11 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
             }
+        }
+
+        if (finishLap.raceIsOver)
+        {
+            StartMenu();
         }
     }
 

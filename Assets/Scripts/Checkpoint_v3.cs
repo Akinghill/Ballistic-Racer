@@ -26,8 +26,7 @@ public class Checkpoint_v3 : MonoBehaviour
     public Text timerText;
     public Text checkpointNum;
     public Text lapNum;
-    
-    
+    public GameObject finish;
 
     void Awake()
     {
@@ -82,9 +81,9 @@ public class Checkpoint_v3 : MonoBehaviour
         //checkPoint = currentCheckpoint;
         //checkpointA = checkPointArray;
     }
+
     void TimerStarted()
     {
-       
         t = Time.timeSinceLevelLoad - startTime;
         minutes = Mathf.Floor((int)t / 60).ToString("00");
         seconds = (t % 60).ToString("f2");
@@ -97,16 +96,15 @@ public class Checkpoint_v3 : MonoBehaviour
         }
     }
 
-void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         //Debug.Log("This is me", transform);
         //Debug.Log("This is Checkpoint 0", Laps.checkpointA[Laps.currentCheckpoint].transform);
 
         //Is it the Ship that enters the collider?
-        if (other.gameObject.transform.tag != "Point")
+        if (other.tag != "Point")
         {
-            return;//If it's not the checkpoints dont continue
-
+            return;//If it's not the checkpoints or finish don't continue
         }
 
         if (other.transform == checkPointArray[currentCheckpoint].transform)
@@ -119,14 +117,14 @@ void OnTriggerEnter(Collider other)
             // Set the tempNode for the AI to the currentNode at the checkpoint (when they respawn, currentNode gets set to tempNode)
             transform.GetComponent<ShipAI>().tempNode = transform.GetComponent<ShipAI>().currentNode;
 
-            //Check so we dont exceed our checkpoint quantity
+            //Check so we don't exceed our checkpoint quantity
             if (currentCheckpoint < checkPointArray.Length - 1)
             {
                 currentCheckpoint++;
             }
             else
             {
-                //If we dont have any Checkpoints left, go back to 0 and increase currentLap
+                //If we don't have any Checkpoints left, go back to 0 and increase currentLap
                 currentCheckpoint = 0;
                 currentLap++;
             }
@@ -135,13 +133,14 @@ void OnTriggerEnter(Collider other)
             lapNum.text = "Lap Number: " + currentLap;
         }
     }
-    void LevelFinished()
-    {
-        if (currentLap == 3)
-        {
-            updateTimer = false;
-            SceneManager.LoadScene("MainMenu");
+
+    //void LevelFinished()
+    //{
+    //    if (currentLap == 3)
+    //    {
+    //        updateTimer = false;
+    //        SceneManager.LoadScene("MainMenu");
             
-        }
-    }
+    //    }
+    //}
 }

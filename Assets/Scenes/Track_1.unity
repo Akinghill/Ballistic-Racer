@@ -1820,31 +1820,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4899707883913936, guid: 8d5d66f933176e64090c6dc51ce4ec5a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1221.8
+      value: -624.3
       objectReference: {fileID: 0}
     - target: {fileID: 4899707883913936, guid: 8d5d66f933176e64090c6dc51ce4ec5a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 11
+      value: 1154
       objectReference: {fileID: 0}
     - target: {fileID: 4899707883913936, guid: 8d5d66f933176e64090c6dc51ce4ec5a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1419
+      value: 1061.4
       objectReference: {fileID: 0}
     - target: {fileID: 4899707883913936, guid: 8d5d66f933176e64090c6dc51ce4ec5a, type: 2}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4899707883913936, guid: 8d5d66f933176e64090c6dc51ce4ec5a, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0.74130076
+      value: 0.70090926
       objectReference: {fileID: 0}
     - target: {fileID: 4899707883913936, guid: 8d5d66f933176e64090c6dc51ce4ec5a, type: 2}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4899707883913936, guid: 8d5d66f933176e64090c6dc51ce4ec5a, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.671173
+      value: 0.71325046
       objectReference: {fileID: 0}
     - target: {fileID: 4899707883913936, guid: 8d5d66f933176e64090c6dc51ce4ec5a, type: 2}
       propertyPath: m_RootOrder
@@ -1852,20 +1852,43 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4899707883913936, guid: 8d5d66f933176e64090c6dc51ce4ec5a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 95.685005
+      value: 89
       objectReference: {fileID: 0}
     - target: {fileID: 65175292261746768, guid: 8d5d66f933176e64090c6dc51ce4ec5a,
         type: 2}
       propertyPath: m_Size.x
-      value: 127.33
+      value: 204.47
       objectReference: {fileID: 0}
     - target: {fileID: 1668521858826458, guid: 8d5d66f933176e64090c6dc51ce4ec5a, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114174660779448712, guid: 8d5d66f933176e64090c6dc51ce4ec5a, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 8d5d66f933176e64090c6dc51ce4ec5a, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &626040361 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1668521858826458, guid: 8d5d66f933176e64090c6dc51ce4ec5a,
+    type: 2}
+  m_PrefabInternal: {fileID: 626040360}
+--- !u!114 &626040362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 626040361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d791346e3917cd4cb04570b82ff3f2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  restartDelay: 5
+  restartTimer: 0
+  numberOfLaps: 3
+  isFinished: 0
+  finishes: 0
+  raceIsOver: 0
 --- !u!1 &629780725
 GameObject:
   m_ObjectHideFlags: 0

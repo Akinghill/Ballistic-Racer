@@ -138,6 +138,11 @@ public class PlayerInput : MonoBehaviour
                         GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
                     }
                 }
+                else
+                {
+                    shoot = false;
+                    GamePad.SetVibration(PlayerIndex.One, 0.0f, 0.0f);
+                }
 
                 // Check if player 1 pressed the Left Bummper button this frame
                 if (m_P1PrevState.Buttons.LeftShoulder == ButtonState.Released && m_P1State.Buttons.LeftShoulder == ButtonState.Pressed)
@@ -195,6 +200,11 @@ public class PlayerInput : MonoBehaviour
                         shoot = false;
                         GamePad.SetVibration(PlayerIndex.Two, 0.0f, 0.0f);
                     }
+                }
+                else
+                {
+                    shoot = false;
+                    GamePad.SetVibration(PlayerIndex.Two, 0.0f, 0.0f);
                 }
 
                 // Check if player 2 pressed the Left Bummper button this frame
@@ -254,6 +264,11 @@ public class PlayerInput : MonoBehaviour
                         GamePad.SetVibration(PlayerIndex.Three, 0.0f, 0.0f);
                     }
                 }
+                else
+                {
+                    shoot = false;
+                    GamePad.SetVibration(PlayerIndex.Three, 0.0f, 0.0f);
+                }
 
                 // Check if player 3 pressed the Left Bummper button this frame
                 if (m_P3PrevState.Buttons.LeftShoulder == ButtonState.Released && m_P3State.Buttons.LeftShoulder == ButtonState.Pressed)
@@ -311,6 +326,11 @@ public class PlayerInput : MonoBehaviour
                         shoot = false;
                         GamePad.SetVibration(PlayerIndex.Four, 0.0f, 0.0f);
                     }
+                }
+                else
+                {
+                    shoot = false;
+                    GamePad.SetVibration(PlayerIndex.Four, 0.0f, 0.0f);
                 }
 
                 // Check if player 4 pressed the Left Bummper button this frame

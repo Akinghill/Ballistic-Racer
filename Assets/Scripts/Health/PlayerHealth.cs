@@ -28,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
     public PlayerShooting[] playerShooting;
 
     public GameObject DeathXplosion;
+    bool stopExplosionParticle;
 
     public GameObject SparkFX;
     Rigidbody rb;
@@ -121,6 +122,7 @@ public class PlayerHealth : MonoBehaviour
         {
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
+
         damaged = false;
 
         healthSlider.value = currentHealth;
@@ -146,6 +148,7 @@ public class PlayerHealth : MonoBehaviour
             currentHealth -= amount;
             //healthSlider.value = currentHealth;
         }
+
         if (currentHealth <= 0 && !isDead)
         {
             Death();
@@ -174,13 +177,22 @@ public class PlayerHealth : MonoBehaviour
         isDead = true;
         rb.velocity = Vector3.zero;
         ultimate.ultPower = 0;
-        GameObject clone = (GameObject)Instantiate (DeathXplosion, transform.position, Quaternion.identity);
+
+        GetComponentInParent<PlayerInput>().canShoot = false;
+        
+        if (!stopExplosionParticle)
+        {
+            GameObject clone = (GameObject)Instantiate(DeathXplosion, transform.position, Quaternion.identity);
+            stopExplosionParticle = true;
+            Destroy(clone, 1f);
+        }
 
         foreach (PlayerShooting playerShooting in playerShooting)
         {
             playerShooting.DisableEffects();
             playerShooting.enabled = false;
         }
+
         foreach (ParticleSystem particle in particles)
         {
             if (particle.isPlaying || particle.isEmitting)
@@ -188,49 +200,60 @@ public class PlayerHealth : MonoBehaviour
                 particle.Stop();
             }
         }
+
         for (int i = 0; i < mesh.Length; i++) 
 		{
 			mesh[i].enabled = false;
 		}
+
         for (int j = 0; j < meshCollider.Length; j++)
         {
             meshCollider[j].enabled = false;
         }
+
         movement.enabled = false;
-        Destroy(clone, 1f);
 
         StartCoroutine(StartRespawn());
     }
 
     void Respawn()
     {
-        
         if (isDead == true)
         {
             player.transform.position = respawnPoint.transform.position;
             player.transform.rotation = respawnPoint.rotation;
-			for (int x = 0; x < mesh.Length; x++) 
+
+            GetComponentInParent<PlayerInput>().canShoot = true;
+
+            for (int x = 0; x < mesh.Length; x++) 
 			{
 				mesh[x].enabled = true;
 			}
+
             for (int j = 0; j < meshCollider.Length; j++)
             {
                 meshCollider[j].enabled = true;
             }
+
             movement.enabled = true;
+
             foreach (PlayerShooting playerShooting in playerShooting)
             {
                 playerShooting.enabled = true;
             }
+
             foreach (ParticleSystem particle in particles)
             {
                 particle.Play();
             }
+
             currentHealth = startingHealth;
+            currentNRG = startingNRG;
 
             player.GetComponentInParent<ShipAI>().currentNode = player.GetComponentInParent<ShipAI>().tempNode;
             //healthSlider.value = startingHealth;
             isDead = false;
+            stopExplosionParticle = false;
         }
     }
 

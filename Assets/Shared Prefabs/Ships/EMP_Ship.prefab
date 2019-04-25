@@ -1162,14 +1162,14 @@ Transform:
   - {fileID: 4030376026686992}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 140, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4248364271472358
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1886762655815188}
-  m_LocalRotation: {x: 0.17842484, y: 0.00000008940697, z: -0.000000007450581, w: 0.9839536}
+  m_LocalRotation: {x: 0.17842478, y: 0.00000008940697, z: -0.000000007450581, w: 0.9839536}
   m_LocalPosition: {x: -0.0000004087177, y: 6.428571, z: -11.428574}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000005}
   m_Children: []
@@ -1303,7 +1303,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1477008217598716}
-  m_LocalRotation: {x: -0.22975287, y: 0.00000014901161, z: -0.0000005289912, w: -0.9732491}
+  m_LocalRotation: {x: -0.22975287, y: 0.00000014901161, z: -0.0000004991889, w: -0.9732491}
   m_LocalPosition: {x: -0.00000011920929, y: 7.5, z: -4.999999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1344,7 +1344,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1215705026502216}
-  m_LocalRotation: {x: 0.22975284, y: -0.00000032782555, z: 0.0000010356307, w: 0.9732491}
+  m_LocalRotation: {x: 0.22975287, y: -0.00000032782555, z: 0.0000010356307, w: 0.9732491}
   m_LocalPosition: {x: -0.00000023841858, y: 10, z: -9.999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2445,6 +2445,7 @@ MonoBehaviour:
   timerText: {fileID: 114951722030253374}
   checkpointNum: {fileID: 114905356373443716}
   lapNum: {fileID: 114345497103729226}
+  finish: {fileID: 1077390363340030}
 --- !u!114 &114114937349731188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2558,7 +2559,9 @@ MonoBehaviour:
   player: {fileID: 4224436112975086}
   respawnPoint: {fileID: 0}
   movement: {fileID: 114001033098210072}
-  playerShooting: []
+  playerShooting:
+  - {fileID: 114766716146148950}
+  - {fileID: 114760379144920482}
   DeathXplosion: {fileID: 1751335438653384, guid: 8d2164bd5b3b2854497e678508a3753e,
     type: 2}
   SparkFX: {fileID: 1998333006346368}
