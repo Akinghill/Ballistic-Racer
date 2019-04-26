@@ -350,7 +350,7 @@ public class ShipMovement : MonoBehaviour
 
     IEnumerator RaceCountdown()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(8);
         isRaceStarted = true;
     }
 
