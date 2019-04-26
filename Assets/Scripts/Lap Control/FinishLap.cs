@@ -40,7 +40,7 @@ public class FinishLap : MonoBehaviour
 
             if (playerInput.controllerNumber != 0)
             {
-                Debug.Log("Passed");
+                //Debug.Log("Passed");
                 CompleteLap(checkpoint_V3, playerInput, shipAI);
             }
         }
