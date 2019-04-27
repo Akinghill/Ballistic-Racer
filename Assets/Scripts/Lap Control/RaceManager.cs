@@ -3,63 +3,63 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CheckTrigger : MonoBehaviour
+public class RaceManager : MonoBehaviour
 {
     public Text lapNumber;
 
     public Text racePosition;
 
-    public GameObject finish;
-
-    public int lapsCompleted;
-
     public bool racerFinished = false;
 
-    Checkpoint checkpoint;
+    private Transform[] checkpoint;
 
-    public PlayerHealth playerHealth;
 
     public bool checkpointReached;
 
     GameObject[] checksGO;
 
-    List<CheckTrigger> checks = new List<CheckTrigger>();
+    List<RaceManager> checks = new List<RaceManager>();
 
-    GameObject lastPoint;
+    private Transform lastCheckpoint;
+    private Transform nextCheckpoint;
 
     public GameObject miniMapIcon;
 
     public int position;
 
     public float lastPointDistance;
+    public float nextPointDistance;
 
     public int pointID;
 
     int numberOfRacers;
 
     private float MaxSpeedStart;
+    int currCheckpoint;
 
     void Start()
     {
-        miniMapIcon.SetActive(true);
-        checksGO = GameObject.FindGameObjectsWithTag("Check");
+        checksGO = GameObject.FindGameObjectsWithTag("Ship");
         foreach (GameObject check in checksGO)
         {
-            checks.Add(check.GetComponent<CheckTrigger>());
+            checks.Add(check.GetComponent<RaceManager>());
         }
+        currCheckpoint = GetComponent<Checkpoint_v3>().currentCheckpoint;
         numberOfRacers = checksGO.Length;
         position = numberOfRacers;
-        checkpoint = FindObjectOfType<Checkpoint>();
+        checkpoint = GetComponent<Checkpoint_v3>().checkPointArray;
 
-        lastPoint = GameObject.FindGameObjectWithTag("Finish");
+        lastCheckpoint = GetComponent<Checkpoint_v3>().checkPointArray[currCheckpoint - 1];
+        nextCheckpoint = GetComponent<Checkpoint_v3>().checkPointArray[currCheckpoint + 1];
+
         MaxSpeedStart = GetComponentInParent<ShipMovement>().maxSpeed;
     }
 
     void Update()
     {
-        /*lastPointDistance = Vector3.Distance(transform.position, lastPoint.transform.position);
-        lapNumber.text = lapsCompleted + "/" + checkpoint.numberOfLaps;
-        switch(position)
+        lastPointDistance = Vector3.Distance(transform.position, lastCheckpoint.transform.position);
+        nextPointDistance = Vector3.Distance(transform.position, nextCheckpoint.transform.position);
+        switch (position)
         {
             case 1:
                 racePosition.text = position + "st";
@@ -94,7 +94,7 @@ public class CheckTrigger : MonoBehaviour
         }
         
 
-        foreach (CheckTrigger check in checks)
+        foreach (RaceManager check in checks)
         {
             if (check != this && check.lapsCompleted > lapsCompleted)
             {
@@ -134,7 +134,7 @@ public class CheckTrigger : MonoBehaviour
         else if (position >= numberOfRacers)
         {
             position = numberOfRacers;
-        }*/
+        }
     }
 
     private void OnTriggerEnter(Collider other)
