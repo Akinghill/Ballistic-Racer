@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4878794478511426}
-  - component: {fileID: 114359619616972192}
   m_Layer: 0
   m_Name: Ship_Setup
   m_TagString: Untagged
@@ -40,46 +39,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114359619616972192
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1278726526502266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d26320b4ce170c9458e9d7b0917d0792, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onePCamera: {fileID: 1039248022397010, guid: 700fe57fea44c1e4cb9a80ded413e79a, type: 2}
-  onePCanvas: {fileID: 1394568626072432, guid: 49019c77b0fa7644b836c5b2f715c422, type: 2}
-  twoPCanvas: {fileID: 1538490212608574, guid: 1b0b0590170604f4693d284be602b903, type: 2}
-  threePCanvas: {fileID: 1504631221833268, guid: 57e5f7a7150451547a073e91164fcaa5,
-    type: 2}
-  fourPCanvas: {fileID: 1079300360698768, guid: 5682372f09421fe4fa7e8db0fa33ad39,
-    type: 2}
-  onePMiniMap: {fileID: 1634494704953096, guid: 28913744a44b3fd41ac52b8b6d8ba851,
-    type: 2}
-  MPMiniMap: {fileID: 1329233331367808, guid: 9e0e1e521189f824d826aa8d08bef092, type: 2}
-  twoPlayers:
-    pOneCamera: {fileID: 1496140636279170, guid: 702027ebb62aa6546bf080c0b2231272,
-      type: 2}
-    pTwoCamera: {fileID: 1177519205836940, guid: 681fd5dac7b63f24c837695a371fd206,
-      type: 2}
-  threePlayers:
-    pOneCamera: {fileID: 1450126658380312, guid: a3767ac1aa7c8c44f9f191b9b080cb0e,
-      type: 2}
-    pTwoCamera: {fileID: 1613804030174284, guid: 14a43b5142dc8b9479f0831df84560ae,
-      type: 2}
-    pThreeCamera: {fileID: 1001217815142570, guid: 14344c9d486c6d2489bea3a5b1a50c9f,
-      type: 2}
-  fourPlayers:
-    pOneCamera: {fileID: 1130336108635074, guid: 6793e6333f7c96b4ba9df25784a71423,
-      type: 2}
-    pTwoCamera: {fileID: 1364149796287596, guid: 046fd6ae8cf43504a96f7d16a0e0b360,
-      type: 2}
-    pThreeCamera: {fileID: 1840321827152940, guid: 31c8c19d30e734240a4bb54a56f27954,
-      type: 2}
-    pFourCamera: {fileID: 1235868637222018, guid: bfd2f1acb0a424941bd19624723d355a,
-      type: 2}
-  ships: []
