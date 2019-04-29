@@ -367,6 +367,7 @@ public class PlayerInput : MonoBehaviour
 
     IEnumerator AbleToShoot()
     {
+        yield return new WaitUntil(() => GetComponent<ShipMovement>().isRaceStarted);
         yield return new WaitForSeconds(10);
         canShoot = true;
     }
