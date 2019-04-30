@@ -6,7 +6,7 @@ using Cinemachine;
 public class BlendCameras : MonoBehaviour {
 
     public Transform followTarget;
-    public float initialWeight = 5f;
+    public float initialWeight = 10f;
 
     private CinemachineMixingCamera vcam;
 
