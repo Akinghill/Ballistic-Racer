@@ -44,7 +44,7 @@ public class Checkpoint_v3 : MonoBehaviour
     {
        
        
-        startTime = Time.timeSinceLevelLoad;
+        startTime = Time.time;
         startPos = transform.position;
         currentCheckpoint = 0;
         currentLap = 1;
@@ -66,7 +66,7 @@ public class Checkpoint_v3 : MonoBehaviour
     IEnumerator WaitThreeSeconds()
     {
        
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(8.5f);
         TimerStarted();
 
     }
@@ -84,7 +84,7 @@ public class Checkpoint_v3 : MonoBehaviour
 
     void TimerStarted()
     {
-        t = Time.timeSinceLevelLoad - startTime;
+        t = (Time.time - 8.5f) - startTime;
         minutes = Mathf.Floor((int)t / 60).ToString("00");
         seconds = (t % 60).ToString("f2");
 
