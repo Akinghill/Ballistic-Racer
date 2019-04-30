@@ -130,7 +130,7 @@ public class Checkpoint_v3 : MonoBehaviour
             }
 
             checkpointNum.text = "Checkpoints: " + currentCheckpoint;
-            lapNum.text = "Lap Number: " + currentLap;
+            lapNum.text = "Lap: " + currentLap;
         }
     }
 
