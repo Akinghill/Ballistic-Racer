@@ -347,7 +347,7 @@ public class PlayerInput : MonoBehaviour
         }
 
         // Set the keyboard inputs for player using keyboard
-        if (usingKeyboard)
+        if (usingKeyboard && controllerNumber != 0)
         {
             rudder = Input.GetAxis(steeringInput);
             accelerate = Input.GetAxis(accelerateInput);
