@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.76062524, g: 0.3429266, b: 0.18206081, a: 1}
+  m_IndirectSpecularColor: {r: 0.76279217, g: 0.3424374, b: 0.18243933, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 75251077}
   - component: {fileID: 75251076}
   - component: {fileID: 75251078}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: BuildingSuperscape
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -2389,9 +2389,9 @@ GameObject:
   - component: {fileID: 583217011}
   - component: {fileID: 583217010}
   - component: {fileID: 583217012}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Balistic_Racers_officebuilding_Finished:Outtershell
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2460,7 +2460,7 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 583217008}
-  m_Material: {fileID: 13400000, guid: 6f2ac3db4e288d047a5c099508e6fee1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3849,7 +3849,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4377941414874112, guid: 6dfdf1da3bb739848bd286706aac31db, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 130
+      value: -401.54
       objectReference: {fileID: 0}
     - target: {fileID: 4377941414874112, guid: 6dfdf1da3bb739848bd286706aac31db, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3857,7 +3857,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4377941414874112, guid: 6dfdf1da3bb739848bd286706aac31db, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -308
+      value: 260.58
       objectReference: {fileID: 0}
     - target: {fileID: 4377941414874112, guid: 6dfdf1da3bb739848bd286706aac31db, type: 2}
       propertyPath: m_LocalRotation.x
@@ -3882,7 +3882,7 @@ Prefab:
     - target: {fileID: 20534210773026786, guid: 6dfdf1da3bb739848bd286706aac31db,
         type: 2}
       propertyPath: m_CullingMask.m_Bits
-      value: 6656
+      value: 7680
       objectReference: {fileID: 0}
     - target: {fileID: 4377941414874112, guid: 6dfdf1da3bb739848bd286706aac31db, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3908,7 +3908,7 @@ Prefab:
     - target: {fileID: 20534210773026786, guid: 6dfdf1da3bb739848bd286706aac31db,
         type: 2}
       propertyPath: orthographic size
-      value: 2500
+      value: 1400
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6dfdf1da3bb739848bd286706aac31db, type: 2}
@@ -5632,9 +5632,9 @@ GameObject:
   - component: {fileID: 1147002121}
   - component: {fileID: 1147002120}
   - component: {fileID: 1147002122}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Outtershell
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5703,7 +5703,7 @@ MeshCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1147002118}
-  m_Material: {fileID: 13400000, guid: 6f2ac3db4e288d047a5c099508e6fee1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -7466,7 +7466,7 @@ GameObject:
   - component: {fileID: 1536651052}
   - component: {fileID: 1536651051}
   - component: {fileID: 1536651053}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: SudoGround
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -10105,7 +10105,7 @@ GameObject:
   - component: {fileID: 1994628621}
   - component: {fileID: 1994628620}
   - component: {fileID: 1994628622}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: BuildingSuperscape1
   m_TagString: Wall
   m_Icon: {fileID: 0}
