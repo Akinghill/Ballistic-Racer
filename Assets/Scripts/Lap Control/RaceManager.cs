@@ -5,139 +5,51 @@ using UnityEngine.UI;
 
 public class RaceManager : MonoBehaviour
 {
-    public Text lapNumber;
-
-    public Text racePosition;
-
-    public bool racerFinished = false;
-
-    private Transform[] checkpoint;
-
-
-    public bool checkpointReached;
-
     GameObject[] checksGO;
 
-    List<RaceManager> checks = new List<RaceManager>();
+    public List<Checkpoint_v3> checks = new List<Checkpoint_v3>();
 
-    private Transform lastCheckpoint;
-    private Transform nextCheckpoint;
-
-    public int position;
-
-    public float lastPointDistance;
-    public float nextPointDistance;
-
-    public int pointID;
-
-    int numberOfRacers;
-
-    private float MaxSpeedStart;
-    int currCheckpoint;
-    int currLap;
+    public int numberOfRacers;
 
     void Start()
     {
+        StartCoroutine(FindShips());
+
         checksGO = GameObject.FindGameObjectsWithTag("Ship");
-        currCheckpoint = GetComponent<Checkpoint_v3>().currentCheckpoint;
-        currLap = GetComponent<Checkpoint_v3>().currentLap;
-        lastCheckpoint = GetComponent<Checkpoint_v3>().checkPointArray[currCheckpoint - 1];
-        
-        nextCheckpoint = GetComponent<Checkpoint_v3>().checkPointArray[currCheckpoint + 1];
+
         foreach (GameObject check in checksGO)
         {
-            checks.Add(check.GetComponent<RaceManager>());
+            checks.Add(check.GetComponentInParent<Checkpoint_v3>());
         }
-       
+
         numberOfRacers = checksGO.Length;
-        position = numberOfRacers;
-        checkpoint = GetComponent<Checkpoint_v3>().checkPointArray;
+    }
 
-
-
-        MaxSpeedStart = GetComponentInParent<ShipMovement>().maxSpeed;
+    IEnumerator FindShips()
+    {
+        yield return new WaitForEndOfFrame();
     }
 
     void Update()
     {
-        lastPointDistance = Vector3.Distance(transform.position, lastCheckpoint.transform.position);
-        nextPointDistance = Vector3.Distance(transform.position, nextCheckpoint.transform.position);
-        switch (position)
+        checks.Sort(delegate (Checkpoint_v3 ship1, Checkpoint_v3 ship2)
         {
-            case 1:
-                racePosition.text = position + "st";
-                GetComponentInParent<ShipMovement>().maxSpeed = MaxSpeedStart;
-                break;
-
-            case 2:
-                racePosition.text = position + "nd";
-                GetComponentInParent<ShipMovement>().maxSpeed = MaxSpeedStart + 1;
-                break;
-
-            case 3:
-                racePosition.text = position + "rd";
-                GetComponentInParent<ShipMovement>().maxSpeed = MaxSpeedStart + 2;
-                break;
-
-            case 4:
-                racePosition.text = position + "th";
-                GetComponentInParent<ShipMovement>().maxSpeed = MaxSpeedStart + 5;
-                break;
-
-            case 5:
-                racePosition.text = position + "th";
-                GetComponentInParent<ShipMovement>().maxSpeed = MaxSpeedStart + 7;
-                break;
-
-            case 6:
-                racePosition.text = position + "th";
-                //racePosition.text = "hah ur last u suck"
-                GetComponentInParent<ShipMovement>().maxSpeed = MaxSpeedStart + 10;
-                break;
-        }
-
-
-        foreach (RaceManager check in checks)
-        {
-            if (check != this && check.currLap > currLap)
+            if (ship1.currentLap > ship2.currentLap) return -1;
+            else if (ship1.currentLap < ship2.currentLap) return 1;
+            else if (ship1.currentLap == ship2.currentLap)
             {
-                position++;
-            }
-            else if (check != this && check.currLap < currLap)
-            {
-                position--;
-            }
-            else if (check != this && check.currLap == currLap)
-            {
-                if (check.currCheckpoint > currCheckpoint && check != this)
+                if (ship1.currentCheckpoint > ship2.currentCheckpoint) return -1;
+                else if (ship1.currentCheckpoint < ship2.currentCheckpoint) return 1;
+                else if (ship1.currentCheckpoint == ship2.currentCheckpoint)
                 {
-                    position++;
+                    if (ship1.lastPointDistance > ship2.lastPointDistance) return -1;
+                    else if (ship1.lastPointDistance < ship2.lastPointDistance) return 1;
+                    else return 0;
                 }
-                else if (check.currCheckpoint < currCheckpoint && check != this)
-                {
-                    position--;
-                }
-                else if (check.currCheckpoint == currCheckpoint && check != this)
-                {
-                    if (check.lastPointDistance > lastPointDistance && check != this)
-                    {
-                        position++;
-                    }
-                    else if (check.lastPointDistance < lastPointDistance && check != this)
-                    {
-                        position--;
-                    }
-                }
+                else return 0;
             }
-        }
-        if (position <= 1)
-        {
-            position = 1;
-        }
-        else if (position >= numberOfRacers)
-        {
-            position = numberOfRacers;
-        }
+            else return 0;
+        });
     }
 }
 

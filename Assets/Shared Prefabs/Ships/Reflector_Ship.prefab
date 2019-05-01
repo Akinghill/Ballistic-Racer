@@ -532,7 +532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1416464360127962
 GameObject:
   m_ObjectHideFlags: 1
@@ -1759,7 +1759,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1981381947019618}
-  m_LocalRotation: {x: -0.1710467, y: 0.00000008940696, z: -0.00000016391276, w: -0.985263}
+  m_LocalRotation: {x: -0.17104669, y: -0, z: -0.00000015646218, w: -0.98526293}
   m_LocalPosition: {x: -0.00000023841858, y: 6.08, z: -9.999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1832,7 +1832,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1609244989411448}
-  m_LocalRotation: {x: 0.17828101, y: 0.00000008940696, z: -0.000000014901159, w: 0.9839796}
+  m_LocalRotation: {x: 0.178281, y: 0.00000008940696, z: -0.0000000074505797, w: 0.9839796}
   m_LocalPosition: {x: -0.0000002384187, y: 5.4133334, z: -10.000002}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000006}
   m_Children: []
@@ -4239,7 +4239,14 @@ MonoBehaviour:
   timerText: {fileID: 114644798503473342}
   checkpointNum: {fileID: 114973149230260538}
   lapNum: {fileID: 114378633453862170}
+  positionText: {fileID: 114182451181150694}
+  position: 0
   finish: {fileID: 1996494708615990}
+  lastCheckpoint: {fileID: 0}
+  nextCheckpoint: {fileID: 0}
+  lastPointDistance: 0
+  nextPointDistance: 0
+  rankingManager: {fileID: 0}
 --- !u!114 &114912802644119174
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -26,7 +26,18 @@ public class Checkpoint_v3 : MonoBehaviour
     public Text timerText;
     public Text checkpointNum;
     public Text lapNum;
+    public Text positionText;
+    public int position;
     public GameObject finish;
+
+    public Transform lastCheckpoint;
+    public Transform nextCheckpoint;
+    public float lastPointDistance;
+    public float nextPointDistance;
+
+    public GameObject rankingManager;
+    float MaxSpeedStart;
+    RaceManager raceManager;
 
     void Awake()
     {
@@ -38,18 +49,24 @@ public class Checkpoint_v3 : MonoBehaviour
         {
             checkPointArray[i] = check.transform.GetChild(i);
         }
+
+        lastCheckpoint = checkPointArray[checkPointArray.Length - 1];
+        nextCheckpoint = checkPointArray[0];
+        lastPointDistance = Vector3.Distance(transform.position, lastCheckpoint.transform.position);
+        nextPointDistance = Vector3.Distance(transform.position, nextCheckpoint.transform.position);
+
+        MaxSpeedStart = GetComponent<ShipMovement>().maxSpeed;
+        rankingManager = GameObject.Find("Ranking Manager");
+        raceManager = rankingManager.GetComponent<RaceManager>();
     }
 
     void Start()
     {
-       
-       
         startTime = Time.time;
         startPos = transform.position;
         currentCheckpoint = 0;
         currentLap = 1;
         updateTimer = true;
-
 
         StartCoroutine(FindCheckPoints());
     }
@@ -80,6 +97,57 @@ public class Checkpoint_v3 : MonoBehaviour
         //Lap = currentLap;
         //checkPoint = currentCheckpoint;
         //checkpointA = checkPointArray;
+
+        lastPointDistance = Vector3.Distance(transform.position, lastCheckpoint.transform.position);
+        nextPointDistance = Vector3.Distance(transform.position, nextCheckpoint.transform.position);
+
+        position = raceManager.checks.IndexOf(this) + 1;
+        if (position <= 1)
+        {
+            position = 1;
+        }
+        else if (position >= raceManager.numberOfRacers)
+        {
+            position = raceManager.numberOfRacers;
+        }
+
+        switch (position)
+        {
+            case 1:
+                positionText.text = position + "st";
+                GetComponent<ShipMovement>().maxSpeed = MaxSpeedStart;
+                break;
+
+            case 2:
+                positionText.text = position + "nd";
+                GetComponent<ShipMovement>().maxSpeed = MaxSpeedStart + 1;
+                break;
+
+            case 3:
+                positionText.text = position + "rd";
+                GetComponent<ShipMovement>().maxSpeed = MaxSpeedStart + 2;
+                break;
+
+            case 4:
+                positionText.text = position + "th";
+                GetComponent<ShipMovement>().maxSpeed = MaxSpeedStart + 5;
+                break;
+
+            case 5:
+                positionText.text = position + "th";
+                GetComponent<ShipMovement>().maxSpeed = MaxSpeedStart + 7;
+                break;
+
+            case 6:
+                positionText.text = position + "th";
+                GetComponent<ShipMovement>().maxSpeed = MaxSpeedStart + 10;
+                break;
+
+            case 7:
+                positionText.text = position + "th";
+                GetComponent<ShipMovement>().maxSpeed = MaxSpeedStart + 15;
+                break;
+        }
     }
 
     void TimerStarted()
@@ -131,6 +199,10 @@ public class Checkpoint_v3 : MonoBehaviour
 
             checkpointNum.text = "Checkpoints: " + currentCheckpoint;
             lapNum.text = "Lap: " + currentLap;
+
+            lastCheckpoint = checkPointArray[currentCheckpoint - 1];
+
+            nextCheckpoint = checkPointArray[currentCheckpoint];
         }
     }
 
