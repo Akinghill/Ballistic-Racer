@@ -151,7 +151,7 @@ public class ShipAI : MonoBehaviour
         }
 
         // If next node is greater than 2000 away from ship, then boost.
-        if (nextNodeDirection.magnitude > 2000.0f)
+        if (nextNodeDirection.magnitude > 2000.0f || shipMovement.speed <= (shipMovement.maxSpeed - 25.0f))
         {
             input.boost = true;
         }

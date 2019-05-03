@@ -1,28 +1,33 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class RaceManager : MonoBehaviour
 {
-    GameObject[] checksGO;
+    GameObject[] shipsGO;
 
-    public List<Checkpoint_v3> checks = new List<Checkpoint_v3>();
+    public List<Checkpoint_v3> ships = new List<Checkpoint_v3>();
 
     public int numberOfRacers;
+
+    GameObject finish;
+    FinishLap finishLap;
 
     void Start()
     {
         StartCoroutine(FindShips());
 
-        checksGO = GameObject.FindGameObjectsWithTag("Ship");
+        shipsGO = GameObject.FindGameObjectsWithTag("Ship");
 
-        foreach (GameObject check in checksGO)
+        foreach (GameObject check in shipsGO)
         {
-            checks.Add(check.GetComponentInParent<Checkpoint_v3>());
+            ships.Add(check.GetComponentInParent<Checkpoint_v3>());
         }
 
-        numberOfRacers = checksGO.Length;
+        numberOfRacers = shipsGO.Length;
+
+        finish = GameObject.FindGameObjectWithTag("Finish");
+        finishLap = finish.GetComponent<FinishLap>();
     }
 
     IEnumerator FindShips()
@@ -32,8 +37,9 @@ public class RaceManager : MonoBehaviour
 
     void Update()
     {
-        checks.Sort(delegate (Checkpoint_v3 ship1, Checkpoint_v3 ship2)
+        ships.Sort(delegate (Checkpoint_v3 ship1, Checkpoint_v3 ship2)
         {
+            if (ship1.currentLap > finishLap.numberOfLaps || ship2.currentLap > finishLap.numberOfLaps) return 0;
             if (ship1.currentLap > ship2.currentLap) return -1;
             else if (ship1.currentLap < ship2.currentLap) return 1;
             else if (ship1.currentLap == ship2.currentLap)
@@ -42,8 +48,8 @@ public class RaceManager : MonoBehaviour
                 else if (ship1.currentCheckpoint < ship2.currentCheckpoint) return 1;
                 else if (ship1.currentCheckpoint == ship2.currentCheckpoint)
                 {
-                    if (ship1.lastPointDistance > ship2.lastPointDistance) return -1;
-                    else if (ship1.lastPointDistance < ship2.lastPointDistance) return 1;
+                    if (ship1.nextPointDistance < ship2.nextPointDistance) return -1;
+                    else if (ship1.nextPointDistance > ship2.nextPointDistance) return 1;
                     else return 0;
                 }
                 else return 0;

@@ -1,20 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class FinishLap : MonoBehaviour
 {
     public float restartDelay = 5f;
     public float restartTimer;
+    public float resultsDelay = 15f;
+    public float resultsTimer;
     public int numberOfLaps;
     public bool isFinished = false;
     public int finishes = 0;
     public bool raceIsOver;
+    public bool showResults;
+    //GameObject results;
 
     private void Start()
     {
         raceIsOver = false;
+        showResults = false;
+        //results = GameObject.Find("Results Screen");
+        //results.SetActive(false);
     }
 
     private void Update()
@@ -24,8 +30,13 @@ public class FinishLap : MonoBehaviour
             restartTimer += Time.deltaTime;
             if (restartTimer >= restartDelay)
             {
-                raceIsOver = true;
-                //ReturnToMenu();
+                showResults = true;
+                //results.SetActive(true);
+                resultsTimer += Time.deltaTime;
+                if (resultsTimer >= resultsDelay)
+                {
+                    raceIsOver = true;
+                }
             }
         }
     }
@@ -38,11 +49,7 @@ public class FinishLap : MonoBehaviour
             PlayerInput playerInput = other.transform.parent.parent.GetComponent<PlayerInput>();
             ShipAI shipAI = other.transform.parent.parent.GetComponent<ShipAI>();
 
-            if (playerInput.controllerNumber != 0)
-            {
-                //Debug.Log("Passed");
-                CompleteLap(checkpoint_V3, playerInput, shipAI);
-            }
+            CompleteLap(checkpoint_V3, playerInput, shipAI);
         }
     }
 
@@ -51,9 +58,15 @@ public class FinishLap : MonoBehaviour
         if (checkpoint_V3.currentLap > numberOfLaps)
         {
             checkpoint_V3.finish.SetActive(true);
+            checkpoint_V3.updateTimer = false;
             playerInput.controllerNumber = 0;
             shipAI.currentNode = 0;
-            finishes++;
+
+            if (playerInput.controllerNumber != 0)
+            {
+                finishes++;
+            }
+            
             if (PlayerManager.numOfPlayers == 1 && finishes == 1)
             {
                 isFinished = true;
@@ -72,9 +85,4 @@ public class FinishLap : MonoBehaviour
             }
         }
     }
-
-    //void ReturnToMenu()
-    //{
-    //    SceneManager.LoadScene("MainMenu");
-    //}
 }

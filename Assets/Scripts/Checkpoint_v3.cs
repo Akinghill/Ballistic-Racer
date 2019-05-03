@@ -2,27 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-
 
 public class Checkpoint_v3 : MonoBehaviour
 {
-    //static Transform shipTransform;
     public Transform[] checkPointArray;
-    //public static Transform[] checkpointA;
     public int currentCheckpoint;
     public int currentLap;
     public Vector3 startPos;
-    //public int Lap;
-    //public int checkPoint;
-    float startTime;
-    //float endTime;
-    float levelTimer;
-    bool updateTimer;
-    //bool alapCompleted = false;
-    string minutes;
-    string seconds;
-    float t;
+    float raceTimer;
+    string raceTimerString;
+    public bool updateTimer;
     public Text timerText;
     public Text checkpointNum;
     public Text lapNum;
@@ -62,13 +51,15 @@ public class Checkpoint_v3 : MonoBehaviour
 
     void Start()
     {
-        startTime = Time.time;
         startPos = transform.position;
         currentCheckpoint = 0;
         currentLap = 1;
-        updateTimer = true;
+        raceTimerString = FormatRaceTime(raceTimer);
+        timerText.text = raceTimerString;
+        lapNum.text = "Lap: " + currentLap;
 
         StartCoroutine(FindCheckPoints());
+        StartCoroutine(TimerDelayedStart());
     }
 
     IEnumerator FindCheckPoints()
@@ -80,28 +71,26 @@ public class Checkpoint_v3 : MonoBehaviour
             //Debug.Log("the checkpoints have been found.");
         }
     }
-    IEnumerator WaitThreeSeconds()
+
+    IEnumerator TimerDelayedStart()
     {
-       
         yield return new WaitForSeconds(8.5f);
-        TimerStarted();
-
+        updateTimer = true;
     }
-
 
     void Update()
     {
-        StartCoroutine(WaitThreeSeconds());
-
-
-        //Lap = currentLap;
-        //checkPoint = currentCheckpoint;
-        //checkpointA = checkPointArray;
+        if (updateTimer)
+        {
+            raceTimer += Time.deltaTime;
+            raceTimerString = FormatRaceTime(raceTimer);
+            timerText.text = raceTimerString;
+        }
 
         lastPointDistance = Vector3.Distance(transform.position, lastCheckpoint.transform.position);
         nextPointDistance = Vector3.Distance(transform.position, nextCheckpoint.transform.position);
 
-        position = raceManager.checks.IndexOf(this) + 1;
+        position = raceManager.ships.IndexOf(this) + 1;
         if (position <= 1)
         {
             position = 1;
@@ -150,35 +139,27 @@ public class Checkpoint_v3 : MonoBehaviour
         }
     }
 
-    void TimerStarted()
+    public string FormatRaceTime(float raceTime)
     {
-        t = (Time.time - 8.5f) - startTime;
-        minutes = Mathf.Floor((int)t / 60).ToString("00");
-        seconds = (t % 60).ToString("f2");
+        int minutes = (int)raceTime / 60;
+        int seconds = (int)raceTime % 60;
+        float milliseconds = raceTime * 1000;
+        milliseconds = milliseconds % 1000;
 
-        timerText.text = minutes + ":" + seconds;
-
-        if (updateTimer)
-        {
-            levelTimer += startTime;
-        }
+        string raceTimeString = raceTime.ToString();
+        raceTimeString = string.Format("{0}:{1:00}.{2:000}", minutes, seconds, milliseconds);
+        return raceTimeString;
     }
 
     void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("This is me", transform);
-        //Debug.Log("This is Checkpoint 0", Laps.checkpointA[Laps.currentCheckpoint].transform);
-
-        //Is it the Ship that enters the collider?
         if (other.tag != "Point")
         {
-            return;//If it's not the checkpoints or finish don't continue
+            return;
         }
 
         if (other.transform == checkPointArray[currentCheckpoint].transform)
         {
-            //Debug.Log("You just passed a checkpoint");
-
             // Set the respawn point for the ship to the last checkpoint
             transform.GetComponentInChildren<PlayerHealth>().respawnPoint = checkPointArray[currentCheckpoint].transform;
 
@@ -200,19 +181,16 @@ public class Checkpoint_v3 : MonoBehaviour
             checkpointNum.text = "Checkpoints: " + currentCheckpoint;
             lapNum.text = "Lap: " + currentLap;
 
-            lastCheckpoint = checkPointArray[currentCheckpoint - 1];
+            if (currentCheckpoint != 0)
+            {
+                lastCheckpoint = checkPointArray[currentCheckpoint - 1];
+            }
+            else
+            {
+                lastCheckpoint = checkPointArray[0];
+            }
 
             nextCheckpoint = checkPointArray[currentCheckpoint];
         }
     }
-
-    //void LevelFinished()
-    //{
-    //    if (currentLap == 3)
-    //    {
-    //        updateTimer = false;
-    //        SceneManager.LoadScene("MainMenu");
-            
-    //    }
-    //}
 }
