@@ -189,11 +189,11 @@ public class ShipMovement : MonoBehaviour
         m_lfOnGround = Physics.Raycast(frontLeft.position, -transform.up, out lf, maxHoveringDistance, whatIsGround);
         m_rfOnGround = Physics.Raycast(frontRight.position, -transform.up, out rf, maxHoveringDistance, whatIsGround);
 
-        Debug.DrawRay(transform.position, -transform.up * hit.distance, Color.blue);
-        Debug.DrawRay(backLeft.position, -transform.up * lr.distance, Color.blue);
-        Debug.DrawRay(backRight.position, -transform.up * rr.distance, Color.blue);
-        Debug.DrawRay(frontLeft.position, -transform.up * lf.distance, Color.blue);
-        Debug.DrawRay(frontRight.position, -transform.up * rf.distance, Color.blue);
+        //Debug.DrawRay(transform.position, -transform.up * hit.distance, Color.blue);
+        //Debug.DrawRay(backLeft.position, -transform.up * lr.distance, Color.blue);
+        //Debug.DrawRay(backRight.position, -transform.up * rr.distance, Color.blue);
+        //Debug.DrawRay(frontLeft.position, -transform.up * lf.distance, Color.blue);
+        //Debug.DrawRay(frontRight.position, -transform.up * rf.distance, Color.blue);
 
         if (isFlippedOver)
         {
@@ -360,11 +360,16 @@ public class ShipMovement : MonoBehaviour
         playerHealth.Death();
     }
 
-     void OnCollisionEnter(Collision col) {
-         if(col.collider.tag == "Wall")
-         {
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.collider.tag == "Wall")
+        {
             playerHealth.TakeDamage((int) DamageCalc);
-         }
-         
-     }
+        }
+
+        if (col.collider.tag == "Terrain")
+        {
+            playerHealth.Death();
+        }
+    }
 }
