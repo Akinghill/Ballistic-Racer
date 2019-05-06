@@ -26,6 +26,7 @@ public class PlayerInput : MonoBehaviour
         public string powerUp;
         public string shoot;
         public string airBrake;
+        public string selfDestruct;
     }
     public InputNames inputNames;
 
@@ -36,6 +37,7 @@ public class PlayerInput : MonoBehaviour
     string powerUpInput;
     string shootInput;
     string airBrakeInput;
+    string selfDestructInput;
 
     public int controllerNumber;
 
@@ -51,6 +53,7 @@ public class PlayerInput : MonoBehaviour
     [HideInInspector] public bool shoot;
     [HideInInspector] public bool airBrake;
     [HideInInspector] public bool canShoot;
+    [HideInInspector] public bool selfDestruct;
 
     void Start()
     {
@@ -89,6 +92,7 @@ public class PlayerInput : MonoBehaviour
              *      Powerup          =       Y
              *      Shoot            =       B
              *      Air  brake       =       Left Bumper
+             *      Self Destruct    =       Back
              *      
              */
 
@@ -154,6 +158,17 @@ public class PlayerInput : MonoBehaviour
                 {
                     airBrake = false;
                 }
+
+                // Check if player 1 pressed the Back button this frame
+                if (m_P1PrevState.Buttons.Back == ButtonState.Released && m_P1State.Buttons.Back == ButtonState.Pressed)
+                {
+                    selfDestruct = true;
+                }
+                // Check if player 1 released the Back button this frame
+                if (m_P1PrevState.Buttons.Back == ButtonState.Pressed && m_P1State.Buttons.Back == ButtonState.Released)
+                {
+                    selfDestruct = false;
+                }
             }
             // Set the gamepad inputs for player 2 (if not using keyboard)
             else if (controllerNumber == 2 && !usingKeyboard)
@@ -216,6 +231,17 @@ public class PlayerInput : MonoBehaviour
                 if (m_P2PrevState.Buttons.LeftShoulder == ButtonState.Pressed && m_P2State.Buttons.LeftShoulder == ButtonState.Released)
                 {
                     airBrake = false;
+                }
+
+                // Check if player 2 pressed the Back button this frame
+                if (m_P2PrevState.Buttons.Back == ButtonState.Released && m_P2State.Buttons.Back == ButtonState.Pressed)
+                {
+                    selfDestruct = true;
+                }
+                // Check if player 2 released the Back button this frame
+                if (m_P2PrevState.Buttons.Back == ButtonState.Pressed && m_P2State.Buttons.Back == ButtonState.Released)
+                {
+                    selfDestruct = false;
                 }
             }
             // Set the gamepad inputs for player 3 (if not using keyboard)
@@ -280,6 +306,17 @@ public class PlayerInput : MonoBehaviour
                 {
                     airBrake = false;
                 }
+
+                // Check if player 3 pressed the Back button this frame
+                if (m_P3PrevState.Buttons.Back == ButtonState.Released && m_P3State.Buttons.Back == ButtonState.Pressed)
+                {
+                    selfDestruct = true;
+                }
+                // Check if player 3 released the Back button this frame
+                if (m_P3PrevState.Buttons.Back == ButtonState.Pressed && m_P3State.Buttons.Back == ButtonState.Released)
+                {
+                    selfDestruct = false;
+                }
             }
             // Set the gamepad inputs for player 4 (if not using keyboard)
             else if (controllerNumber == 4 && !usingKeyboard)
@@ -343,6 +380,17 @@ public class PlayerInput : MonoBehaviour
                 {
                     airBrake = false;
                 }
+
+                // Check if player 4 pressed the Back button this frame
+                if (m_P4PrevState.Buttons.Back == ButtonState.Released && m_P4State.Buttons.Back == ButtonState.Pressed)
+                {
+                    selfDestruct = true;
+                }
+                // Check if player 4 released the Back button this frame
+                if (m_P4PrevState.Buttons.Back == ButtonState.Pressed && m_P4State.Buttons.Back == ButtonState.Released)
+                {
+                    selfDestruct = false;
+                }
             }
         }
 
@@ -362,6 +410,8 @@ public class PlayerInput : MonoBehaviour
             }
 
             airBrake = Input.GetButton(airBrakeInput);
+
+            selfDestruct = Input.GetButton(selfDestructInput);
         }
     }
 
@@ -383,6 +433,7 @@ public class PlayerInput : MonoBehaviour
             powerUpInput = "K" + inputNames.powerUp;
             shootInput = "K" + inputNames.shoot;
             airBrakeInput = "K" + inputNames.airBrake;
+            selfDestructInput = "K" + inputNames.selfDestruct;
         }
     }
 }

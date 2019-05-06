@@ -134,7 +134,7 @@ public class PlayerHealth : MonoBehaviour
             Death();
         }
 
-        if (Input.GetKeyDown(KeyCode.Delete))
+        if (input.selfDestruct)
         {
             Death();
         }
