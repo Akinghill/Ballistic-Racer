@@ -1,11 +1,24 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Checkpoint_v3 : MonoBehaviour
 {
-    public Transform[] checkPointArray;
+    [Serializable]
+    public class Checkpoints
+    {
+        public Transform[] checkPointArray;
+
+        public Checkpoints(Transform[] array)
+        {
+            checkPointArray = array;
+        }
+    }
+
+    public Checkpoints[] checkPointArray;
+
     public int currentCheckpoint;
     public int currentLap;
     public Vector3 startPos;
@@ -28,19 +41,53 @@ public class Checkpoint_v3 : MonoBehaviour
     float MaxSpeedStart;
     RaceManager raceManager;
 
+    GameObject[] check;
+    int checkChildren;
+
     void Awake()
     {
-        GameObject check = GameObject.FindGameObjectWithTag("Checkpoint");
-        int checkChildren = check.transform.childCount;
-        checkPointArray = new Transform[checkChildren];
+        check = GameObject.FindGameObjectsWithTag("Checkpoint");
 
-        for (int i = 0; i < checkChildren; i++)
+        if (check.Length > 1)
         {
-            checkPointArray[i] = check.transform.GetChild(i);
+            checkChildren = check[0].transform.childCount;
+            int checkChildren2 = check[1].transform.childCount;
+            checkPointArray = new Checkpoints[]
+            {
+                new Checkpoints(new Transform[checkChildren]),
+                new Checkpoints(new Transform[checkChildren2])
+            };
+            
+            for(int i = 0; i < checkChildren; i++)
+            {
+                checkPointArray[0].checkPointArray[i] = check[0].transform.GetChild(i);
+            }
+
+            for (int j = 0; j < checkChildren2; j++)
+            {
+                checkPointArray[1].checkPointArray[j] = check[1].transform.GetChild(j);
+            }
+
+            lastCheckpoint = checkPointArray[0].checkPointArray[checkPointArray[0].checkPointArray.Length - 1];
+            nextCheckpoint = checkPointArray[0].checkPointArray[0];
+        }
+        else
+        {
+            checkChildren = check[0].transform.childCount;
+            checkPointArray = new Checkpoints[]
+            {
+                new Checkpoints(new Transform[checkChildren]),
+            };
+
+            for (int i = 0; i < checkChildren; i++)
+            {
+                checkPointArray[0].checkPointArray[i] = check[0].transform.GetChild(i);
+            }
+
+            lastCheckpoint = checkPointArray[0].checkPointArray[checkPointArray[0].checkPointArray.Length - 1];
+            nextCheckpoint = checkPointArray[0].checkPointArray[0];
         }
 
-        lastCheckpoint = checkPointArray[checkPointArray.Length - 1];
-        nextCheckpoint = checkPointArray[0];
         lastPointDistance = Vector3.Distance(transform.position, lastCheckpoint.transform.position);
         nextPointDistance = Vector3.Distance(transform.position, nextCheckpoint.transform.position);
 
@@ -158,39 +205,43 @@ public class Checkpoint_v3 : MonoBehaviour
             return;
         }
 
-        if (other.transform == checkPointArray[currentCheckpoint].transform)
+        for (int i = 0; i < check.Length; i++)
         {
-            // Set the respawn point for the ship to the last checkpoint
-            transform.GetComponentInChildren<PlayerHealth>().respawnPoint = checkPointArray[currentCheckpoint].transform;
-
-            // Set the tempNode for the AI to the currentNode at the checkpoint (when they respawn, currentNode gets set to tempNode)
-            transform.GetComponent<ShipAI>().tempNode = transform.GetComponent<ShipAI>().currentNode;
-
-            //Check so we don't exceed our checkpoint quantity
-            if (currentCheckpoint < checkPointArray.Length - 1)
+            if (other.transform == checkPointArray[i].checkPointArray[currentCheckpoint].transform)
             {
-                currentCheckpoint++;
-            }
-            else
-            {
-                //If we don't have any Checkpoints left, go back to 0 and increase currentLap
-                currentCheckpoint = 0;
-                currentLap++;
-            }
+                // Set the respawn point for the ship to the last checkpoint
+                transform.GetComponentInChildren<PlayerHealth>().respawnPoint = checkPointArray[i].checkPointArray[currentCheckpoint].transform;
 
-            checkpointNum.text = "Checkpoints: " + currentCheckpoint;
-            lapNum.text = "Lap: " + currentLap;
+                // Set the tempNode for the AI to the currentNode at the checkpoint (when they respawn, currentNode gets set to tempNode)
+                transform.GetComponent<ShipAI>().tempNode = transform.GetComponent<ShipAI>().currentNode;
 
-            if (currentCheckpoint != 0)
-            {
-                lastCheckpoint = checkPointArray[currentCheckpoint - 1];
-            }
-            else
-            {
-                lastCheckpoint = checkPointArray[0];
-            }
+                //Check so we don't exceed our checkpoint quantity
+                if (currentCheckpoint < checkPointArray[i].checkPointArray.Length - 1)
+                {
+                    currentCheckpoint++;
+                }
+                else
+                {
+                    //If we don't have any Checkpoints left, go back to 0 and increase currentLap
+                    currentCheckpoint = 0;
+                    currentLap++;
+                }
 
-            nextCheckpoint = checkPointArray[currentCheckpoint];
+                checkpointNum.text = "Checkpoints: " + currentCheckpoint;
+                lapNum.text = "Lap: " + currentLap;
+
+                if (currentCheckpoint != 0)
+                {
+                    lastCheckpoint = checkPointArray[i].checkPointArray[currentCheckpoint - 1];
+                }
+                else
+                {
+                    lastCheckpoint = checkPointArray[i].checkPointArray[0];
+                }
+
+                nextCheckpoint = checkPointArray[i].checkPointArray[currentCheckpoint];
+            }
         }
+        
     }
 }
