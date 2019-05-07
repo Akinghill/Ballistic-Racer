@@ -13,9 +13,9 @@ public class RaceManager : MonoBehaviour
     GameObject finish;
     FinishLap finishLap;
 
-    void Start()
+    IEnumerator Start()
     {
-        StartCoroutine(FindShips());
+        yield return null;
 
         shipsGO = GameObject.FindGameObjectsWithTag("Ship");
 
@@ -28,11 +28,6 @@ public class RaceManager : MonoBehaviour
 
         finish = GameObject.FindGameObjectWithTag("Finish");
         finishLap = finish.GetComponent<FinishLap>();
-    }
-
-    IEnumerator FindShips()
-    {
-        yield return new WaitForEndOfFrame();
     }
 
     void Update()

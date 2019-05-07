@@ -13,14 +13,11 @@ public class FinishLap : MonoBehaviour
     public int finishes = 0;
     public bool raceIsOver;
     public bool showResults;
-    //GameObject results;
 
     private void Start()
     {
         raceIsOver = false;
         showResults = false;
-        //results = GameObject.Find("Results Screen");
-        //results.SetActive(false);
     }
 
     private void Update()
@@ -31,7 +28,6 @@ public class FinishLap : MonoBehaviour
             if (restartTimer >= restartDelay)
             {
                 showResults = true;
-                //results.SetActive(true);
                 resultsTimer += Time.deltaTime;
                 if (resultsTimer >= resultsDelay)
                 {
@@ -57,15 +53,15 @@ public class FinishLap : MonoBehaviour
     {
         if (checkpoint_V3.currentLap > numberOfLaps)
         {
-            checkpoint_V3.finish.SetActive(true);
-            checkpoint_V3.updateTimer = false;
-            playerInput.controllerNumber = 0;
-            shipAI.currentNode = 0;
-
             if (playerInput.controllerNumber != 0)
             {
                 finishes++;
             }
+
+            checkpoint_V3.finish.SetActive(true);
+            checkpoint_V3.updateTimer = false;
+            playerInput.controllerNumber = 0;
+            shipAI.currentNode = 0;
             
             if (PlayerManager.numOfPlayers == 1 && finishes == 1)
             {

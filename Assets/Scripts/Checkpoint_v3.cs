@@ -46,6 +46,22 @@ public class Checkpoint_v3 : MonoBehaviour
 
     void Awake()
     {
+        MaxSpeedStart = GetComponent<ShipMovement>().maxSpeed;
+        rankingManager = GameObject.Find("Ranking Manager");
+        raceManager = rankingManager.GetComponent<RaceManager>();
+    }
+
+    void Start()
+    {
+        startPos = transform.position;
+        currentCheckpoint = 0;
+        currentLap = 1;
+        raceTimerString = FormatRaceTime(raceTimer);
+        timerText.text = raceTimerString;
+        lapNum.text = "Lap: " + currentLap;
+
+        StartCoroutine(FindCheckPoints());
+
         check = GameObject.FindGameObjectsWithTag("Checkpoint");
 
         if (check.Length > 1)
@@ -57,8 +73,8 @@ public class Checkpoint_v3 : MonoBehaviour
                 new Checkpoints(new Transform[checkChildren]),
                 new Checkpoints(new Transform[checkChildren2])
             };
-            
-            for(int i = 0; i < checkChildren; i++)
+
+            for (int i = 0; i < checkChildren; i++)
             {
                 checkPointArray[0].checkPointArray[i] = check[0].transform.GetChild(i);
             }
@@ -91,21 +107,6 @@ public class Checkpoint_v3 : MonoBehaviour
         lastPointDistance = Vector3.Distance(transform.position, lastCheckpoint.transform.position);
         nextPointDistance = Vector3.Distance(transform.position, nextCheckpoint.transform.position);
 
-        MaxSpeedStart = GetComponent<ShipMovement>().maxSpeed;
-        rankingManager = GameObject.Find("Ranking Manager");
-        raceManager = rankingManager.GetComponent<RaceManager>();
-    }
-
-    void Start()
-    {
-        startPos = transform.position;
-        currentCheckpoint = 0;
-        currentLap = 1;
-        raceTimerString = FormatRaceTime(raceTimer);
-        timerText.text = raceTimerString;
-        lapNum.text = "Lap: " + currentLap;
-
-        StartCoroutine(FindCheckPoints());
         StartCoroutine(TimerDelayedStart());
     }
 
@@ -113,10 +114,10 @@ public class Checkpoint_v3 : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
-        if (GameObject.FindGameObjectsWithTag("Point") != null)
-        {
-            //Debug.Log("the checkpoints have been found.");
-        }
+        //if (GameObject.FindGameObjectsWithTag("Point") != null)
+        //{
+        //    //Debug.Log("the checkpoints have been found.");
+        //}
     }
 
     IEnumerator TimerDelayedStart()
